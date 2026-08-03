@@ -1,0 +1,153 @@
+/* --- SEÇÃO BENEFÍCIOS --- */
+.beneficios {
+  background-color: #ffffff; /* Fundo branco conforme a imagem */
+  position: relative;
+  /* Retiramos o padding-bottom padrão para a ondinha colar perfeitamente no final */
+  padding-bottom: 0 !important; 
+}
+
+.ben-container {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  padding-bottom: 120px; /* Compensa a retirada do padding da seção */
+}
+
+/* --- LADO DO TEXTO --- */
+.ben-text-side {
+  flex: 1;
+}
+
+.ben-text-side .badge {
+  background-color: #e5ebe9;
+  color: #798b84;
+  margin-bottom: 24px;
+}
+
+.ben-text-side .section-title {
+  color: #4a453f;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.ben-text-side p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.ben-highlight strong {
+  color: #4a453f;
+  font-size: 1.1rem;
+}
+
+/* --- LADO DOS CARDS --- */
+.ben-cards-side {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.ben-card {
+  background-color: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ben-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.ben-icon {
+  color: #90a198;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.ben-card-content h3 {
+  font-size: 1.05rem;
+  color: #4a453f;
+  margin-bottom: 8px;
+}
+
+.ben-card-content p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* --- ONDA E SETA INTERATIVA NO RODAPÉ --- */
+.wave-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Altura da ondinha */
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.wave-divider svg {
+  position: absolute;
+  bottom: -1px; /* Evita linha branca fina entre seções */
+  width: 100%;
+  height: 100%;
+}
+
+.wave-arrow-btn {
+  position: relative;
+  z-index: 10;
+  background: white;
+  color: var(--secondary-color);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 15px; /* Sobe um pouco a seta na onda */
+  animation: float 2.5s infinite ease-in-out;
+  transition: background 0.3s, color 0.3s;
+}
+
+.wave-arrow-btn:hover {
+  background: var(--secondary-color);
+  color: white;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* --- MOBILE VIEW --- */
+@media (max-width: 992px) {
+  .ben-container {
+    flex-direction: column;
+    padding-bottom: 100px;
+  }
+  
+  .ben-text-side {
+    text-align: center;
+  }
+
+  .ben-cards-side {
+    grid-template-columns: 1fr; /* Cards empilhados no celular */
+    width: 100%;
+  }
+
+  .wave-divider {
+    height: 50px;
+  }
+}

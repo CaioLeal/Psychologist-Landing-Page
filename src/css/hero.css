@@ -1,0 +1,126 @@
+.hero {
+  /* Reduzido de 160px para 120px para encostar mais na navbar */
+  padding: 1px 0 250px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,50 Q25,20 50,50 T100,50' fill='none' stroke='rgba(220, 215, 205, 0.4)' stroke-width='3'/%3E%3Cpath d='M0,70 Q25,40 50,70 T100,70' fill='none' stroke='rgba(220, 215, 205, 0.4)' stroke-width='3'/%3E%3Cpath d='M0,30 Q25,0 50,30 T100,30' fill='none' stroke='rgba(220, 215, 205, 0.4)' stroke-width='3'/%3E%3C/svg%3E"); /* Mantenha seu SVG aqui */
+  background-size: 200px 200px;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 650px; /* Aumentado de 550px para 650px (mais largo no PC) */
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  color: #3b2f28; /* Marrom escuro elegante */
+  line-height: 1.1;
+  margin-bottom: 24px;
+  font-family: serif; /* Dá aquele ar mais clássico como na imagem */
+}
+
+.hero-content p {
+  font-size: .9rem;
+  color: var(--text-light);
+  margin-bottom: 40px;
+}
+
+.hero-content p strong {
+  color: var(--text-dark);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: nowrap; /* Garante que fiquem lado a lado */
+}
+
+.btn {
+  white-space: nowrap; /* Impede que o texto quebre em duas linhas */
+  padding: 16px 32px;  /* Botões mais largos e imponentes */
+}
+
+/* Card da Imagem */
+.hero-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.image-card {
+  background: white;
+  padding: 15px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  max-width: 500px;
+}
+
+.image-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Força a imagem a ser 100% quadrada */
+  height: auto; /* Remove a altura fixa */
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.image-card-info {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.image-card-info h3 {
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #3b2f28;
+}
+
+.image-card-info p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+@media (max-width: 992px) {
+  .hero {
+    padding: 120px 0 60px; /* Dá um espaço melhor no topo para a navbar no mobile */
+  }
+
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  /* Reduz o título que estava gigante */
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Empilha os botões verticalmente no celular */
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
+
+  /* Remove a trava de 1 linha e faz o botão ocupar 100% da tela */
+  .btn {
+    width: 100%;
+    white-space: normal; 
+  }
+
+  .hero-image-wrapper {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cindy Andriolli - Psicóloga</title>
+  <link rel="stylesheet" href="src/css/style.css">
+  <!-- FontAwesome para o ícone do globo -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="img/logowhite.png">
+</head>
+<body>
+
+  <!-- =========================================
+                      NAVBAR
+       ========================================= -->
+  <header class="header">
+    <nav class="navbar container">
+      <div class="logo">
+        <a href="#home" class="logo-link">
+          <img src="img/logo.png" alt="Ícone" class="logo-icon">
+          <h2 class="logo-text">
+            Cindy Andriolli
+            <span>Psicóloga Clínica • CRP 06/209430</span>
+          </h2>
+        </a>
+      </div>
+  
+      <div class="nav-pill">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home" data-i18n="nav-home">Home</a></li>
+          <li><a href="#para-quem" data-i18n="nav-for-who">Para quem é</a></li>
+          <li><a href="#beneficios" data-i18n="nav-benefits">Benefícios</a></li>
+          <li><a href="#sobre" data-i18n="nav-about">A Psicóloga</a></li>
+          <li><a href="#como-funciona" data-i18n="nav-how">Como funciona</a></li>
+          <li><a href="#faq" data-i18n="nav-faq">Dúvidas frequentes</a></li>
+          <li><a href="#contato" data-i18n="nav-contact">Contato</a></li>
+        </ul>
+  
+        <div class="nav-mobile-controls">
+          <div class="lang-switcher">
+            <button class="lang-btn" id="currentLangBtn">
+              <i class="fa-solid fa-globe"></i>
+            </button>
+            <ul class="lang-dropdown" id="langDropdown">
+              <li class="lang-option" data-lang="pt">Português</li>
+              <li class="lang-option" data-lang="es">Español</li>
+            </ul>
+          </div>
+  
+          <button class="btn-mobile" id="btn-mobile" aria-label="Abrir menu">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar3"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================
+                      HERO SECTION
+       ========================================= -->
+  <section class="hero" id="home">
+    <div class="container hero-container">
+      
+      <div class="hero-content">
+        <h1 data-i18n="hero-title">Psicoterapia para mulheres cansadas de sustentar tudo sozinhas.</h1>
+        <p data-i18n="hero-desc">Por fora, você é responsável, forte e resolve tudo. Por dentro, vive em alerta, se cobra demais e nunca sente que é suficiente. <strong>A terapia te ajuda a parar de funcionar no automático e começar a viver com mais presença e direção.</strong></p>
+        
+        <div class="hero-buttons">
+          <a href="#contato" class="btn btn-primary" data-i18n="hero-btn-primary">Quero dar meu primeiro passo</a>
+          <a href="#sobre" class="btn btn-outline" data-i18n="hero-btn-secondary">Conheça a Psicóloga</a>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <div class="image-card">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" alt="Evelyn Mendes"><!-- Substitua pela foto da psicóloga -->
+          <div class="image-card-info">
+            <h3 data-i18n="hero-card-name">Cindy Andriolli</h3>
+            <p data-i18n="hero-card-crp">Psicóloga - CRP 06/209430</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================
+                      PARA QUEM É
+       ========================================= -->
+  <section class="identificacao" id="para-quem">
+    <div class="container ident-container">
+      
+      <div class="ident-header fade-up">
+        <span class="badge" data-i18n="ident-badge">Identificação</span>
+        <h2 class="section-title" data-i18n="ident-title">Você tem se sentido assim ultimamente?</h2>
+      </div>
+
+      <div class="cards-grid">
+        <!-- Card 1 -->
+        <div class="card fade-up">
+          <div class="card-icon"><i class="fa-solid fa-head-side-virus"></i></div>
+          <div class="card-content">
+            <h3 data-i18n="ident-c1-title">Ansiedade constante</h3>
+            <p data-i18n="ident-c1-desc">Sua mente está sempre um passo à frente, antecipando problemas que ainda nem aconteceram.</p>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="card fade-up">
+          <div class="card-icon"><i class="fa-solid fa-weight-hanging"></i></div>
+          <div class="card-content">
+            <h3 data-i18n="ident-c2-title">Sobrecarga invisível</h3>
+            <p data-i18n="ident-c2-desc">Você sustenta responsabilidades no trabalho, na família e nos relacionamentos, mas quase ninguém percebe o custo disso.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card fade-up">
+          <div class="card-icon"><i class="fa-solid fa-arrow-trend-down"></i></div>
+          <div class="card-content">
+            <h3 data-i18n="ident-c3-title">Sensação de insuficiência</h3>
+            <p data-i18n="ident-c3-desc">Mesmo conquistando coisas importantes, você sente que ainda não é o bastante.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card fade-up">
+          <div class="card-icon"><i class="fa-solid fa-battery-quarter"></i></div>
+          <div class="card-content">
+            <h3 data-i18n="ident-c4-title">Cansaço emocional</h3>
+            <p data-i18n="ident-c4-desc">Um esgotamento que não melhora apenas com descanso.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ident-footer fade-up">
+        <p data-i18n="ident-footer">Se você <strong>se reconheceu</strong> em mais de um desses pontos,<br>talvez não seja falta de força, mas excesso de esforço.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================
+                      SEÇÃO: BENEFÍCIOS
+       ========================================= -->
+  <section class="beneficios" id="beneficios">
+    <div class="container ben-container">
+      
+      <!-- Coluna da Esquerda (Texto) -->
+      <div class="ben-text-side fade-up">
+        <span class="badge" data-i18n="ben-badge">Benefícios da terapia</span>
+        <h2 class="section-title" data-i18n="ben-title">Por que investir em terapia muda tudo ao redor</h2>
+        
+        <p class="ben-highlight" data-i18n="ben-desc1"><strong>A psicoterapia para mulheres é um processo de fortalecimento interno.</strong></p>
+        <p data-i18n="ben-desc2">Tudo o que você quer construir começa na forma como você se sustenta por dentro. Quando sua saúde mental se fortalece, suas decisões ficam mais claras, seus limites mais firmes e sua postura mais segura.</p>
+        <p data-i18n="ben-desc3"><strong>Sem estrutura emocional, você vive apagando incêndios.<br>Com acompanhamento psicológico, você constrói direção.</strong></p>
+      </div>
+
+      <!-- Coluna da Direita (Cards) -->
+      <div class="ben-cards-side">
+        
+        <div class="ben-card fade-up">
+          <div class="ben-icon"><i class="fa-solid fa-lock"></i></div>
+          <div class="ben-card-content">
+            <h3 data-i18n="ben-c1-title">Segurança emocional</h3>
+            <p data-i18n="ben-c1-desc">Desenvolva a capacidade de sentir ansiedade sem deixar que ela conduza suas decisões.</p>
+          </div>
+        </div>
+
+        <div class="ben-card fade-up" style="transition-delay: 0.1s;">
+          <div class="ben-icon"><i class="fa-solid fa-eye"></i></div>
+          <div class="ben-card-content">
+            <h3 data-i18n="ben-c2-title">Clareza nas decisões</h3>
+            <p data-i18n="ben-c2-desc">Diferencie o que é culpa do que é valor.</p>
+          </div>
+        </div>
+
+        <div class="ben-card fade-up" style="transition-delay: 0.2s;">
+          <div class="ben-icon"><i class="fa-solid fa-arrows-left-right-to-line"></i></div>
+          <div class="ben-card-content">
+            <h3 data-i18n="ben-c3-title">Limites mais saudáveis</h3>
+            <p data-i18n="ben-c3-desc">Aprenda a dizer não sem medo excessivo de decepcionar.</p>
+          </div>
+        </div>
+
+        <div class="ben-card fade-up" style="transition-delay: 0.3s;">
+          <div class="ben-icon"><i class="fa-solid fa-brain"></i></div>
+          <div class="ben-card-content">
+            <h3 data-i18n="ben-c4-title">Autonomia emocional</h3>
+            <p data-i18n="ben-c4-desc">Construa independência emocional e profissional com mais estabilidade.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Divisória com Onda e Seta (Aponta para a próxima seção "sobre") -->
+    <div class="wave-divider">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 V120 H1200 V0 C1200,0 900,120 600,120 C300,120 0,0 0,0 Z" fill="#b7c4cd"></path>
+      </svg>
+      <a href="#sobre" class="wave-arrow-btn" aria-label="Descer para próxima seção">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================================
+                      A PSICÓLOGA / SOBRE
+       ========================================= -->
+  <section class="sobre" id="sobre">
+    <div class="container sobre-container">
+      
+      <!-- CARD 1: SOBRE MIM -->
+      <div class="sobre-card fade-up">
+        
+        <!-- Lado da Imagem -->
+        <div class="sobre-img-wrapper">
+          <!-- Substitua pela foto da psicóloga -->
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" alt="Psicóloga Cindy Andriolli" class="sobre-img">
+          <div class="sobre-img-caption">
+            <h3 data-i18n="sobre-name">Cindy Andriolli</h3>
+            <p data-i18n="sobre-crp">Psicóloga - CRP 06/209430</p>
+          </div>
+        </div>
+
+        <!-- Lado do Texto -->
+        <div class="sobre-text-wrapper">
+          <span class="badge" data-i18n="sobre-badge">A Psicóloga</span>
+          <h2 class="section-title" data-i18n="sobre-title">Sobre mim</h2>
+          
+          <div class="sobre-text-content">
+            <p data-i18n="sobre-p1"><strong>Sou Cindy Andriolli, psicóloga que trabalha com Terapias Contextuais, com foco em Terapia de Aceitação e Compromisso (ACT), no atendimento voltado para mulheres adultas.</strong></p>
+            <p data-i18n="sobre-p2">Escolhi a ACT porque ela parte de uma premissa que faz sentido para mim: o problema raramente é o que você sente. É a guerra que você trava contra isso. Ansiedade, culpa, esgotamento (esses estados têm função e história) e grande parte do sofrimento vem da energia gasta tentando não sentir, não da emoção em si.</p>
+            <p data-i18n="sobre-p3">A ACT tem base científica consolidada e trabalha algo chamado flexibilidade psicológica: a capacidade de se mover em direção ao que importa mesmo diante do desconforto, sem precisar resolver tudo antes. Não é sobre sentir bem, mas viver de forma mais coerente com o que você, de fato, quer e acredita.</p>
+            <p data-i18n="sobre-p4">É esse espaço que eu ofereço: examinar o que esses padrões estão custando e o que se torna possível quando há mais clareza.</p>
+            <p data-i18n="sobre-p5"><strong>Vamos juntas?</strong></p>
+          </div>
+
+          <ul class="sobre-list">
+            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l1">Psicóloga pela Universidade X (UX) 2021</span></li>
+            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l2">Pós-graduanda em Psicologia Clínica pela PUCRS</span></li>
+            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l3">Pós-graduanda em Terapias Contextuais pela Wainer Psicologia</span></li>
+            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l4">Formação em Terapia de Aceitação e Compromisso (ACT)</span></li>
+            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l5">Capacitação em atendimento a mulheres</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CARD 2: COMO FUNCIONA -->
+      <div class="como-funciona-card fade-up" id="como-funciona">
+        
+        <!-- Lado do Texto (Como Funciona) -->
+        <div class="cf-text-side">
+          <span class="badge" data-i18n="cf-badge">Como funciona</span>
+          <h2 class="section-title" data-i18n="cf-title">Psicoterapia Online<br>para Mulheres</h2>
+          <p data-i18n="cf-desc">A terapia online oferece praticidade e continuidade, mantendo o mesmo compromisso ético e técnico do atendimento presencial.</p>
+        </div>
+
+        <!-- Lado dos Ícones (Grid) -->
+        <div class="cf-grid-side">
+          
+          <div class="cf-item">
+            <div class="cf-icon"><i class="fa-regular fa-clock"></i></div>
+            <div class="cf-info">
+              <h4 data-i18n="cf-i1-title">Duração da Sessão</h4>
+              <p data-i18n="cf-i1-desc">50 minutos</p>
+            </div>
+          </div>
+
+          <div class="cf-item">
+            <div class="cf-icon"><i class="fa-regular fa-calendar-check"></i></div>
+            <div class="cf-info">
+              <h4 data-i18n="cf-i2-title">Frequência</h4>
+              <p data-i18n="cf-i2-desc">Sessões semanais</p>
+            </div>
+          </div>
+
+          <div class="cf-item">
+            <div class="cf-icon"><i class="fa-solid fa-laptop-medical"></i></div>
+            <div class="cf-info">
+              <h4 data-i18n="cf-i3-title">Modalidade de atendimento</h4>
+              <p data-i18n="cf-i3-desc">Terapia Online</p>
+            </div>
+          </div>
+
+          <div class="cf-item">
+            <div class="cf-icon"><i class="fa-regular fa-heart"></i></div>
+            <div class="cf-info">
+              <h4 data-i18n="cf-i4-title">Abordagem</h4>
+              <p data-i18n="cf-i4-desc">ACT - Terapia de Aceitação e Compromisso</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>

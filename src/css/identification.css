@@ -1,0 +1,127 @@
+/* --- FUNDO E RECORTES --- */
+.identificacao {
+  background-color: var(--primary-color); 
+  clip-path: polygon(0 60px, 35% 60px, 40% 0, 100% 0, 100% 100%, 0 100%);
+  margin-top: -250px; 
+  position: relative;
+  z-index: 2;
+}
+
+.ident-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- CABEÇALHO DA SEÇÃO --- */
+.ident-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #9aa8b1;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: serif; /* Usando a mesma fonte da sua logo */
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+}
+
+/* --- GRID DE CARDS --- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas no PC */
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 50px;
+}
+
+.card {
+  background-color: white;
+  padding: 24px;
+  border-radius: 4px;
+  display: flex;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.card-icon {
+  background-color: #9aa8b1;
+  color: white;
+  min-width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+
+.card-content h3 {
+  font-size: 1.1rem;
+  color: #3b4238;
+  margin-bottom: 8px;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* --- FOOTER DA SEÇÃO --- */
+.ident-footer {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+}
+
+.ident-footer strong {
+  color: var(--secondary-color);
+}
+
+/* --- ANIMAÇÃO DE FADE UP (CSS BASE) --- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px); /* Começa 40px mais baixo */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0); /* Sobe para a posição original */
+}
+
+/* --- MOBILE VIEW --- */
+@media (max-width: 992px) {
+  .identificacao {
+    /* Ajusta o recorte para telas menores (aumenta a área de corte) */
+    clip-path: polygon(0 40px, 45% 40px, 55% 0, 100% 0, 100% 100%, 0 100%);
+    margin-top: -40px;
+    padding: 80px 0 60px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr; /* 1 coluna no celular */
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
