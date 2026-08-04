@@ -1,0 +1,161 @@
+/* --- SEÇÃO JORNADA --- */
+.jornada {
+  background-color: var(--primary-color);
+  text-align: center;
+}
+
+.jornada-header {
+  margin-bottom: 60px;
+}
+
+.jornada-header .badge {
+  background-color: #9aa8b1; /* Cor da badge adaptada para o fundo azul */
+  color: white;
+}
+
+.jornada-header .section-title {
+  color: var(--secondary-color);
+  font-family: 'Noto Serif TC';
+}
+
+/* --- TIMELINE CONTAINER --- */
+.jornada-timeline {
+  position: relative;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+/* 1. Animação da Linha Traçada (Desktop) */
+.timeline-line {
+  position: absolute;
+  top: 120px; /* Altura exata para cruzar atrás dos textos */
+  left: -5%; /* Começa um pouco fora da tela para o efeito atravessar */
+  height: 2px;
+  width: 0; /* Inicia em ZERO para poder animar esticando */
+  border-top: 5px dashed #8c9e95;
+  z-index: 1;
+  opacity: .6;
+  transition: width 2s ease-out; /* Duração de 2 segundos desenhando a linha */
+}
+
+/* O gatilho: Quando a seção entra na tela (.visible), a linha estica para 110% */
+.jornada-timeline.visible .timeline-line {
+  width: 110%;
+}
+
+/* 2. Animação dos Cards */
+.timeline-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 2; /* Fica por cima da linha */
+}
+
+.jornada-card {
+  background: white;
+  padding: 30px 24px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: left;
+  
+  /* Preparando os cards para o Fade da esquerda para a direita */
+  opacity: 0; 
+  transform: translateX(-30px); 
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* O gatilho dos cards: Ativados quando a timeline fica visível */
+.jornada-timeline.visible .jornada-card {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Tipografia dos Cards */
+.step-num {
+  font-family: 'Noto Serif TC'; 
+  font-size: 2.8rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.jornada-card h4 {
+  color: #3b4238;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.jornada-card p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* --- FOOTER & BOTÃO SHINE --- */
+.jornada-footer {
+  color: var(--secondary-color);
+}
+
+.jornada-footer p {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+/* Efeito de Reflexo (Brilho) no Botão */
+.btn-shine {
+  margin-top: 25px;
+  position: relative;
+  overflow: hidden; /* Corta o brilho para não vazar do botão */
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  /* Gradiente branco transparente simulando o reflexo */
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg);
+  animation: shine 3.5s infinite; /* Roda a cada 3.5 segundos */
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  20% { left: 200%; } /* Passa rápido */
+  100% { left: 200%; } /* Pausa invisível no final */
+}
+
+/* --- MOBILE VIEW --- */
+@media (max-width: 992px) {
+  .timeline-cards {
+    grid-template-columns: 1fr; /* Empilha os cards */
+    gap: 25px;
+  }
+
+  /* Transforma a linha horizontal em Vertical */
+  .timeline-line {
+    top: 0;
+    left: 20px; /* Gruda no canto esquerdo */
+    width: 2px !important;
+    height: 0; /* Começa zerada na altura */
+    border-top: none; /* Tira a borda do topo */
+    border-left: 2px dashed #8c9e95; /* Coloca borda lateral */
+    transition: height 2s ease-out; /* Animação descendo */
+  }
+
+  .jornada-timeline.visible .timeline-line {
+    height: 100%; /* Estica do topo até o fim */
+  }
+
+  .jornada-card {
+    margin-left: 45px; /* Abre espaço pro lado esquerdo não colar na linha */
+    transform: translateY(30px); /* Muda o Fade para vir de BAIXO para CIMA no celular */
+  }
+  
+  .jornada-timeline.visible .jornada-card {
+    transform: translateY(0);
+  }
+}

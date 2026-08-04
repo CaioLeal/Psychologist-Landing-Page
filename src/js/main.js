@@ -1,9 +1,17 @@
 import { initNavbar } from './navbar.js';
-// import { initI18n } from './i18n.js'; // Descomente quando integrar o seu script
+// import { initI18n } from './i18n.js'; // Descomente quando o script
+import { initFAQ } from './faq.js';
+import { initDepoimentos } from './treatment.js';
+import { initInstagram } from './instagram.js';
+import { initFooter } from './footer.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   //initI18n();
+  initFAQ();
+  initDepoimentos();
+  initInstagram();
+  initFooter();
   
   // --- Lógica de Animação Fade Up ao fazer Scroll ---
   const observerOptions = {

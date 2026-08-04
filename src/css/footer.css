@@ -1,0 +1,314 @@
+/* =========================================
+   FOOTER SECTION
+========================================= */
+footer {
+    background: #BCC6CE; /* Fundo cinza clarinho e limpo */
+    padding: 40px 10% 30px; 
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 40px 40px 0 0;
+}
+
+.newsletter {
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.newsletter h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    font-family: serif;
+}
+
+.newsletter p {
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+    color: var(--text-light);
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.form-container input {
+    background: #f7f6f1; /* Fundo suave combinando com o site */
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: var(--text-dark);
+    outline: none;
+    width: 100%;
+    max-width: 400px;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.form-container input::placeholder {
+    color: #9aa8b1;
+}
+
+.form-container input:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 5px 20px rgba(64, 85, 115, 0.1);
+}
+
+/* =========================================
+   RODAPÉ: LINHA DOS LINKS E LOGOS
+========================================= */
+.footer-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 80px; 
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* =========================================
+   BOTÕES MÁGICOS (COSMUS E PSI)
+========================================= */
+.cosmus-badge, .psi-badge {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;  
+    height: 100px;  
+    background: transparent; 
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.cosmus-badge {
+    right: 80px; 
+}
+
+.cosmus-badge img, .psi-badge img {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain; 
+    border-radius: 10px;
+}
+
+.cosmus-badge:hover, .psi-badge:hover {
+    animation: badge-vibrate 0.3s linear infinite;
+}
+
+@keyframes badge-vibrate {
+    0% { transform: translate(0); }
+    25% { transform: translate(-1px, 1px); }
+    50% { transform: translate(1px, -1px); }
+    75% { transform: translate(-1px, -1px); }
+    100% { transform: translate(0); }
+}
+
+/* PARTICULAS DA EXPLOSÃO */
+.particle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    font-size: 24px; 
+    pointer-events: none; 
+    z-index: -1;
+}
+
+/* Cores Cosmos Agency */
+.p1 { color: #FF4757; } 
+.p2 { color: #1E90FF; } 
+.p3 { color: #FFA502; } 
+.p4 { color: #2ED573; } 
+.p5 { color: #9B59B6; } 
+
+/* Cores Psicóloga (Tons pastéis e sóbrios baseados no site) */
+.f1 { color: #405573; } /* Cérebro - Secundária */
+.f2 { color: #8c9e95; } /* Coração - Verde suave */
+.f3 { color: #2e5e85; } /* Folha - Azul acinzentado */
+.f4 { color: #aa9c91; } /* Spa - Marrom claro */
+.f5 { color: #4a453f; } /* Mãos - Texto escuro */
+
+/* Gatilhos Cosmos */
+.cosmus-badge.is-animating .p1 { animation: burst1 2.5s ease-in-out forwards; animation-delay: 0s; }
+.cosmus-badge.is-animating .p2 { animation: burst2 2.5s ease-in-out forwards; animation-delay: 0.3s; }
+.cosmus-badge.is-animating .p3 { animation: burst3 2.5s ease-in-out forwards; animation-delay: 0.6s; }
+.cosmus-badge.is-animating .p4 { animation: burst4 2.5s ease-in-out forwards; animation-delay: 0.9s; }
+.cosmus-badge.is-animating .p5 { animation: burst5 2.5s ease-in-out forwards; animation-delay: 1.2s; }
+
+/* Gatilhos Psicóloga */
+.psi-badge.is-animating .f1 { animation: burst1 2.5s ease-in-out forwards; animation-delay: 0s; }
+.psi-badge.is-animating .f2 { animation: burst2 2.5s ease-in-out forwards; animation-delay: 0.3s; }
+.psi-badge.is-animating .f3 { animation: burst3 2.5s ease-in-out forwards; animation-delay: 0.6s; }
+.psi-badge.is-animating .f4 { animation: burst4 2.5s ease-in-out forwards; animation-delay: 0.9s; }
+.psi-badge.is-animating .f5 { animation: burst5 2.5s ease-in-out forwards; animation-delay: 1.2s; }
+
+/* Rotas de Explosão */
+@keyframes burst1 {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    15% { transform: translate(-100px, -60px) scale(1.6) rotate(-45deg); opacity: 1; }
+    45% { transform: translate(-105px, -55px) scale(1.3) rotate(-50deg); opacity: 1; }
+    75% { transform: translate(-95px, -65px) scale(1.3) rotate(-40deg); opacity: 1; }
+    90% { transform: translate(-50%, -50%) scale(0.3) rotate(0deg); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+}
+@keyframes burst2 {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    15% { transform: translate(0px, -90px) scale(1.6) rotate(0deg); opacity: 1; }
+    45% { transform: translate(5px, -95px) scale(1.3) rotate(10deg); opacity: 1; }
+    75% { transform: translate(-5px, -85px) scale(1.3) rotate(-10deg); opacity: 1; }
+    90% { transform: translate(-50%, -50%) scale(0.3) rotate(0deg); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+}
+@keyframes burst3 {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    15% { transform: translate(100px, -60px) scale(1.6) rotate(45deg); opacity: 1; }
+    45% { transform: translate(105px, -65px) scale(1.3) rotate(50deg); opacity: 1; }
+    75% { transform: translate(95px, -55px) scale(1.3) rotate(40deg); opacity: 1; }
+    90% { transform: translate(-50%, -50%) scale(0.3) rotate(0deg); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+}
+@keyframes burst4 {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    15% { transform: translate(-120px, 15px) scale(1.6) rotate(-90deg); opacity: 1; }
+    45% { transform: translate(-125px, 10px) scale(1.3) rotate(-95deg); opacity: 1; }
+    75% { transform: translate(-115px, 20px) scale(1.3) rotate(-85deg); opacity: 1; }
+    90% { transform: translate(-50%, -50%) scale(0.3) rotate(0deg); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+}
+@keyframes burst5 {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    15% { transform: translate(120px, 15px) scale(1.6) rotate(90deg); opacity: 1; }
+    45% { transform: translate(125px, 20px) scale(1.3) rotate(95deg); opacity: 1; }
+    75% { transform: translate(115px, 10px) scale(1.3) rotate(85deg); opacity: 1; }
+    90% { transform: translate(-50%, -50%) scale(0.3) rotate(0deg); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+}
+
+/* =========================================
+   CRÉDITOS E REDES SOCIAIS 
+========================================= */
+.footer-credits {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.copyright {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-dark);
+    background: #f7f6f1;
+    font-size: 1rem;
+    transition: all .3s ease;
+}
+
+.social-icons a:hover {
+    background: var(--secondary-color);
+    color: #ffffff;
+    border-color: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(64, 85, 115, 0.15);
+}
+
+/* --- RESPONSIVIDADE CELULAR --- */
+@media (max-width: 992px) {
+    footer {
+        padding: 60px 5% 30px;
+    }
+    
+    .footer-bottom {
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center;
+        align-items: center;
+        gap: 20px; 
+    }
+
+    .footer-links {
+        order: 1; 
+        width: 100%; 
+        margin-bottom: 20px;
+    }
+
+    .footer-logo {
+        order: 2; 
+        left: 0; 
+        margin: 0;
+    }
+
+    .psi-badge, .cosmus-badge {
+        width: 140px; 
+        height: 70px; 
+        left: 0; 
+        right: 0;
+    }
+
+    .cosmus-badge {
+        order: 3; 
+    }
+
+    .footer-credits {
+        flex-direction: column-reverse; 
+        gap: 20px;
+        text-align: center;
+        margin-top: 40px;
+    }
+}

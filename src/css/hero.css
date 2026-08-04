@@ -4,8 +4,10 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,50 Q25,20 50,50 T100,50' fill='none' stroke='rgba(220, 215, 205, 0.4)' stroke-width='3'/%3E%3Cpath d='M0,70 Q25,40 50,70 T100,70' fill='none' stroke='rgba(220, 215, 205, 0.4)' stroke-width='3'/%3E%3Cpath d='M0,30 Q25,0 50,30 T100,30' fill='none' stroke='rgba(220, 215, 205, 0.4)' stroke-width='3'/%3E%3C/svg%3E"); /* Mantenha seu SVG aqui */
-  background-size: 200px 200px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("/img/backbranco.webp");
+  background-size: cover; /* Faz a imagem crescer proporcionalmente até cobrir toda a área */
+  background-repeat: no-repeat; /* Proíbe a imagem de se repetir/multiplicar */
+  background-position: center; /* Garante que o centro da imagem fique sempre visível */
 }
 
 .hero-container {
@@ -25,7 +27,7 @@
   color: #3b2f28; /* Marrom escuro elegante */
   line-height: 1.1;
   margin-bottom: 24px;
-  font-family: serif; /* Dá aquele ar mais clássico como na imagem */
+  font-family: 'Noto Serif TC'; /* Dá aquele ar mais clássico como na imagem */
 }
 
 .hero-content p {

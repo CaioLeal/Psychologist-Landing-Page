@@ -3,6 +3,11 @@
 @import 'identification.css';
 @import 'benefits.css';
 @import 'about.css';
+@import 'journey.css';
+@import 'faq.css';
+@import 'treatment.css';
+@import 'instagram.css';
+@import 'footer.css';
 
 :root {
   --bg-primary: #f7f6f1; /* Fundo off-white/bege */
@@ -19,6 +24,13 @@
   font-family: "Kostania";
   src: url("../font/Kostania-Light.otf") format("opentype");
   font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Serif TC";
+  src: url("../font/NotoSerifTC[wght].ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -48,18 +60,18 @@ body {
 /* =========================================
    PADRONIZAÇÃO DE ESPAÇAMENTO DAS SEÇÕES
 ========================================= */
-/* Aplica 100px de respiro em cima e embaixo para TODAS as seções, 
+/* Aplica 80px de respiro em cima e embaixo para TODAS as seções, 
    exceto a Hero (#home) que tem seu próprio balanço de tela */
 section:not(#home) {
-    padding-top: 80px !important;
-    padding-bottom: 80px !important;
+    padding-top: 80px; 
+    padding-bottom: 80px;
 }
 
 /* MOBILE: Reduz o respiro para telas menores (Celulares e Tablets pequenos) */
 @media (max-width: 768px) {
     section:not(#home) {
-        padding-top: 60px !important;
-        padding-bottom: 40px !important;
+        padding-top: 60px;
+        padding-bottom: 40px;
     }
 }
 

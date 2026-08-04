@@ -1,0 +1,125 @@
+/* --- SEÇÃO FAQ --- */
+.faq {
+  background-color: var(--bg-primary); /* Fundo claro para contrastar com a seção anterior */
+}
+
+.faq-container {
+  max-width: 900px; /* Deixa o FAQ mais centralizado e estreito que o site normal */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.faq-header .badge {
+  background-color: #e5ebe9;
+  color: #798b84;
+}
+
+.faq-header .section-title {
+  color: #4a453f;
+  font-family: 'Noto Serif TC'; 
+}
+
+/* --- LISTA E ITENS DO FAQ --- */
+.faq-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background-color: white;
+  border-radius: 50px; /* Formato de pílula da imagem */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  overflow: hidden; /* Importante para a borda arredondada funcionar na animação */
+  transition: border-radius 0.4s ease;
+}
+
+/* Quando aberto, tiramos o formato de pílula gigante para virar um card arredondado padrão */
+.faq-item.active {
+  border-radius: 20px; 
+}
+
+/* --- BOTÃO DA PERGUNTA --- */
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 35px;
+  background: none;
+  border: none;
+  font-family: var(--font-main);
+  font-size: 1.05rem;
+  color: #4a453f;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: var(--secondary-color);
+}
+
+/* O ícone da setinha */
+.faq-question i {
+  color: #9aa8b1;
+  font-size: 1.2rem;
+  background-color: #f7f6f1;
+  padding: 8px;
+  border-radius: 50%;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Giro super fluido */
+}
+
+/* Vira a setinha para cima quando estiver ativo */
+.faq-item.active .faq-question i {
+  transform: rotate(-180deg);
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+/* --- RESPOSTA ANIMADA (Mágica do Grid) --- */
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr; /* Altura ZERO inicial */
+  opacity: 0;
+  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease-out;
+}
+
+.faq-item.active .faq-answer {
+  grid-template-rows: 1fr; /* Altura TOTAL automática do conteúdo */
+  opacity: 1;
+}
+
+/* Conteúdo interno escondido pela grid */
+.faq-answer-content {
+  overflow: hidden;
+  padding: 0 35px; /* Mantém o mesmo alinhamento horizontal da pergunta */
+}
+
+.faq-answer-content p {
+  padding-bottom: 30px; /* Dá respiro apenas para o texto, sem travar o height geral */
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* --- MOBILE VIEW --- */
+@media (max-width: 768px) {
+  .faq-question {
+    padding: 20px 25px;
+    font-size: 1rem;
+    gap: 15px; /* Espaço para o texto não sobrepor o ícone */
+  }
+
+  .faq-answer-content {
+    padding: 0 25px;
+  }
+}

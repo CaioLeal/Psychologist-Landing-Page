@@ -1,0 +1,133 @@
+/* --- SEÇÃO INSTAGRAM --- */
+.instagram {
+width: 100%; /* Força a ocupar a tela toda */
+  padding: 80px 0; /* Dá o respiro necessário em cima e embaixo */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("/img/backbranco.webp");
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center;
+}
+
+.container.insta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1500px; /* Agora sim ele vai quebrar a barreira! Pode colocar 100% se quiser que encoste nas bordas da tela */
+  width: 100%;
+}
+
+.insta-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.insta-header .section-title {
+  color: #4a453f;
+  font-family: 'Noto Serif TC';
+  font-size: 2.2rem;
+  line-height: 1.3;
+}
+
+/* Deixa o @ */
+.insta-header a {
+  color: #8c9e95; 
+  text-decoration: none;
+  font-family: 'Noto Serif TC';
+  font-style: italic;
+  transition: color .3s;
+}
+
+.insta-header a:hover {
+  color: var(--secondary-color);
+}
+
+/* --- GRID DE FOTOS --- */
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas perfeitas no PC */
+  gap: 15px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.insta-item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Força o elemento a ser um QUADRADO perfeito */
+  overflow: hidden;
+  border-radius: 15px; /* Cantos mais arredondados conforme solicitado */
+  display: block;
+}
+
+.insta-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Efeito de Overlay (Película escura + Ícone) que aparece ao passar o mouse */
+.insta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.insta-overlay i {
+  color: white;
+  font-size: 2rem;
+  transform: translateY(20px);
+  transition: transform .3s ease;
+}
+
+/* Animações combinadas ao fazer Hover no link */
+.insta-item:hover img {
+  transform: scale(1.08); /* Dá um zoom sutil na imagem */
+}
+
+.insta-item:hover .insta-overlay {
+  opacity: 1; /* Revela a película preta */
+}
+
+.insta-item:hover .insta-overlay i {
+  transform: translateY(0); /* Faz o ícone subir suavemente */
+}
+
+/* --- FOOTER / BOTÃO --- */
+.insta-footer {
+  text-align: center;
+}
+
+.insta-footer .btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--secondary-color);
+}
+
+/* --- MOBILE VIEW --- */
+@media (max-width: 992px) {
+  .insta-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas no celular/tablet */
+    gap: 10px;
+  }
+
+  .insta-header .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Se a tela for muito pequena, podemos deixar 1 coluna (opcional, mantive 2 para ficar igual feed) */
+  .insta-grid {
+    gap: 5px; /* Reduz o espaço entre as fotos para telas minúsculas */
+  }
+}

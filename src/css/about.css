@@ -1,9 +1,15 @@
 /* --- SEÇÃO SOBRE (FUNDO AZUL ZEBRA) --- */
 .sobre {
-  background-color: var(--primary-color);
-  /* Zebra em SVG - usando a cor secundária com leve transparência para as listras */
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,50 Q25,20 50,50 T100,50' fill='none' stroke='rgba(64, 85, 115, 0.15)' stroke-width='3'/%3E%3Cpath d='M0,70 Q25,40 50,70 T100,70' fill='none' stroke='rgba(64, 85, 115, 0.15)' stroke-width='3'/%3E%3Cpath d='M0,30 Q25,0 50,30 T100,30' fill='none' stroke='rgba(64, 85, 115, 0.15)' stroke-width='3'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
+  width: 100%; /* Força a ocupar a tela toda */
+  position: relative;
+  z-index: 1; /* Garante que fique na camada certa em relação à ondinha */
+  padding: 100px 0; /* Mantém as caixas longe das bordas da imagem */
+  
+  /* O seu background continua aqui: */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.747), rgb(255, 255, 255)), url("/img/backazul.avif");
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center;
 }
 
 .sobre-container {
@@ -49,7 +55,7 @@
 }
 
 .sobre-img-caption h3 {
-  font-family: serif;
+  font-family: 'Noto Serif TC';
   color: #3b4238;
   font-size: 1.2rem;
 }
@@ -72,7 +78,7 @@
 .sobre-text-wrapper .section-title {
   color: #4a453f;
   margin-bottom: 25px;
-  font-family: serif;
+  font-family: 'Noto Serif TC'; 
 }
 
 .sobre-text-content p {

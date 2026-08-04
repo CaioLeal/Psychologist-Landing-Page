@@ -1,0 +1,237 @@
+/* --- SEÇÃO TRATAMENTOS E DEPOIMENTOS --- */
+.tratamentos {
+  background-color: var(--bg-primary);
+  padding-bottom: 0 !important; /* Zera o padding bottom para o letreiro colar no fim da seção */
+  overflow: hidden;
+}
+
+.tratamentos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 120px;
+}
+
+.tratamentos-header {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 700px;
+}
+
+.tratamentos-header .badge {
+  background-color: #e5ebe9;
+  color: #798b84;
+}
+
+.tratamentos-header .section-title {
+  color: var(--text-dark);
+  font-family: 'Noto Serif TC';
+  font-size: 2.2rem;
+}
+
+/* --- CLOUD DE TAGS --- */
+.tratamentos-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+
+.trat-tag {
+  background-color: rgba(229, 235, 233, .6);
+  color: #4a453f;
+  border: 1px solid #d1dbd6;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: .95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: default;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.trat-tag i {
+  color: #9aa8b1;
+  font-size: .8rem;
+}
+
+/* Animação fluida de levitar a tag no hover */
+.trat-tag:hover {
+  transform: translateY(-4px) scale(1.02);
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,.04);
+  border-color: #bcc6ce;
+}
+
+.tratamentos-action {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.trat-info {
+  margin-top: 15px;
+  font-size: .85rem;
+  color: var(--text-light);
+}
+
+/* Linha divisória sutil */
+.spacer-line {
+  width: 100%;
+  height: 5px;
+  background-color: rgba(0,0,0,.05);
+  margin-bottom: 80px;
+}
+
+/* --- DEPOIMENTOS --- */
+.depoimentos-wrapper {
+  display: flex;
+  gap: 60px;
+  width: 100%;
+}
+
+.depoimentos-text {
+  flex: 0 0 40%;
+}
+
+.depoimentos-text .badge {
+  background-color: #e5ebe9;
+  color: #798b84;
+}
+
+.depoimentos-text .section-title {
+  color: #4a453f;
+  font-family: 'Noto Serif TC';
+  margin-bottom: 20px;
+}
+
+.depoimentos-text p {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Grid onde os cards entram pelo JS */
+.depoimentos-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.depoimento-card {
+  background: white;
+  padding: 35px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0, .04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform .4s ease;
+}
+
+.depoimento-card:hover {
+  transform: translateY(-5px);
+}
+
+.dep-name {
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #4a453f;
+  margin-bottom: 15px;
+}
+
+.dep-text {
+  color: var(--text-light);
+  font-size: .9rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.dep-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffc107; /* Cor das estrelas */
+  font-size: .9rem;
+}
+
+.dep-rating img {
+  height: 20px;
+}
+
+/* --- LETREIRO INFINITO (MARQUEE) --- */
+.marquee-wrapper {
+  background-color: var(--secondary-color); 
+  color: white;
+  padding: 5px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  margin-top: 40px; 
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 30s linear infinite;  /* Animação de 30 segundos, linear e infinita */
+}
+
+.marquee-content span {
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  margin-right: 60px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.marquee-content i {
+  font-size: .6rem;
+  margin: 0 15px;
+  opacity: .5;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  /* Move exatamente 50% da largura, que corresponde à primeira metade do conteúdo duplicado */
+  100% { transform: translateX(-50%); } 
+}
+
+/* --- MOBILE VIEW --- */
+@media (max-width: 992px) {
+  .depoimentos-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .depoimentos-text {
+    text-align: center;
+  }
+
+  .depoimentos-grid {
+    grid-template-columns: 1fr; /* Empilha os depoimentos */
+  }
+
+  .tratamentos-tags {
+    gap: 10px;
+  }
+
+  .trat-tag {
+    font-size: .85rem;
+    padding: 8px 16px;
+  }
+  
+  /* COMENTÁRIO EXTRA 3: No celular, as caixas de depoimentos descem e ficam perto da faixa. Essa margem garante o afastamento correto no mobile! */
+  .marquee-wrapper {
+    margin-top: 60px;
+  }
+  
+  /* COMENTÁRIO EXTRA 4: Reduz o padding do container apenas no celular para compensar o margin-top da faixa e não deixar um buraco gigante */
+  .tratamentos-container {
+    padding-bottom: 40px;
+  }
+}
