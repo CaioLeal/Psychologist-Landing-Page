@@ -23,12 +23,12 @@ export function initInstagram() {
     }
   ];
 
-  // Injetando as fotos no HTML com o fade-up (mantendo o data-i18n na âncora)
+  // Injetando as fotos no HTML já com os atributos do AOS
   posts.forEach((post, index) => {
-    const delay = index * 0.1; 
+    const delay = index * 100; // AOS usa delay em milissegundos
 
     const postHTML = `
-      <a href="${post.postUrl}" target="_blank" class="insta-item fade-up" style="transition-delay: ${delay}s;" aria-label="Ver post no Instagram" data-i18n="insta-post-${index + 1}">
+      <a href="${post.postUrl}" target="_blank" class="insta-item" data-aos="fade-up" data-aos-delay="${delay}" aria-label="Ver post no Instagram" data-i18n="insta-post-${index + 1}">
         <img src="${post.imgUrl}" alt="Post do Instagram da Psicóloga">
         <div class="insta-overlay">
           <i class="fa-brands fa-instagram"></i>
@@ -38,4 +38,8 @@ export function initInstagram() {
 
     container.innerHTML += postHTML;
   });
+
+  // Elementos injetados depois do AOS.init() precisam desse refresh
+  // pra serem "descobertos" e entrarem na observação do scroll
+  if (window.AOS) window.AOS.refresh();
 }

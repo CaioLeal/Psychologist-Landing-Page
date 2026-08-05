@@ -1,65 +1,117 @@
+/* =========================================
+   CABEÇALHO E NAVEGAÇÃO SUPER PILL
+========================================= */
 .header {
   position: fixed;
   width: 100%;
-  top: 15px; /* Dá um leve respiro no topo para a pílula não colar no teto */
+  top: 30px; 
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  transition: padding .4s ease;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 10px 0; 
+  background-color: transparent; /* Navbar pai transparente no início */
+  transition: all .4s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* A pílula direita no estado inicial */
+.nav-pill {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, .95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, .05);
+  gap: 24px;
+  transition: all .4s ease;
+}
+
+/* --- A MÁGICA DO SCROLL --- */
+/* A Navbar inteira vira a pílula (O glassmorphism está no seu HTML) */
+#navbarPill.scrolled {
+  max-width: 1100px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+  padding: 10px 30px;
+  border-radius: 50px;
+}
+
+/* Desativa o fundo da pílula interna para evitar sobreposição dupla de vidro */
+#navbarPill.scrolled .nav-pill {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  padding: 0;
+}
+
+/* Oculta o nome da logo ao rolar */
+#navbarPill.scrolled .logo-text {
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-left: 0;
 }
 
 /* --- ESTILOS DA LOGO --- */
 .logo-link {
   display: flex;
   align-items: center;
-  gap: 12px; /* Espaçamento entre o ícone e o texto */
-  text-decoration: none; /* Remove o sublinhado do link */
+  gap: 15px; 
+  text-decoration: none; 
 }
 
 .logo-icon {
-  width: 45px; /* Ajuste o tamanho da logozinha*/
-  height: 45px;
+  width: 50px; 
+  height: 50px;
   object-fit: contain;
+  transition: transform .4s ease;
+}
+
+#navbarPill.scrolled .logo-icon {
+  transform: scale(.85); /* Diminui o ícone quando vira pílula */
 }
 
 .logo-text {
   font-family: 'Kostania', serif; 
-  font-size: 3rem; /* Aumentei bastante a fonte! Pode ajustar como quiser */
+  font-size: 2.8rem; 
   color: #3b4238;
-  line-height: 0.9; /* Reduz a altura invisível da fonte para não empurrar a navbar */
-  white-space: nowrap; /* Impede o nome de quebrar a linha e amassar a pílula */
+  line-height: .9; 
+  white-space: nowrap; 
+  transition: all .4s ease; /* Animação de sumiço suave */
+  width: auto;
+  opacity: 1;
 }
 
 .logo-text span {
   font-family: var(--font-main);
-  font-size: 0.65rem;
+  font-size: .65rem;
   font-weight: normal;
   letter-spacing: 1px;
   text-transform: uppercase;
-  display: block; /* Força o subtítulo a ir para a linha de baixo sem precisar da tag <br> */
-  margin-top: 6px; /* Descola o subtítulo do nome principal */
+  display: block; 
+  margin-top: 6px; 
   line-height: 1.2;
 }
 
-/* --- ESTILO DA PÍLULA --- */
-.nav-pill {
-  display: flex;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 15px 25px;
-  border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  gap: 24px;
-}
-
+/* --- LINKS --- */
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 24px;
+  gap: 22px;
+  transition: transform .4s ease;
+}
+
+#navbarPill.scrolled .nav-links {
+  transform: translateX(-20px); /* Puxa os links sutilmente pra esquerda pra equilibrar o sumiço do nome */
 }
 
 .nav-links a {
@@ -71,57 +123,91 @@
 }
 
 .nav-links a:hover {
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
-/* Container do Idioma + Menu Mobile */
+/* --- CONTROLES (IDIOMA / MOBILE) --- */
 .nav-mobile-controls {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* Estilos básicos do switcher de idioma */
 .lang-switcher {
   position: relative;
 }
 
 .lang-btn {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
+  background: white;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
   cursor: pointer;
   color: var(--text-dark);
+  transition: all .3s ease;
+}
+
+.lang-btn:hover {
+  background: var(--bg-primary);
 }
 
 .lang-dropdown {
   display: none;
   position: absolute;
   right: 0;
-  top: 100%;
+  top: 120%;
   background: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0, .08);
   list-style: none;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  min-width: 120px;
+  min-width: 140px;
 }
 
 .lang-dropdown.show {
   display: block;
+  animation: dropIn .2s ease-out forwards;
 }
 
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* BANDEIRAS DO FIELD STATS */
 .lang-option {
-  padding: 10px 15px;
+  padding: 12px 20px;
+  color: var(--text-dark);
+  font-size: .9rem;
+  font-weight: 500;
   cursor: pointer;
-  font-size: 0.9rem;
+  transition: background .2s;
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+  text-align: left;
 }
 
 .lang-option:hover {
-  background: #f0f0f0;
+  background: #f7f6f1; 
+  color: var(--secondary-color);
 }
 
-/* Menu Hamburger */
+.flag-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%; 
+  object-fit: cover; 
+  display: block; 
+  border: 1px solid rgba(0, 0, 0, .1); 
+}
+
+/* --- MENU MOBILE --- */
 .btn-mobile {
   display: none;
   background: none;
@@ -138,69 +224,67 @@
   height: 2px;
   background-color: var(--text-dark);
   position: absolute;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
 }
 
 .bar1 { top: 0; }
 .bar2 { top: 9px; }
 .bar3 { top: 18px; }
 
-/* Animação do botão mobile ativo */
 .btn-mobile.active .bar1 { transform: rotate(45deg); top: 9px; }
 .btn-mobile.active .bar2 { opacity: 0; }
 .btn-mobile.active .bar3 { transform: rotate(-45deg); top: 9px; }
 
-/* Mobile View */
+/* MOBILE VIEW */
 @media (max-width: 992px) {
-  /* 1. Reduz o tamanho da logo para caber na tela do celular */
+  
+  #navbarPill.scrolled {
+    padding: 10px 20px;
+    border-radius: 50px;
+    max-width: 95%;
+  }
+
   .logo-text {
     font-size: 1.6rem;
   }
+  
   .logo-icon {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
   }
 
   .btn-mobile {
     display: block;
   }
-
-  /* 2. Removemos o fundo da pílula pai para o menu não ficar preso */
   .nav-pill {
-    background: transparent;
-    backdrop-filter: none;
-    box-shadow: none;
-    padding: 0;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    gap: 0;
   }
 
-  /* 3. Passamos o visual da Pílula apenas para o grupo de controles no mobile */
-  .nav-mobile-controls {
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 8px 16px;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    position: relative;
-    z-index: 1001; /* Mantém a pílula ACIMA do menu quando ele abrir */
-  }
-
-  /* 4. Menu em Tela Cheia */
   .nav-links {
     position: fixed;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100vh;
-    background-color: var(--bg-primary, #f7f6f1);
+    background-color: rgba(255, 255, 255, .98);
+    backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 30px;
-    transition: left 0.4s ease;
-    z-index: 1000; /* Fica abaixo dos controles */
+    transition: left .4s ease;
+    z-index: 1000;
   }
 
   .nav-links.active {
     left: 0;
+  }
+
+  .nav-mobile-controls {
+    z-index: 1001; /* Fica acima do menu aberto */
   }
 }

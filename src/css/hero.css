@@ -1,39 +1,65 @@
+.hero-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  width: fit-content;
+  box-shadow: 0 4px 10px rgba(0,0,0,.05);
+  margin-bottom: 25px;
+}
+
+.hero-rating .stars i {
+  color: #ffc107;
+  font-size: .8rem;
+}
+
+.hero-rating .rating-text {
+  font-size: .8rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
 .hero {
-  /* Reduzido de 160px para 120px para encostar mais na navbar */
-  padding: 1px 0 250px;
+  /* Aumentei MUITO o padding-top (de 1px para 180px) para a Hero não colar na Navbar Pílula e dar espaço para a imagem crescer */
+  padding: 180px 0 350px;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("/img/backbranco.webp");
-  background-size: cover; /* Faz a imagem crescer proporcionalmente até cobrir toda a área */
-  background-repeat: no-repeat; /* Proíbe a imagem de se repetir/multiplicar */
-  background-position: center; /* Garante que o centro da imagem fique sempre visível */
+  background-image: linear-gradient(rgba(255, 255, 255, .6), rgba(255, 255, 255, .6)), url("/img/backbranco.webp");
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
 }
 
-.hero-container {
+.container.hero-container {
+  max-width: 1500px; /* Joga a imagem do card bem mais para a direita e os textos para a esquerda */
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
+  gap: 80px;
 }
 
 .hero-content {
   flex: 1;
-  max-width: 650px; /* Aumentado de 550px para 650px (mais largo no PC) */
+  max-width: 850px; /* Aumentado drasticamente para o título H1 quebrar em apenas 3 linhas */
 }
 
 .hero-content h1 {
-  font-size: 3.2rem;
-  color: #3b2f28; /* Marrom escuro elegante */
+  font-size: 3.5rem; /* Aumentei um tiquinho de 3.2 para 3.5 */
+  color: #3b2f28; 
   line-height: 1.1;
-  margin-bottom: 24px;
-  font-family: 'Noto Serif TC'; /* Dá aquele ar mais clássico como na imagem */
+  margin-bottom: 30px; /* Mais folga abaixo do título */
+  font-family: 'Noto Serif TC', serif; 
 }
 
 .hero-content p {
-  font-size: .9rem;
+  font-size: 1rem; /* Aumentei de .9 para 1rem */
   color: var(--text-light);
-  margin-bottom: 40px;
+  margin-bottom: 50px; /* Mais folga abaixo do texto */
+  line-height: 1.7; /* Mais espaço entre as linhas */
 }
 
 .hero-content p strong {
@@ -44,6 +70,7 @@
   display: flex;
   gap: 16px;
   flex-wrap: nowrap; /* Garante que fiquem lado a lado */
+  align-items: center;
 }
 
 .btn {
@@ -58,18 +85,18 @@
   justify-content: flex-end;
 }
 
-.image-card {
+.image-card.hero-card-tall {
   background: white;
   padding: 15px;
   border-radius: var(--border-radius);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-  max-width: 500px;
+  box-shadow: 0 20px 40px rgba(0,0,0, .08);
+  width: 90%; /* REMOVIDO: max-width: 500px; (Isso estava impedindo a foto de ficar gigante) */
 }
 
-.image-card img {
+.image-card.hero-card-tall img {
   width: 100%;
-  aspect-ratio: 1 / 1; /* Força a imagem a ser 100% quadrada */
-  height: auto; /* Remove a altura fixa */
+  aspect-ratio: 4 / 4;
+  height: auto; 
   object-fit: cover;
   border-radius: 8px;
   display: block;
@@ -88,18 +115,18 @@
 }
 
 .image-card-info p {
-  font-size: 0.85rem;
+  font-size: .85rem;
   color: var(--text-light);
   margin-top: 4px;
 }
 
 @media (max-width: 992px) {
   .hero {
-    padding: 120px 0 60px; /* Dá um espaço melhor no topo para a navbar no mobile */
+    padding: 120px 0 100px;
   }
 
   .hero-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
     gap: 40px;
   }

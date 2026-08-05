@@ -1,0 +1,84 @@
+/* =========================================
+   BOTÕES FLUTUANTES (WHATSAPP E TOPO)
+========================================= */
+#backToTop {
+    position: fixed;
+    bottom: 30px; /* Fica logo acima do botão do WhatsApp */
+    right: 35px;
+    z-index: 999;
+    
+    /* Efeito Vidro Claro */
+    background: rgba(255, 255, 255, .85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 0, 0, .08);
+    color: var(--secondary-color);
+    
+    padding: 12px 16px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: none; /* Escondido por padrão, o JS ativa */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+    transition: all .3s ease;
+}
+
+#backToTop:hover {
+    background: var(--secondary-color);
+    color: #ffffff;
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(64, 85, 115, .3);
+}
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 120px; 
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366; /* Verde do WhatsApp padrão */
+    color: #ffffff; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    z-index: 999;
+    text-decoration: none !important;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, .4);
+    animation: vibrate-whatsapp 3s infinite;
+    transition: all .3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, .6);
+    animation: none; /* Para de tremer ao passar o mouse */
+}
+
+@keyframes vibrate-whatsapp {
+    0%, 100% { transform: rotate(0deg); }
+    5%, 15%, 25% { transform: rotate(-10deg) scale(1.1); }
+    10%, 20%, 30% { transform: rotate(10deg) scale(1.1); }
+    35% { transform: rotate(0deg) scale(1); }
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE E TABLETS)
+========================================= */
+@media (max-width: 1024px) {
+    #backToTop {
+        right: 20px; 
+    }
+    .whatsapp-btn {
+        bottom: 120px;
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+        right: 15px;
+    }
+    #backToTop {
+        bottom: 30px;
+    }
+}

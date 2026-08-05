@@ -1,12 +1,10 @@
 /* --- SEÇÃO SOBRE (FUNDO AZUL ZEBRA) --- */
 .sobre {
-  width: 100%; /* Força a ocupar a tela toda */
+  width: 100%; 
   position: relative;
-  z-index: 1; /* Garante que fique na camada certa em relação à ondinha */
-  padding: 100px 0; /* Mantém as caixas longe das bordas da imagem */
-  
-  /* O seu background continua aqui: */
-  background-image: linear-gradient(rgba(255, 255, 255, 0.747), rgb(255, 255, 255)), url("/img/backazul.avif");
+  z-index: 1; 
+  padding: 120px 0 100px 0 !important; /* AUMENTO DO PADDING AQUI */
+  background-image: linear-gradient(rgba(255, 255, 255, .747), rgb(255, 255, 255)), url("/img/backazul.avif");
   background-size: cover; 
   background-repeat: no-repeat; 
   background-position: center;
@@ -15,14 +13,15 @@
 .sobre-container {
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Distância entre os dois cartões maiores */
+  gap: 40px; 
+  margin-top: 60px; 
 }
 
 /* --- CARD GERAL (BASE) --- */
 .sobre-card, .como-funciona-card {
   background: white;
   border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,.05);
   display: flex;
   overflow: hidden;
 }
@@ -62,7 +61,7 @@
 
 .sobre-img-caption p {
   color: var(--text-light);
-  font-size: 0.9rem;
+  font-size: .9rem;
 }
 
 /* Lado do Texto (Sobre Mim) */
@@ -84,7 +83,7 @@
 .sobre-text-content p {
   color: var(--text-light);
   margin-bottom: 15px;
-  font-size: 0.95rem;
+  font-size: .95rem;
 }
 
 .sobre-text-content strong {
@@ -105,7 +104,7 @@
   align-items: flex-start;
   gap: 12px;
   color: var(--text-dark);
-  font-size: 0.9rem;
+  font-size: .9rem;
   font-weight: 500;
 }
 
@@ -140,7 +139,7 @@
 
 .cf-text-side p {
   color: var(--text-light);
-  font-size: 0.95rem;
+  font-size: .95rem;
 }
 
 /* Grid de Informações */
@@ -158,7 +157,8 @@
   display: flex;
   gap: 15px;
   align-items: center;
-  transition: border-color 0.3s;
+  transition: border-color .3s;
+  border-radius: 20px
 }
 
 .cf-item:hover {
@@ -171,13 +171,13 @@
 }
 
 .cf-info h4 {
-  font-size: 0.95rem;
+  font-size: .95rem;
   color: #4a453f;
   margin-bottom: 4px;
 }
 
 .cf-info p {
-  font-size: 0.8rem;
+  font-size: .8rem;
   color: var(--text-light);
 }
 

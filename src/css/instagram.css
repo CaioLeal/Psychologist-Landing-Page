@@ -2,7 +2,7 @@
 .instagram {
 width: 100%; /* Força a ocupar a tela toda */
   padding: 80px 0; /* Dá o respiro necessário em cima e embaixo */
-  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("/img/backbranco.webp");
+  background-image: linear-gradient(rgba(255, 255, 255, .6), rgba(255, 255, 255, .6)), url("/img/backbranco.webp");
   background-size: cover; 
   background-repeat: no-repeat; 
   background-position: center;
@@ -55,7 +55,7 @@ width: 100%; /* Força a ocupar a tela toda */
   width: 100%;
   aspect-ratio: 1 / 1; /* Força o elemento a ser um QUADRADO perfeito */
   overflow: hidden;
-  border-radius: 15px; /* Cantos mais arredondados conforme solicitado */
+  border-radius: 20px; /* Cantos mais arredondados conforme solicitado */
   display: block;
 }
 
@@ -63,7 +63,7 @@ width: 100%; /* Força a ocupar a tela toda */
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform .5s ease;
 }
 
 /* Efeito de Overlay (Película escura + Ícone) que aparece ao passar o mouse */

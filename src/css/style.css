@@ -8,6 +8,7 @@
 @import 'treatment.css';
 @import 'instagram.css';
 @import 'footer.css';
+@import 'floating-buttons.css';
 
 :root {
   --bg-primary: #f7f6f1; /* Fundo off-white/bege */
@@ -77,19 +78,23 @@ section:not(#home) {
 
 /* Botões Globais */
 .btn {
-  display: inline-block;
+  display: inline-flex; /* Mudou de inline-block para inline-flex */
+  align-items: center; /* Trava o texto perfeitamente no meio (vertical) */
+  justify-content: center; /* Trava o texto perfeitamente no meio (horizontal) */
   padding: 14px 28px;
   border-radius: 6px;
   font-weight: bold;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
   cursor: pointer;
+  text-align: center;
 }
 
 .btn-primary {
   background-color: var(--secondary-color);
   color: white;
-  border: none;
+  /* A Borda transparente de 1px cria a mesma massa matemática que o botão branco tem */
+  border: 1px solid transparent; 
 }
 
 .btn-primary:hover {
@@ -99,9 +104,39 @@ section:not(#home) {
 .btn-outline {
   background-color: transparent;
   color: var(--text-dark);
-  border: 1px solid var(--text-dark);
+  /* A borda de 1px aqui é o que causa a diferença de altura */
+  border: 1px solid var(--text-dark); 
 }
 
 .btn-outline:hover {
-  background-color: rgba(0,0,0,0.05);
+  background-color: rgba(0,0,0, .05);
+}
+
+/* =========================================
+   EFEITO SHINE (BRILHO) PARA BOTÕES
+========================================= */
+.btn-shine {
+  position: relative;
+  overflow: hidden; /* Impede que o brilho vaze para fora do botão e quebre o layout */
+  z-index: 1;
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  /* Cria o feixe de luz branco translúcido */
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .4) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-25deg); /* Inclina o feixe de luz */
+  animation: shineAnimation 3s infinite; /* A animação dura 3s e se repete infinitamente */
+  pointer-events: none; /* Garante que a luz não atrapalhe o clique do usuário */
+}
+
+@keyframes shineAnimation {
+  0% { left: -100%; }
+  20% { left: 200%; }  /* O feixe passa rápido (nos primeiros 20% do tempo) */
+  100% { left: 200%; } /* Fica invisível no resto do tempo esperando o próximo ciclo */
 }

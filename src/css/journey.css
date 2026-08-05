@@ -56,13 +56,12 @@
   background: white;
   padding: 30px 24px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0, .05);
   text-align: left;
-  
   /* Preparando os cards para o Fade da esquerda para a direita */
   opacity: 0; 
   transform: translateX(-30px); 
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity .6s ease-out, transform .6s ease-out;
 }
 
 /* O gatilho dos cards: Ativados quando a timeline fica visível */
@@ -88,7 +87,7 @@
 
 .jornada-card p {
   color: var(--text-light);
-  font-size: 0.9rem;
+  font-size: .9rem;
   line-height: 1.5;
 }
 
@@ -102,30 +101,10 @@
   margin-bottom: 5px;
 }
 
-/* Efeito de Reflexo (Brilho) no Botão */
-.btn-shine {
+/* Efeito de Reflexo (Brilho) no Botão - o efeito em si (position/overflow/::after/animation)
+   agora vive centralizado no style.css. Aqui só o espaçamento específico deste botão. */
+.jornada-footer .btn-shine {
   margin-top: 25px;
-  position: relative;
-  overflow: hidden; /* Corta o brilho para não vazar do botão */
-}
-
-.btn-shine::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 50%;
-  height: 100%;
-  /* Gradiente branco transparente simulando o reflexo */
-  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
-  transform: skewX(-25deg);
-  animation: shine 3.5s infinite; /* Roda a cada 3.5 segundos */
-}
-
-@keyframes shine {
-  0% { left: -100%; }
-  20% { left: 200%; } /* Passa rápido */
-  100% { left: 200%; } /* Pausa invisível no final */
 }
 
 /* --- MOBILE VIEW --- */
