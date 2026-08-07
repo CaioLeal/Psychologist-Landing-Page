@@ -76,6 +76,36 @@ section:not(#home) {
     }
 }
 
+/* =========================================
+   SCROLLBAR PERSONALIZADA (BARRA DE ROLAGEM)
+========================================= */
+
+/* Firefox */
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin; /* Deixa a barra fininha no Firefox */
+  scrollbar-color: var(--primary-color) var(--bg-primary); /* Cor da barra e cor do fundo */
+}
+
+/* Chrome, Edge, Safari e outros navegadores WebKit */
+::-webkit-scrollbar {
+  width: 8px; /* Largura da barra vertical */
+  height: 8px; /* Altura da barra horizontal (se houver) */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary); /* Fundo da barra usando a cor off-white do site */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color); /* Azul acinzentado na barra */
+  border-radius: 10px; /* Deixa as pontinhas da barra arredondadas */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color); /* Fica mais escura (azul marinho) quando passa o mouse */
+}
+
 /* Botões Globais */
 .btn {
   display: inline-flex; /* Mudou de inline-block para inline-flex */
