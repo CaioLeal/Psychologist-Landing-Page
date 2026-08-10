@@ -288,3 +288,44 @@
     z-index: 1001; /* Fica acima do menu aberto */
   }
 }
+
+/* =========================================
+   AJUSTE PARA CELULARES ESTREITOS (S22, iPhone SE, etc. até 400px)
+========================================= */
+@media (max-width: 400px) {
+  /* Ganha espaço nas bordas reduzindo o padding do container */
+  .navbar.container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  /* Reduz sutilmente a logo */
+  .logo-icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  
+  .logo-link {
+    gap: 8px; /* Aproxima o ícone do texto */
+  }
+  
+  .logo-text {
+    font-size: 1.3rem !important; 
+  }
+  
+  .logo-text span {
+    font-size: .55rem !important;
+  }
+  
+  /* Reduz o botão do globo para não brigar por espaço */
+  .lang-btn {
+    width: 34px;
+    height: 34px;
+    font-size: .85rem;
+  }
+  
+  /* Aproxima o botão do globo do menu hambúrguer */
+  .nav-mobile-controls {
+    gap: 10px;
+  }
+}

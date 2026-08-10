@@ -23,7 +23,7 @@ width: 100%; /* Força a ocupar a tela toda */
 
 .insta-header .section-title {
   color: #4a453f;
-  font-family: 'Noto Serif TC';
+  font-family: 'Elegant';
   font-size: 2.2rem;
   line-height: 1.3;
 }
@@ -32,7 +32,7 @@ width: 100%; /* Força a ocupar a tela toda */
 .insta-header a {
   color: #8c9e95; 
   text-decoration: none;
-  font-family: 'Noto Serif TC';
+  font-family: 'Elegant';
   font-style: italic;
   transition: color .3s;
 }

@@ -35,6 +35,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Elegant";
+  src: url("../font/elegant.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;

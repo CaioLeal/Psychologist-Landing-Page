@@ -82,3 +82,20 @@
         bottom: 30px;
     }
 }
+
+/* =========================================
+   AJUSTE PARA CELULARES ESTREITOS (S22, iPhone SE, etc. até 400px)
+========================================= */
+@media (max-width: 400px) {
+    .whatsapp-btn {
+        bottom: 120px;
+        width: 45px;
+        height: 45px;
+        font-size: 28px;
+        right: 20px;
+    }
+    #backToTop {
+        bottom: 30px;
+        right: 20px;
+    }
+}

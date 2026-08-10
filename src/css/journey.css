@@ -15,7 +15,7 @@
 
 .jornada-header .section-title {
   color: var(--secondary-color);
-  font-family: 'Noto Serif TC';
+  font-family: 'Elegant';
 }
 
 /* --- TIMELINE CONTAINER --- */
@@ -72,7 +72,7 @@
 
 /* Tipografia dos Cards */
 .step-num {
-  font-family: 'Noto Serif TC'; 
+  font-family: 'Elegant'; 
   font-size: 2.8rem;
   color: var(--secondary-color);
   margin-bottom: 10px;
