@@ -5,6 +5,7 @@ import { initDepoimentos } from './treatment.js';
 import { initInstagram } from './instagram.js';
 import { initFooter } from './footer.js';
 import { initFloatingButtons } from './floating-buttons.js';
+import { initHolidays } from './holidays.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initInstagram();
   initFooter();
   initFloatingButtons();
+  initHolidays();
   
   // --- Lógica de Animação Fade Up ao fazer Scroll ---
   const observerOptions = {
