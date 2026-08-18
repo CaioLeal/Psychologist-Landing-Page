@@ -1,15 +1,15 @@
 import { initNavbar } from './navbar.js';
-// import { initI18n } from './i18n.js'; // Descomente quando o script
 import { initFAQ } from './faq.js';
 import { initDepoimentos } from './treatment.js';
 import { initInstagram } from './instagram.js';
 import { initFooter } from './footer.js';
 import { initFloatingButtons } from './floating-buttons.js';
 import { initHolidays } from './holidays.js';
+import { initI18n } from './i18n.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
-  //initI18n();
+  initI18n();
   initFAQ();
   initDepoimentos();
   initInstagram();

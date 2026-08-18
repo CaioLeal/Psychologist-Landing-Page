@@ -94,9 +94,9 @@
 .sobre-list {
   list-style: none;
   margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: grid; /* Muda de flex para grid */
+  grid-template-columns: repeat(2, 1fr); /* Cria duas colunas de tamanhos iguais */
+  gap: 15px 20px; /* gap: <espaço-vertical> <espaço-horizontal> */
 }
 
 .sobre-list li {
@@ -106,12 +106,14 @@
   color: var(--text-dark);
   font-size: .9rem;
   font-weight: 500;
+  line-height: 1.4; /* Melhora a leitura dos itens que quebram linha */
 }
 
 .sobre-list i {
-  color: #8c9e95; /* Verde musgo suave do print */
+  color: #8c9e95; /* Verde musgo suave */
   font-size: 1rem;
-  margin-top: 3px;
+  margin-top: 2px; /* Ajuste sutil para alinhar melhor o ícone com o texto de várias linhas */
+  flex-shrink: 0; /* Impede que o ícone seja esmagado se o texto for muito longo */
 }
 
 /* --- CARD 2: COMO FUNCIONA --- */
@@ -199,5 +201,21 @@
 
   .cf-grid-side {
     grid-template-columns: 1fr; /* Coloca a grid em uma coluna no celular */
+  }
+  
+  /* Centraliza a badge, o título e os parágrafos */
+  .sobre-text-wrapper {
+    text-align: center;
+  }
+
+  /* Volta a lista para 1 coluna e centraliza o ícone com o texto */
+  .sobre-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .sobre-list li {
+    justify-content: center; /* Centraliza os itens flexíveis (ícone + texto) horizontalmente */
+    text-align: center; /* Centraliza o texto em si caso ele quebre em duas linhas */
   }
 }

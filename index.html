@@ -18,6 +18,9 @@
   <!-- AOS ANIMATION -->
   <link rel="stylesheet" href="https://unpkg.com" />
 
+  <!-- GSAP ANIMATION -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
   <style>
     #navbarPill.scrolled {
       background-color: rgba(255, 255, 255, .05) !important;
@@ -90,22 +93,28 @@
   <section class="hero" id="home">
     <!-- Adicionamos o <style> do Glassmorphism direto no HTML para garantir que o Vite leia o Backdrop-Filter perfeitamente, conforme seu modelo Cosmus -->
     <div class="container hero-container">
-      
+    
       <!-- Texto -->
       <div class="hero-content" data-aos="fade-up">
-        <h1 data-i18n="hero-title">Psicoterapia online para quem busca mais equilíbrio emocional e qualidade de vida.</h1>
-        <p data-i18n="hero-desc">Por fora, você é responsável, forte e resolve tudo. Por dentro, vive em alerta, se cobra demais e nunca sente que é suficiente. <strong>A terapia te ajuda a parar de funcionar no automático e começar a viver com mais presença e direção.</strong></p>
-        
+        <h1 data-i18n="hero-title">Psicoterapia para compreender o que você está vivendo e construir novos caminhos.</h1>
+    
+        <p data-i18n="hero-desc">
+          Nem sempre é fácil entender o que está acontecendo quando emoções, pensamentos e comportamentos começam a pesar no
+          dia a dia.
+          <strong>Um espaço de escuta e cuidado para olhar para você com mais clareza, acolhimento e profundidade.</strong>
+        </p>
+    
         <div class="hero-buttons">
-          <a href="#contato" class="btn btn-primary btn-shine" data-i18n="hero-btn-primary">Quero dar meu primeiro passo</a>
+          <a href="#contato" class="btn btn-primary btn-shine" data-i18n="hero-btn-primary">Agendar uma conversa</a>
           <a href="#sobre" class="btn btn-outline" data-i18n="hero-btn-secondary">Conheça a Psicóloga</a>
         </div>
       </div>
 
+
       <!-- Imagem Cheiona (Retrato) -->
       <div class="hero-image-wrapper">
         <div class="image-card hero-card-tall">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" alt="Psicóloga Cindy Andriolli">
+          <img src="img/hero1.jpeg" alt="Psicóloga Cindy Andriolli">
           <div class="image-card-info">
             <h3 data-i18n="hero-card-name">Cindy Andriolli</h3>
             <p data-i18n="hero-card-crp">Psicóloga - CRP 06/209430</p>
@@ -250,7 +259,7 @@
         <!-- Lado da Imagem -->
         <div class="sobre-img-wrapper">
           <!-- Substitua pela foto da psicóloga -->
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" alt="Psicóloga Cindy Andriolli" class="sobre-img">
+          <img src="img/hero2.jpeg" alt="Psicóloga Cindy Andriolli" class="sobre-img">
           <div class="sobre-img-caption">
             <h3 data-i18n="sobre-name">Cindy Andriolli</h3>
             <p data-i18n="sobre-crp">Psicóloga - CRP 06/209430</p>
@@ -263,19 +272,37 @@
           <h2 class="section-title" data-i18n="sobre-title">Sobre mim</h2>
           
           <div class="sobre-text-content">
-            <p data-i18n="sobre-p1"><strong>Sou Cindy Andriolli, psicóloga que trabalha com Terapias Contextuais, com foco em Terapia de Aceitação e Compromisso (ACT), no atendimento voltado para pessoas adultas.</strong></p>
-            <p data-i18n="sobre-p2">Escolhi a ACT porque ela parte de uma premissa que faz sentido para mim: o problema raramente é o que você sente. É a guerra que você trava contra isso. Ansiedade, culpa, esgotamento (esses estados têm função e história) e grande parte do sofrimento vem da energia gasta tentando não sentir, não da emoção em si.</p>
-            <p data-i18n="sobre-p3">A ACT tem base científica consolidada e trabalha algo chamado flexibilidade psicológica: a capacidade de se mover em direção ao que importa mesmo diante do desconforto, sem precisar resolver tudo antes. Não é sobre sentir bem, mas viver de forma mais coerente com o que você, de fato, quer e acredita.</p>
-            <p data-i18n="sobre-p4">É esse espaço que eu ofereço: examinar o que esses padrões estão custando e o que se torna possível quando há mais clareza.</p>
-            <p data-i18n="sobre-p5"><strong>Vamos juntas?</strong></p>
+            <p data-i18n="sobre-p1"><strong>Sou Cindy Andriolli, psicóloga, com atuação em Psicologia Clínica e especialização em
+                Neuropsicologia, com formação voltada para Avaliação e Reabilitação Neuropsicológica.</strong></p>
+          
+            <p data-i18n="sobre-p2">Acredito que o processo psicológico começa pelo acolhimento e pela compreensão de cada pessoa
+              em sua singularidade. Mais do que olhar apenas para uma queixa, meu trabalho busca compreender a história, os
+              comportamentos, as emoções e os diferentes aspectos que fazem parte da experiência de cada paciente.</p>
+          
+            <p data-i18n="sobre-p3">Minha formação em Neuropsicologia amplia esse olhar, permitindo compreender de forma integrada
+              aspectos cognitivos, emocionais e comportamentais, contribuindo para uma avaliação mais cuidadosa e individualizada.
+            </p>
+          
+            <p data-i18n="sobre-p4">No atendimento clínico, construo um espaço de escuta, respeito e segurança, para que você
+              possa compreender melhor o que está vivendo, desenvolver novas possibilidades e encontrar caminhos mais coerentes
+              com suas necessidades e objetivos.</p>
+          
+            <p data-i18n="sobre-p5"><strong>Se você está buscando um espaço para se compreender melhor e cuidar da sua saúde
+                emocional, estou aqui para acompanhar esse processo.</strong></p>
           </div>
 
+
           <ul class="sobre-list">
-            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l1">Psicóloga pela Universidade X (UX) 2021</span></li>
-            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l2">Pós-graduanda em Psicologia Clínica pela PUCRS</span></li>
-            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l3">Pós-graduanda em Terapias Contextuais pela Wainer Psicologia</span></li>
-            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l4">Formação em Terapia de Aceitação e Compromisso (ACT)</span></li>
-            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l5">Atendimento a adolescentes e adultos</span></li>
+            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l1">Psicóloga formada pela Anhanguera Educacional
+                (2015)</span></li>
+            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l2">Pós-graduada em Neuropsicologia, com ênfase em
+                Avaliação e Reabilitação Neuropsicológica</span></li>
+            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l3">Especialização em Supervisão Escolar e
+                Orientação Educacional</span></li>
+            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l4">Atuação e experiência em Psicologia Clínica e
+                Avaliação Psicológica</span></li>
+            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l5">Formação complementar em Produção Audiovisual e
+                Comunicação</span></li>
           </ul>
         </div>
       </div>

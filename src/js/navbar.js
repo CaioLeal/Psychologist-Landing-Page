@@ -1,8 +1,6 @@
 export function initNavbar() {
   const btnMobile = document.getElementById('btn-mobile');
   const navLinks = document.getElementById('nav-links');
-  const langBtn = document.getElementById('currentLangBtn');
-  const langDropdown = document.getElementById('langDropdown');
   const navbarPill = document.getElementById('navbarPill'); // A Navbar global
 
   // 1. Lógica do Scroll (Shrink / Super Pill)
@@ -30,18 +28,6 @@ export function initNavbar() {
         btnMobile.classList.remove('active');
         navLinks.classList.remove('active');
       });
-    });
-  }
-
-  // 3. Lógica do Menu de Idioma (Bandeiras)
-  if (langBtn && langDropdown) {
-    langBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); 
-      langDropdown.classList.toggle('show');
-    });
-
-    document.addEventListener('click', () => {
-      langDropdown.classList.remove('show');
     });
   }
 }

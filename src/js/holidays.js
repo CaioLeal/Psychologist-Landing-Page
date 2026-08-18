@@ -79,6 +79,96 @@ export function initHolidays() {
             icone: ["fa-solid fa-ribbon"], // Fita de conscientização
             cores: ["#E4E67E", "#ffc107", "#fff176"], // Tons de amarelo da campanha
             fisica: { gravidade: 1, vento: .5, rotacao: 5, tamanhoBase: 15, intensidade: .015 } 
+        },
+                janeiroBranco: {
+            ativo: true,
+            inicio: { mes: 1, dia: 1 },
+            fim: { mes: 1, dia: 31 },
+            novaLogo: "",
+            imagemFooter: "",
+            imagemVoadora: "",
+            intervaloVoo: 180000,
+            icone: ["fa-solid fa-brain", "fa-solid fa-heart"],
+            cores: ["#FFFFFF", "#E8F4F8", "#D9EEF2", "#B8DDE5"],
+            fisica: { gravidade: .7, vento: .3, rotacao: 2, tamanhoBase: 8, intensidade: .015 }
+        },
+
+        diaDaMulher: {
+            ativo: true,
+            inicio: { mes: 3, dia: 1 },
+            fim: { mes: 3, dia: 10 },
+            novaLogo: "",
+            imagemFooter: "",
+            imagemVoadora: "",
+            intervaloVoo: 180000,
+            icone: ["fa-solid fa-spa", "fa-solid fa-heart"],
+            cores: ["#E8A9D8", "#C77BC9", "#F3C6E8", "#A86BA8"],
+            fisica: { gravidade: .8, vento: .3, rotacao: 2, tamanhoBase: 8, intensidade: .02 }
+        },
+
+        diaDoAutismo: {
+            ativo: true,
+            inicio: { mes: 4, dia: 1 },
+            fim: { mes: 4, dia: 3 },
+            novaLogo: "",
+            imagemFooter: "",
+            imagemVoadora: "",
+            intervaloVoo: 180000,
+            icone: ["fa-solid fa-puzzle-piece", "fa-solid fa-heart"],
+            cores: ["#6EC6FF", "#A78BFA", "#7DD3A8", "#F9C74F"],
+            fisica: { gravidade: .7, vento: .4, rotacao: 3, tamanhoBase: 8, intensidade: .015 }
+        },
+
+        saudeMental: {
+            ativo: true,
+            inicio: { mes: 10, dia: 7 },
+            fim: { mes: 10, dia: 12 },
+            novaLogo: "",
+            imagemFooter: "",
+            imagemVoadora: "",
+            intervaloVoo: 180000,
+            icone: ["fa-solid fa-brain", "fa-solid fa-heart"],
+            cores: ["#75FFFF", "#1D9DF2", "#BCBCF5", "#0061A6"],
+            fisica: { gravidade: .7, vento: .3, rotacao: 2, tamanhoBase: 8, intensidade: .015 }
+        },
+
+        outubroRosa: {
+            ativo: true,
+            inicio: { mes: 10, dia: 1 },
+            fim: { mes: 10, dia: 31 },
+            novaLogo: "",
+            imagemFooter: "",
+            imagemVoadora: "",
+            intervaloVoo: 180000,
+            icone: ["fa-solid fa-ribbon", "fa-solid fa-heart"],
+            cores: ["#F7A8C4", "#F4C2D7", "#E879A9", "#FFF0F5"],
+            fisica: { gravidade: .8, vento: .4, rotacao: 3, tamanhoBase: 10, intensidade: .015 }
+        },
+
+        novembroAzul: {
+            ativo: true,
+            inicio: { mes: 11, dia: 1 },
+            fim: { mes: 11, dia: 30 },
+            novaLogo: "",
+            imagemFooter: "",
+            imagemVoadora: "",
+            intervaloVoo: 180000,
+            icone: ["fa-solid fa-ribbon", "fa-solid fa-heart"],
+            cores: ["#75FFFF", "#1D9DF2", "#0061A6", "#9DD9FF"],
+            fisica: { gravidade: .8, vento: .4, rotacao: 3, tamanhoBase: 10, intensidade: .015 }
+        },
+
+        pessoaComDeficiencia: {
+            ativo: true,
+            inicio: { mes: 12, dia: 1 },
+            fim: { mes: 12, dia: 5 },
+            novaLogo: "",
+            imagemFooter: "",
+            imagemVoadora: "",
+            intervaloVoo: 180000,
+            icone: ["fa-solid fa-universal-access", "fa-solid fa-heart"],
+            cores: ["#75FFFF", "#1D9DF2", "#BCBCF5", "#0061A6"],
+            fisica: { gravidade: .7, vento: .3, rotacao: 2, tamanhoBase: 8, intensidade: .015 }
         }
     };
 
