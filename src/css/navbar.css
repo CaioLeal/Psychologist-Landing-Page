@@ -235,27 +235,35 @@
 .btn-mobile.active .bar2 { opacity: 0; }
 .btn-mobile.active .bar3 { transform: rotate(-45deg); top: 9px; }
 
-/* MOBILE VIEW */
+/* =========================================
+   MOBILE VIEW (NAVBAR PÍLULA + MENU FULLSCREEN)
+========================================= */
 @media (max-width: 992px) {
   
+  .header {
+    top: 0; /* Zera o top para tapar o buraco do teto */
+    padding: 15px 15px 0 15px; 
+  }
+
   #navbarPill.scrolled {
     padding: 10px 20px;
     border-radius: 50px;
     max-width: 95%;
   }
 
-  .logo-text {
-    font-size: 1.6rem;
-  }
-  
-  .logo-icon {
-    width: 40px;
-    height: 40px;
+  /* A MÁGICA: Desliga o vidro da pílula apenas quando o menu abre para 
+     impedir que o "position: fixed" fique aprisionado e vaze. */
+  #navbarPill.menu-open {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
   }
 
-  .btn-mobile {
-    display: block;
-  }
+  .logo-text { font-size: 1.6rem; }
+  .logo-icon { width: 40px; height: 40px; }
+  .btn-mobile { display: block; }
+  
   .nav-pill {
     background: transparent !important;
     backdrop-filter: none !important;
@@ -264,28 +272,44 @@
     gap: 0;
   }
 
+  /* --- MENU LATERAL TELA CHEIA --- */
   .nav-links {
     position: fixed;
     top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(255, 255, 255, .98);
-    backdrop-filter: blur(10px);
+    left: -101vw; /* Esconde 100% da LARGURA DA TELA para a esquerda */
+    width: 100vw; 
+    height: 100vh; 
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center; 
+    justify-content: center; 
     gap: 30px;
-    transition: left .4s ease;
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
+    margin: 0;
+    padding: 0; 
   }
 
+  /* Menu desliza e preenche a tela inteira sem frestas */
   .nav-links.active {
-    left: 0;
+    left: 0; 
   }
 
+  .nav-links a {
+    font-size: 1.3rem; 
+    font-weight: 600;
+    text-align: center; /* Fontes centralizadas */
+    width: 100%; 
+    display: block; 
+  }
+
+  /* --- TRAVA O BOTÃO "X" NA FRENTE DO MENU --- */
   .nav-mobile-controls {
-    z-index: 1001; /* Fica acima do menu aberto */
+    position: relative; /* OBRIGATÓRIO para o z-index funcionar */
+    z-index: 2000; /* Força os controles (Globo e Hamburguer) para frente */
   }
 }
 
@@ -293,39 +317,14 @@
    AJUSTE PARA CELULARES ESTREITOS (S22, iPhone SE, etc. até 400px)
 ========================================= */
 @media (max-width: 400px) {
-  /* Ganha espaço nas bordas reduzindo o padding do container */
   .navbar.container {
     padding-left: 10px;
     padding-right: 10px;
   }
-  
-  /* Reduz sutilmente a logo */
-  .logo-icon {
-    width: 32px !important;
-    height: 32px !important;
-  }
-  
-  .logo-link {
-    gap: 8px; /* Aproxima o ícone do texto */
-  }
-  
-  .logo-text {
-    font-size: 1.3rem !important; 
-  }
-  
-  .logo-text span {
-    font-size: .55rem !important;
-  }
-  
-  /* Reduz o botão do globo para não brigar por espaço */
-  .lang-btn {
-    width: 34px;
-    height: 34px;
-    font-size: .85rem;
-  }
-  
-  /* Aproxima o botão do globo do menu hambúrguer */
-  .nav-mobile-controls {
-    gap: 10px;
-  }
+  .logo-icon { width: 32px !important; height: 32px !important; }
+  .logo-link { gap: 8px; }
+  .logo-text { font-size: 1.3rem !important; }
+  .logo-text span { font-size: .55rem !important; }
+  .lang-btn { width: 34px; height: 34px; font-size: .85rem; }
+  .nav-mobile-controls { gap: 10px; }
 }
