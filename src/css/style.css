@@ -26,6 +26,7 @@
   src: url("../font/Kostania-Light.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -40,6 +41,7 @@
   src: url("../font/elegant.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 * {

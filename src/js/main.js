@@ -1,3 +1,6 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import { initNavbar } from './navbar.js';
 import { initFAQ } from './faq.js';
 import { initDepoimentos } from './treatment.js';
@@ -8,6 +11,12 @@ import { initHolidays } from './holidays.js';
 import { initI18n } from './i18n.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  AOS.init({
+    once: true,
+    duration: 700,
+    offset: 80
+  });
+  
   initNavbar();
   initI18n();
   initFAQ();

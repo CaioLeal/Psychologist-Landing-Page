@@ -28,7 +28,7 @@ export function initInstagram() {
     const delay = index * 100; // AOS usa delay em milissegundos
 
     const postHTML = `
-      <a href="${post.postUrl}" target="_blank" class="insta-item" data-aos="fade-up" data-aos-delay="${delay}" aria-label="Ver post no Instagram" data-i18n="insta-post-${index + 1}">
+      <a href="${post.postUrl}" target="_blank" class="insta-item" data-aos="fade-up" data-aos-delay="${delay}" aria-label="Ver post ${index + 1} no Instagram" data-i18n="insta-post-${index + 1}">
         <img src="${post.imgUrl}" alt="Post do Instagram da Psicóloga">
         <div class="insta-overlay">
           <i class="fa-brands fa-instagram"></i>

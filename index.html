@@ -4,22 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cindy Andriolli - Psicóloga</title>
+  <meta name="description" content="Psicoterapia online com Cindy Andriolli, psicóloga clínica. Um espaço de escuta, acolhimento e cuidado para compreender emoções, comportamentos e construir novos caminhos.">
+
   <link rel="stylesheet" href="src/css/style.css">
   <!-- FontAwesome-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
-
+  
   <link rel="icon" type="image/png" href="img/logowhite.png">
-  <!-- AOS ANIMATION -->
-  <link rel="stylesheet" href="https://unpkg.com" />
-
-  <!-- GSAP ANIMATION -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
   <style>
     #navbarPill.scrolled {
@@ -63,7 +57,7 @@
     
         <div class="nav-mobile-controls">
           <div class="lang-switcher">
-            <button class="lang-btn" id="currentLangBtn">
+            <button class="lang-btn" id="currentLangBtn" aria-label="Selecionar idioma">
               <i class="fa-solid fa-globe"></i>
             </button>
             <ul class="lang-dropdown" id="langDropdown">
@@ -87,538 +81,542 @@
     </nav>
   </header>
 
+<main>
   <!-- =========================================
-                      HERO SECTION
-       ========================================= -->
-  <section class="hero" id="home">
-    <!-- Adicionamos o <style> do Glassmorphism direto no HTML para garantir que o Vite leia o Backdrop-Filter perfeitamente, conforme seu modelo Cosmus -->
-    <div class="container hero-container">
-    
-      <!-- Texto -->
-      <div class="hero-content" data-aos="fade-up">
-        <h1 data-i18n="hero-title">Psicoterapia para compreender o que você está vivendo e construir novos caminhos.</h1>
-    
-        <p data-i18n="hero-desc">
-          Nem sempre é fácil entender o que está acontecendo quando emoções, pensamentos e comportamentos começam a pesar no
-          dia a dia.
-          <strong>Um espaço de escuta e cuidado para olhar para você com mais clareza, acolhimento e profundidade.</strong>
-        </p>
-    
-        <div class="hero-buttons">
-          <a href="#contato" class="btn btn-primary btn-shine" data-i18n="hero-btn-primary">Agendar uma conversa</a>
-          <a href="#sobre" class="btn btn-outline" data-i18n="hero-btn-secondary">Conheça a Psicóloga</a>
-        </div>
-      </div>
-
-
-      <!-- Imagem Cheiona (Retrato) -->
-      <div class="hero-image-wrapper">
-        <div class="image-card hero-card-tall">
-          <img src="img/hero1.jpeg" alt="Psicóloga Cindy Andriolli">
-          <div class="image-card-info">
-            <h3 data-i18n="hero-card-name">Cindy Andriolli</h3>
-            <p data-i18n="hero-card-crp">Psicóloga - CRP 06/209430</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================
-                      PARA QUEM É
-       ========================================= -->
-  <section class="identificacao" id="para-quem">
-    <div class="container ident-container">
+                        HERO SECTION
+        ========================================= -->
+    <section class="hero" id="home">
+      <!-- Adicionamos o <style> do Glassmorphism direto no HTML para garantir que o Vite leia o Backdrop-Filter perfeitamente, conforme seu modelo Cosmus -->
+      <div class="container hero-container">
       
-      <div class="ident-header fade-up">
-        <span class="badge" data-i18n="ident-badge">Identificação</span>
-        <h2 class="section-title" data-i18n="ident-title">Você tem se sentido assim ultimamente?</h2>
-      </div>
-
-      <div class="cards-grid">
-        <!-- Card 1 -->
-        <div class="card fade-up">
-          <div class="card-icon"><i class="fa-solid fa-head-side-virus"></i></div>
-          <div class="card-content">
-            <h3 data-i18n="ident-c1-title">Ansiedade constante</h3>
-            <p data-i18n="ident-c1-desc">Sua mente está sempre um passo à frente, antecipando problemas que ainda nem aconteceram.</p>
-          </div>
-        </div>
-        
-        <!-- Card 2 -->
-        <div class="card fade-up">
-          <div class="card-icon"><i class="fa-solid fa-weight-hanging"></i></div>
-          <div class="card-content">
-            <h3 data-i18n="ident-c2-title">Sobrecarga invisível</h3>
-            <p data-i18n="ident-c2-desc">Você sustenta responsabilidades no trabalho, na família e nos relacionamentos, mas quase ninguém percebe o custo disso.</p>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="card fade-up">
-          <div class="card-icon"><i class="fa-solid fa-arrow-trend-down"></i></div>
-          <div class="card-content">
-            <h3 data-i18n="ident-c3-title">Sensação de insuficiência</h3>
-            <p data-i18n="ident-c3-desc">Mesmo conquistando coisas importantes, você sente que ainda não é o bastante.</p>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="card fade-up">
-          <div class="card-icon"><i class="fa-solid fa-battery-quarter"></i></div>
-          <div class="card-content">
-            <h3 data-i18n="ident-c4-title">Cansaço emocional</h3>
-            <p data-i18n="ident-c4-desc">Um esgotamento que não melhora apenas com descanso.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="ident-footer fade-up">
-        <p data-i18n="ident-footer">Se você <strong>se reconheceu</strong> em mais de um desses pontos,<br>talvez não seja falta de força, mas excesso de esforço.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================
-                      BENEFÍCIOS
-       ========================================= -->
-  <section class="beneficios" id="beneficios">
-    <div class="container ben-container">
+        <!-- Texto -->
+        <div class="hero-content" data-aos="fade-up">
+          <h1 data-i18n="hero-title">Psicoterapia para compreender o que você está vivendo e construir novos caminhos.</h1>
       
-      <!-- Coluna da Esquerda (Texto) -->
-      <div class="ben-text-side fade-up">
-        <span class="badge" data-i18n="ben-badge">Benefícios da terapia</span>
-        <h2 class="section-title" data-i18n="ben-title">Por que investir em terapia muda tudo ao redor</h2>
-        
-        <p class="ben-highlight" data-i18n="ben-desc1"><strong>A psicoterapia é um processo de desenvolvimento que ajuda você a compreender seus padrões.</strong></p>
-        <p data-i18n="ben-desc2">Tudo o que você quer construir começa na forma como você se sustenta por dentro. Quando sua saúde mental se fortalece, suas decisões ficam mais claras, seus limites mais firmes e sua postura mais segura.</p>
-        <p data-i18n="ben-desc3"><strong>Sem estrutura emocional, você vive apagando incêndios.<br>Com acompanhamento psicológico, você constrói direção.</strong></p>
-      </div>
-
-      <!-- Coluna da Direita (Cards) -->
-      <div class="ben-cards-side">
-        
-        <div class="ben-card fade-up">
-          <div class="ben-icon"><i class="fa-solid fa-lock"></i></div>
-          <div class="ben-card-content">
-            <h3 data-i18n="ben-c1-title">Segurança emocional</h3>
-            <p data-i18n="ben-c1-desc">Desenvolva a capacidade de sentir ansiedade sem deixar que ela conduza suas decisões.</p>
-          </div>
-        </div>
-
-        <div class="ben-card fade-up" style="transition-delay: .1s;">
-          <div class="ben-icon"><i class="fa-solid fa-eye"></i></div>
-          <div class="ben-card-content">
-            <h3 data-i18n="ben-c2-title">Clareza nas decisões</h3>
-            <p data-i18n="ben-c2-desc">Diferencie o que é culpa do que é valor.</p>
-          </div>
-        </div>
-
-        <div class="ben-card fade-up" style="transition-delay: .2s;">
-          <div class="ben-icon"><i class="fa-solid fa-arrows-left-right-to-line"></i></div>
-          <div class="ben-card-content">
-            <h3 data-i18n="ben-c3-title">Limites mais saudáveis</h3>
-            <p data-i18n="ben-c3-desc">Aprenda a dizer não sem medo excessivo de decepcionar.</p>
-          </div>
-        </div>
-
-        <div class="ben-card fade-up" style="transition-delay: .3s;">
-          <div class="ben-icon"><i class="fa-solid fa-brain"></i></div>
-          <div class="ben-card-content">
-            <h3 data-i18n="ben-c4-title">Autonomia emocional</h3>
-            <p data-i18n="ben-c4-desc">Construa independência emocional e profissional com mais estabilidade.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Divisória com Onda e Seta (Aponta para a próxima seção "sobre") -->
-    <div class="wave-divider">
-      <!-- Nova onda invertida e branca (#ffffff) -->
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,0 L0,20 Q600,220 1200,20 L1200,0 Z" fill="#ffffff"></path>
-      </svg>
-      <a href="#sobre" class="wave-arrow-btn" aria-label="Descer para próxima seção">
-        <i class="fa-solid fa-chevron-down"></i>
-      </a>
-    </div>
-  </section>
-
-  <!-- =========================================
-                      A PSICÓLOGA / SOBRE
-       ========================================= -->
-  <section class="sobre" id="sobre">
-    <div class="container sobre-container">
+          <p data-i18n="hero-desc">
+            Nem sempre é fácil entender o que está acontecendo quando emoções, pensamentos e comportamentos começam a pesar no
+            dia a dia.
+            <strong>Um espaço de escuta e cuidado para olhar para você com mais clareza, acolhimento e profundidade.</strong>
+          </p>
       
-      <!-- CARD 1: SOBRE MIM -->
-      <div class="sobre-card fade-up">
-        
-        <!-- Lado da Imagem -->
-        <div class="sobre-img-wrapper">
-          <!-- Substitua pela foto da psicóloga -->
-          <img src="img/hero2.jpeg" alt="Psicóloga Cindy Andriolli" class="sobre-img">
-          <div class="sobre-img-caption">
-            <h3 data-i18n="sobre-name">Cindy Andriolli</h3>
-            <p data-i18n="sobre-crp">Psicóloga - CRP 06/209430</p>
+          <div class="hero-buttons">
+            <a href="#contato" class="btn btn-primary btn-shine" data-i18n="hero-btn-primary">Agendar uma conversa</a>
+            <a href="#sobre" class="btn btn-outline" data-i18n="hero-btn-secondary">Conheça a Psicóloga</a>
           </div>
         </div>
 
-        <!-- Lado do Texto -->
-        <div class="sobre-text-wrapper">
-          <span class="badge" data-i18n="sobre-badge">A Psicóloga</span>
-          <h2 class="section-title" data-i18n="sobre-title">Sobre mim</h2>
-          
-          <div class="sobre-text-content">
-            <p data-i18n="sobre-p1"><strong>Sou Cindy Andriolli, psicóloga, com atuação em Psicologia Clínica e especialização em
-                Neuropsicologia, com formação voltada para Avaliação e Reabilitação Neuropsicológica.</strong></p>
-          
-            <p data-i18n="sobre-p2">Acredito que o processo psicológico começa pelo acolhimento e pela compreensão de cada pessoa
-              em sua singularidade. Mais do que olhar apenas para uma queixa, meu trabalho busca compreender a história, os
-              comportamentos, as emoções e os diferentes aspectos que fazem parte da experiência de cada paciente.</p>
-          
-            <p data-i18n="sobre-p3">Minha formação em Neuropsicologia amplia esse olhar, permitindo compreender de forma integrada
-              aspectos cognitivos, emocionais e comportamentais, contribuindo para uma avaliação mais cuidadosa e individualizada.
-            </p>
-          
-            <p data-i18n="sobre-p4">No atendimento clínico, construo um espaço de escuta, respeito e segurança, para que você
-              possa compreender melhor o que está vivendo, desenvolver novas possibilidades e encontrar caminhos mais coerentes
-              com suas necessidades e objetivos.</p>
-          
-            <p data-i18n="sobre-p5"><strong>Se você está buscando um espaço para se compreender melhor e cuidar da sua saúde
-                emocional, estou aqui para acompanhar esse processo.</strong></p>
-          </div>
 
-
-          <ul class="sobre-list">
-            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l1">Psicóloga formada pela Anhanguera Educacional
-                (2015)</span></li>
-            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l2">Pós-graduada em Neuropsicologia, com ênfase em
-                Avaliação e Reabilitação Neuropsicológica</span></li>
-            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l3">Especialização em Supervisão Escolar e
-                Orientação Educacional</span></li>
-            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l4">Atuação e experiência em Psicologia Clínica e
-                Avaliação Psicológica</span></li>
-            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l5">Formação complementar em Produção Audiovisual e
-                Comunicação</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- CARD 2: COMO FUNCIONA -->
-      <div class="como-funciona-card fade-up" id="como-funciona">
-        
-        <!-- Lado do Texto (Como Funciona) -->
-        <div class="cf-text-side">
-          <span class="badge" data-i18n="cf-badge">Como funciona</span>
-          <h2 class="section-title" data-i18n="cf-title">Psicoterapia Online</h2>
-          <p data-i18n="cf-desc">A terapia online oferece praticidade e continuidade, mantendo o mesmo compromisso ético e técnico do atendimento presencial.</p>
-        </div>
-
-        <!-- Lado dos Ícones (Grid) -->
-        <div class="cf-grid-side">
-          
-          <div class="cf-item">
-            <div class="cf-icon"><i class="fa-regular fa-clock"></i></div>
-            <div class="cf-info">
-              <h4 data-i18n="cf-i1-title">Duração da Sessão</h4>
-              <p data-i18n="cf-i1-desc">40 minutos</p>
+        <!-- Imagem Cheiona (Retrato) -->
+        <div class="hero-image-wrapper">
+          <div class="image-card hero-card-tall">
+            <img src="img/hero1.jpg" alt="Psicóloga Cindy Andriolli" fetchpriority="high">
+            <div class="image-card-info">
+              <h3 data-i18n="hero-card-name">Cindy Andriolli</h3>
+              <p data-i18n="hero-card-crp">Psicóloga - CRP 06/209430</p>
             </div>
           </div>
-
-          <div class="cf-item">
-            <div class="cf-icon"><i class="fa-regular fa-calendar-check"></i></div>
-            <div class="cf-info">
-              <h4 data-i18n="cf-i2-title">Frequência</h4>
-              <p data-i18n="cf-i2-desc">Sessões semanais</p>
-            </div>
-          </div>
-
-          <div class="cf-item">
-            <div class="cf-icon"><i class="fa-solid fa-laptop-medical"></i></div>
-            <div class="cf-info">
-              <h4 data-i18n="cf-i3-title">Modalidade de atendimento</h4>
-              <p data-i18n="cf-i3-desc">Terapia Online</p>
-            </div>
-          </div>
-
-          <div class="cf-item">
-            <div class="cf-icon"><i class="fa-regular fa-heart"></i></div>
-            <div class="cf-info">
-              <h4 data-i18n="cf-i4-title">Abordagem</h4>
-              <p data-i18n="cf-i4-desc">ACT - Terapia de Aceitação e Compromisso</p>
-            </div>
-          </div>
-
         </div>
+
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- =========================================
-                      SEÇÃO: JORNADA (4 PASSOS)
-       ========================================= -->
-  <section class="jornada" id="jornada">
-    <div class="container jornada-container">
-      
-      <!-- Cabeçalho -->
-      <div class="jornada-header fade-up">
-        <span class="badge" data-i18n="jornada-badge">Sem complicações</span>
-        <h2 class="section-title" data-i18n="jornada-title">Comece sua jornada em 4 passos</h2>
-      </div>
-
-      <!-- Container da Timeline Animada -->
-      <div class="jornada-timeline fade-up">
+    <!-- =========================================
+                        PARA QUEM É
+        ========================================= -->
+    <section class="identificacao" id="para-quem">
+      <div class="container ident-container">
         
-        <!-- A linha pontilhada que será animada via CSS -->
-        <div class="timeline-line"></div>
-        
-        <div class="timeline-cards">
+        <div class="ident-header fade-up">
+          <span class="badge" data-i18n="ident-badge">Identificação</span>
+          <h2 class="section-title" data-i18n="ident-title">Você tem se sentido assim ultimamente?</h2>
+        </div>
+
+        <div class="cards-grid">
           <!-- Card 1 -->
-          <div class="jornada-card" style="transition-delay: .3s;">
-            <h3 class="step-num">1.</h3>
-            <h4 data-i18n="jornada-c1-title">Primeiro contato</h4>
-            <p data-i18n="jornada-c1-desc">Você chega pelo WhatsApp e compartilha, no seu tempo, o que está sentindo. Sem pressão e sem compromisso imediato.</p>
+          <div class="card fade-up">
+            <div class="card-icon"><i class="fa-solid fa-head-side-virus"></i></div>
+            <div class="card-content">
+              <h3 data-i18n="ident-c1-title">Ansiedade constante</h3>
+              <p data-i18n="ident-c1-desc">Sua mente está sempre um passo à frente, antecipando problemas que ainda nem aconteceram.</p>
+            </div>
           </div>
           
           <!-- Card 2 -->
-          <div class="jornada-card" style="transition-delay: .6s;">
-            <h3 class="step-num">2.</h3>
-            <h4 data-i18n="jornada-c2-title">Agendamento</h4>
-            <p data-i18n="jornada-c2-desc">Definimos juntas o melhor horário para você. O atendimento é online, com flexibilidade e conforto.</p>
+          <div class="card fade-up">
+            <div class="card-icon"><i class="fa-solid fa-weight-hanging"></i></div>
+            <div class="card-content">
+              <h3 data-i18n="ident-c2-title">Sobrecarga invisível</h3>
+              <p data-i18n="ident-c2-desc">Você sustenta responsabilidades no trabalho, na família e nos relacionamentos, mas quase ninguém percebe o custo disso.</p>
+            </div>
           </div>
 
           <!-- Card 3 -->
-          <div class="jornada-card" style="transition-delay: .9s;">
-            <h3 class="step-num">3.</h3>
-            <h4 data-i18n="jornada-c3-title">Primeira sessão</h4>
-            <p data-i18n="jornada-c3-desc">Um espaço de escuta e investigação da sua história, para entender como você aprendeu a sustentar tudo sozinho, e o custo disso para você.</p>
+          <div class="card fade-up">
+            <div class="card-icon"><i class="fa-solid fa-arrow-trend-down"></i></div>
+            <div class="card-content">
+              <h3 data-i18n="ident-c3-title">Sensação de insuficiência</h3>
+              <p data-i18n="ident-c3-desc">Mesmo conquistando coisas importantes, você sente que ainda não é o bastante.</p>
+            </div>
           </div>
 
           <!-- Card 4 -->
-          <div class="jornada-card" style="transition-delay: 1.2s;">
-            <h3 class="step-num">4.</h3>
-            <h4 data-i18n="jornada-c4-title">Acompanhamento</h4>
-            <p data-i18n="jornada-c4-desc">Sessões semanais que aprofundam seu processo, fortalecem sua autonomia emocional e ajudam você a construir mudanças reais e sustentáveis.</p>
+          <div class="card fade-up">
+            <div class="card-icon"><i class="fa-solid fa-battery-quarter"></i></div>
+            <div class="card-content">
+              <h3 data-i18n="ident-c4-title">Cansaço emocional</h3>
+              <p data-i18n="ident-c4-desc">Um esgotamento que não melhora apenas com descanso.</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Rodapé -->
-      <div class="jornada-footer fade-up" style="transition-delay: 1.5s;">
-        <p data-i18n="jornada-footer-txt1">Você não precisa esperar tudo se resolver para começar.</p>
-        <p data-i18n="jornada-footer-txt2"><strong>Às vezes, começar é o que resolve.</strong></p>
+        <div class="ident-footer fade-up">
+          <p data-i18n="ident-footer">Se você <strong>se reconheceu</strong> em mais de um desses pontos,<br>talvez não seja falta de força, mas excesso de esforço.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================
+                        BENEFÍCIOS
+        ========================================= -->
+    <section class="beneficios" id="beneficios">
+      <div class="container ben-container">
         
-        <!-- Botão com o efeito Shine -->
-        <a href="#contato" class="btn btn-primary btn-shine" data-i18n="jornada-btn">Dar o primeiro passo</a>
+        <!-- Coluna da Esquerda (Texto) -->
+        <div class="ben-text-side fade-up">
+          <span class="badge" data-i18n="ben-badge">Benefícios da terapia</span>
+          <h2 class="section-title" data-i18n="ben-title">Por que investir em terapia muda tudo ao redor</h2>
+          
+          <p class="ben-highlight" data-i18n="ben-desc1"><strong>A psicoterapia é um processo de desenvolvimento que ajuda você a compreender seus padrões.</strong></p>
+          <p data-i18n="ben-desc2">Tudo o que você quer construir começa na forma como você se sustenta por dentro. Quando sua saúde mental se fortalece, suas decisões ficam mais claras, seus limites mais firmes e sua postura mais segura.</p>
+          <p data-i18n="ben-desc3"><strong>Sem estrutura emocional, você vive apagando incêndios.<br>Com acompanhamento psicológico, você constrói direção.</strong></p>
+        </div>
+
+        <!-- Coluna da Direita (Cards) -->
+        <div class="ben-cards-side">
+          
+          <div class="ben-card fade-up">
+            <div class="ben-icon"><i class="fa-solid fa-lock"></i></div>
+            <div class="ben-card-content">
+              <h3 data-i18n="ben-c1-title">Segurança emocional</h3>
+              <p data-i18n="ben-c1-desc">Desenvolva a capacidade de sentir ansiedade sem deixar que ela conduza suas decisões.</p>
+            </div>
+          </div>
+
+          <div class="ben-card fade-up" style="transition-delay: .1s;">
+            <div class="ben-icon"><i class="fa-solid fa-eye"></i></div>
+            <div class="ben-card-content">
+              <h3 data-i18n="ben-c2-title">Clareza nas decisões</h3>
+              <p data-i18n="ben-c2-desc">Diferencie o que é culpa do que é valor.</p>
+            </div>
+          </div>
+
+          <div class="ben-card fade-up" style="transition-delay: .2s;">
+            <div class="ben-icon"><i class="fa-solid fa-arrows-left-right-to-line"></i></div>
+            <div class="ben-card-content">
+              <h3 data-i18n="ben-c3-title">Limites mais saudáveis</h3>
+              <p data-i18n="ben-c3-desc">Aprenda a dizer não sem medo excessivo de decepcionar.</p>
+            </div>
+          </div>
+
+          <div class="ben-card fade-up" style="transition-delay: .3s;">
+            <div class="ben-icon"><i class="fa-solid fa-brain"></i></div>
+            <div class="ben-card-content">
+              <h3 data-i18n="ben-c4-title">Autonomia emocional</h3>
+              <p data-i18n="ben-c4-desc">Construa independência emocional e profissional com mais estabilidade.</p>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- =========================================
-                      FAQ (DÚVIDAS)
-       ========================================= -->
-  <section class="faq" id="faq">
-    <div class="container faq-container">
-      
-      <div class="faq-header fade-up">
-        <span class="badge" data-i18n="faq-badge">Perguntas frequentes</span>
-        <h2 class="section-title" data-i18n="faq-title">Tire suas dúvidas antes de começar</h2>
+      <!-- Divisória com Onda e Seta (Aponta para a próxima seção "sobre") -->
+      <div class="wave-divider">
+        <!-- Nova onda invertida e branca (#ffffff) -->
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,0 L0,20 Q600,220 1200,20 L1200,0 Z" fill="#ffffff"></path>
+        </svg>
+        <a href="#sobre" class="wave-arrow-btn" aria-label="Descer para próxima seção">
+          <i class="fa-solid fa-chevron-down"></i>
+        </a>
       </div>
+    </section>
 
-      <div class="faq-list">
+    <!-- =========================================
+                        A PSICÓLOGA / SOBRE
+        ========================================= -->
+    <section class="sobre" id="sobre">
+      <div class="container sobre-container">
         
-        <!-- Pergunta 1 -->
-        <div class="faq-item fade-up">
-          <button class="faq-question">
-            <span data-i18n="faq-q1">A modalidade online tem a mesma eficácia?</span>
-            <i class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              <p data-i18n="faq-a1">Sim. Diversos estudos científicos comprovam que a psicoterapia online possui a mesma eficácia da presencial, com o benefício extra da flexibilidade de horários e o conforto de estar no seu próprio ambiente seguro.</p>
+        <!-- CARD 1: SOBRE MIM -->
+        <div class="sobre-card fade-up">
+          
+          <!-- Lado da Imagem -->
+          <div class="sobre-img-wrapper">
+            <!-- Substitua pela foto da psicóloga -->
+            <img src="img/hero2.jpg" alt="Psicóloga Cindy Andriolli" class="sobre-img">
+            <div class="sobre-img-caption">
+              <h3 data-i18n="sobre-name">Cindy Andriolli</h3>
+              <p data-i18n="sobre-crp">Psicóloga - CRP 06/209430</p>
             </div>
+          </div>
+
+          <!-- Lado do Texto -->
+          <div class="sobre-text-wrapper">
+            <span class="badge" data-i18n="sobre-badge">A Psicóloga</span>
+            <h2 class="section-title" data-i18n="sobre-title">Sobre mim</h2>
+            
+            <div class="sobre-text-content">
+              <p data-i18n="sobre-p1"><strong>Sou Cindy Andriolli, psicóloga, com atuação em Psicologia Clínica e especialização em
+                  Neuropsicologia, com formação voltada para Avaliação e Reabilitação Neuropsicológica.</strong></p>
+            
+              <p data-i18n="sobre-p2">Acredito que o processo psicológico começa pelo acolhimento e pela compreensão de cada pessoa
+                em sua singularidade. Mais do que olhar apenas para uma queixa, meu trabalho busca compreender a história, os
+                comportamentos, as emoções e os diferentes aspectos que fazem parte da experiência de cada paciente.</p>
+            
+              <p data-i18n="sobre-p3">Minha formação em Neuropsicologia amplia esse olhar, permitindo compreender de forma integrada
+                aspectos cognitivos, emocionais e comportamentais, contribuindo para uma avaliação mais cuidadosa e individualizada.
+              </p>
+            
+              <p data-i18n="sobre-p4">No atendimento clínico, construo um espaço de escuta, respeito e segurança, para que você
+                possa compreender melhor o que está vivendo, desenvolver novas possibilidades e encontrar caminhos mais coerentes
+                com suas necessidades e objetivos.</p>
+            
+              <p data-i18n="sobre-p5"><strong>Se você está buscando um espaço para se compreender melhor e cuidar da sua saúde
+                  emocional, estou aqui para acompanhar esse processo.</strong></p>
+            </div>
+
+
+            <ul class="sobre-list">
+              <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l1">Psicóloga formada pela Anhanguera Educacional
+                  (2015)</span></li>
+              <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l2">Pós-graduada em Neuropsicologia, com ênfase em
+                  Avaliação e Reabilitação Neuropsicológica</span></li>
+              <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l3">Especialização em Supervisão Escolar e
+                  Orientação Educacional</span></li>
+              <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l4">Atuação e experiência em Psicologia Clínica e
+                  Avaliação Psicológica</span></li>
+              <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="sobre-l5">Formação complementar em Produção Audiovisual e
+                  Comunicação</span></li>
+            </ul>
           </div>
         </div>
 
-        <!-- Pergunta 2 -->
-        <div class="faq-item fade-up" style="transition-delay: .1s;">
-          <button class="faq-question">
-            <span data-i18n="faq-q2">Como funcionam os valores e formas de pagamento?</span>
-            <i class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              <p data-i18n="faq-a2">Os honorários são alinhados durante o nosso primeiro contato via WhatsApp, onde explicarei os pacotes mensais e sessões avulsas. O pagamento pode ser feito via PIX ou transferência bancária.</p>
-            </div>
+        <!-- CARD 2: COMO FUNCIONA -->
+        <div class="como-funciona-card fade-up" id="como-funciona">
+          
+          <!-- Lado do Texto (Como Funciona) -->
+          <div class="cf-text-side">
+            <span class="badge" data-i18n="cf-badge">Como funciona</span>
+            <h2 class="section-title" data-i18n="cf-title">Psicoterapia Online</h2>
+            <p data-i18n="cf-desc">A terapia online oferece praticidade e continuidade, mantendo o mesmo compromisso ético e técnico do atendimento presencial.</p>
           </div>
-        </div>
 
-        <!-- Pergunta 3 -->
-        <div class="faq-item fade-up" style="transition-delay: .2s;">
-          <button class="faq-question">
-            <span data-i18n="faq-q3">O que acontece na minha primeira consulta?</span>
-            <i class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              <p data-i18n="faq-a3">A primeira sessão é um momento de acolhimento. Vamos mapear o que te trouxe à terapia, entender um pouco da sua história e alinhar as expectativas sobre o processo e a abordagem utilizada.</p>
+          <!-- Lado dos Ícones (Grid) -->
+          <div class="cf-grid-side">
+            
+            <div class="cf-item">
+              <div class="cf-icon"><i class="fa-regular fa-clock"></i></div>
+              <div class="cf-info">
+                <h4 data-i18n="cf-i1-title">Duração da Sessão</h4>
+                <p data-i18n="cf-i1-desc">40 minutos</p>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Pergunta 4 -->
-        <div class="faq-item fade-up" style="transition-delay: .3s;">
-          <button class="faq-question">
-            <span data-i18n="faq-q4">Você aceita planos de saúde ou convênios?</span>
-            <i class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              <p data-i18n="faq-a4">Meus atendimentos são exclusivamente particulares. No entanto, forneço recibos detalhados de todas as sessões para que você possa solicitar o reembolso integral ou parcial junto ao seu plano de saúde.</p>
+            <div class="cf-item">
+              <div class="cf-icon"><i class="fa-regular fa-calendar-check"></i></div>
+              <div class="cf-info">
+                <h4 data-i18n="cf-i2-title">Frequência</h4>
+                <p data-i18n="cf-i2-desc">Sessões semanais</p>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Pergunta 5 -->
-        <div class="faq-item fade-up" style="transition-delay: .4s;">
-          <button class="faq-question">
-            <span data-i18n="faq-q5">Existe um tempo estimado para o fim do tratamento?</span>
-            <i class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              <p data-i18n="faq-a5">Não há um prazo fixo. O processo terapêutico é contínuo e varia muito de acordo com as suas necessidades e objetivos. Avaliamos constantemente sua evolução juntas ao longo dos encontros.</p>
+            <div class="cf-item">
+              <div class="cf-icon"><i class="fa-solid fa-laptop-medical"></i></div>
+              <div class="cf-info">
+                <h4 data-i18n="cf-i3-title">Modalidade de atendimento</h4>
+                <p data-i18n="cf-i3-desc">Terapia Online</p>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Pergunta 6 -->
-        <div class="faq-item fade-up" style="transition-delay: .5s;">
-          <button class="faq-question">
-            <span data-i18n="faq-q6">A terapia é indicada apenas para momentos de crise?</span>
-            <i class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              <p data-i18n="faq-a6">De forma alguma. Embora seja fundamental nas crises, a terapia também é um processo poderoso de autoconhecimento, fortalecimento emocional e desenvolvimento de autonomia para lidar com a vida antes mesmo da crise chegar.</p>
+            <div class="cf-item">
+              <div class="cf-icon"><i class="fa-regular fa-heart"></i></div>
+              <div class="cf-info">
+                <h4 data-i18n="cf-i4-title">Abordagem</h4>
+                <p data-i18n="cf-i4-desc">ACT - Terapia de Aceitação e Compromisso</p>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Pergunta 7 -->
-        <div class="faq-item fade-up" style="transition-delay: .6s;">
-          <button class="faq-question">
-            <span data-i18n="faq-q7">É minha primeira vez na terapia. Como devo proceder?</span>
-            <i class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              <p data-i18n="faq-a7">Não precisa se preocupar ou "preparar um roteiro". Basta clicar no botão de contato, me mandar um "Olá" e eu te guiarei a partir dali, explicando tudo com calma no seu tempo.</p>
-            </div>
           </div>
         </div>
 
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- =========================================
-                     TRATAMENTOS E DEPOIMENTOS
-       ========================================= -->
-  <section class="tratamentos" id="tratamentos">
-    <div class="container tratamentos-container">
-      
-      <!-- Parte 1: Tags de Tratamento -->
-      <div class="tratamentos-header fade-up">
-        <span class="badge" data-i18n="trat-badge">Terapia de Aceitação e Compromisso (ACT)</span>
-        <h2 class="section-title" data-i18n="trat-title">Algumas das demandas que podemos trabalhar juntas:</h2>
-      </div>
-
-      <div class="tratamentos-tags fade-up" style="transition-delay: .2s;">
-        <span class="trat-tag" data-i18n="tag-1"><i class="fa-solid fa-sparkles"></i> Ansiedade e Pensamentos Acelerados</span>
-        <span class="trat-tag" data-i18n="tag-2"><i class="fa-solid fa-sparkles"></i> Sobrecarga Emocional e Burnout</span>
-        <span class="trat-tag" data-i18n="tag-3"><i class="fa-solid fa-sparkles"></i> Dependência Emocional</span>
-        <span class="trat-tag" data-i18n="tag-4"><i class="fa-solid fa-sparkles"></i> Dificuldade em impor limites</span>
-        <span class="trat-tag" data-i18n="tag-5"><i class="fa-solid fa-sparkles"></i> Perfeccionismo e Autocobrança</span>
-        <span class="trat-tag" data-i18n="tag-6"><i class="fa-solid fa-sparkles"></i> Síndrome da Impostora</span>
-        <span class="trat-tag" data-i18n="tag-7"><i class="fa-solid fa-sparkles"></i> Transições de Carreira e Vida</span>
-      </div>
-
-      <div class="tratamentos-action fade-up" style="transition-delay: .3s;">
-        <a href="https://wa.link/0o6gfu" class="btn btn-primary btn-shine" data-i18n="trat-btn">Ver horários disponíveis</a>
-        <p class="trat-info" data-i18n="trat-info">• Atendimento 100% online •</p>
-      </div>
-
-      <div class="spacer-line fade-up"></div>
-
-      <!-- Parte 2: Depoimentos -->
-      <div class="depoimentos-wrapper">
+    <!-- =========================================
+                        SEÇÃO: JORNADA (4 PASSOS)
+        ========================================= -->
+    <section class="jornada" id="jornada">
+      <div class="container jornada-container">
         
-        <!-- Coluna de Texto -->
-        <div class="depoimentos-text fade-up">
-          <span class="badge" data-i18n="dep-badge">Depoimentos de Pacientes</span>
-          <h2 class="section-title" data-i18n="dep-title">O que as pacientes dizem após o atendimento</h2>
-          <p data-i18n="dep-desc">Os relatos refletem a construção de uma vida com mais autonomia, clareza e acolhimento. Um espaço seguro para ressignificar a forma como você lida com suas próprias emoções e escolhas.</p>
-          <a href="https://wa.link/0o6gfu" class="btn btn-outline" data-i18n="dep-btn">Falar com a Psicóloga Cindy</a>
+        <!-- Cabeçalho -->
+        <div class="jornada-header fade-up">
+          <span class="badge" data-i18n="jornada-badge">Sem complicações</span>
+          <h2 class="section-title" data-i18n="jornada-title">Comece sua jornada em 4 passos</h2>
         </div>
 
-        <!-- Coluna dos Cards (Injetados via JS) -->
-        <div class="depoimentos-grid" id="depoimentos-grid">
+        <!-- Container da Timeline Animada -->
+        <div class="jornada-timeline fade-up">
+          
+          <!-- A linha pontilhada que será animada via CSS -->
+          <div class="timeline-line"></div>
+          
+          <div class="timeline-cards">
+            <!-- Card 1 -->
+            <div class="jornada-card" style="transition-delay: .3s;">
+              <h3 class="step-num">1.</h3>
+              <h4 data-i18n="jornada-c1-title">Primeiro contato</h4>
+              <p data-i18n="jornada-c1-desc">Você chega pelo WhatsApp e compartilha, no seu tempo, o que está sentindo. Sem pressão e sem compromisso imediato.</p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="jornada-card" style="transition-delay: .6s;">
+              <h3 class="step-num">2.</h3>
+              <h4 data-i18n="jornada-c2-title">Agendamento</h4>
+              <p data-i18n="jornada-c2-desc">Definimos juntas o melhor horário para você. O atendimento é online, com flexibilidade e conforto.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="jornada-card" style="transition-delay: .9s;">
+              <h3 class="step-num">3.</h3>
+              <h4 data-i18n="jornada-c3-title">Primeira sessão</h4>
+              <p data-i18n="jornada-c3-desc">Um espaço de escuta e investigação da sua história, para entender como você aprendeu a sustentar tudo sozinho, e o custo disso para você.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="jornada-card" style="transition-delay: 1.2s;">
+              <h3 class="step-num">4.</h3>
+              <h4 data-i18n="jornada-c4-title">Acompanhamento</h4>
+              <p data-i18n="jornada-c4-desc">Sessões semanais que aprofundam seu processo, fortalecem sua autonomia emocional e ajudam você a construir mudanças reais e sustentáveis.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="jornada-footer fade-up" style="transition-delay: 1.5s;">
+          <p data-i18n="jornada-footer-txt1">Você não precisa esperar tudo se resolver para começar.</p>
+          <p data-i18n="jornada-footer-txt2"><strong>Às vezes, começar é o que resolve.</strong></p>
+          
+          <!-- Botão com o efeito Shine -->
+          <a href="#contato" class="btn btn-primary btn-shine" data-i18n="jornada-btn">Dar o primeiro passo</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================
+                        FAQ (DÚVIDAS)
+        ========================================= -->
+    <section class="faq" id="faq">
+      <div class="container faq-container">
+        
+        <div class="faq-header fade-up">
+          <span class="badge" data-i18n="faq-badge">Perguntas frequentes</span>
+          <h2 class="section-title" data-i18n="faq-title">Tire suas dúvidas antes de começar</h2>
+        </div>
+
+        <div class="faq-list">
+          
+          <!-- Pergunta 1 -->
+          <div class="faq-item fade-up">
+            <button class="faq-question">
+              <span data-i18n="faq-q1">A modalidade online tem a mesma eficácia?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p data-i18n="faq-a1">Sim. Diversos estudos científicos comprovam que a psicoterapia online possui a mesma eficácia da presencial, com o benefício extra da flexibilidade de horários e o conforto de estar no seu próprio ambiente seguro.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 2 -->
+          <div class="faq-item fade-up" style="transition-delay: .1s;">
+            <button class="faq-question">
+              <span data-i18n="faq-q2">Como funcionam os valores e formas de pagamento?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p data-i18n="faq-a2">Os honorários são alinhados durante o nosso primeiro contato via WhatsApp, onde explicarei os pacotes mensais e sessões avulsas. O pagamento pode ser feito via PIX ou transferência bancária.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 3 -->
+          <div class="faq-item fade-up" style="transition-delay: .2s;">
+            <button class="faq-question">
+              <span data-i18n="faq-q3">O que acontece na minha primeira consulta?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p data-i18n="faq-a3">A primeira sessão é um momento de acolhimento. Vamos mapear o que te trouxe à terapia, entender um pouco da sua história e alinhar as expectativas sobre o processo e a abordagem utilizada.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 4 -->
+          <div class="faq-item fade-up" style="transition-delay: .3s;">
+            <button class="faq-question">
+              <span data-i18n="faq-q4">Você aceita planos de saúde ou convênios?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p data-i18n="faq-a4">Meus atendimentos são exclusivamente particulares. No entanto, forneço recibos detalhados de todas as sessões para que você possa solicitar o reembolso integral ou parcial junto ao seu plano de saúde.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 5 -->
+          <div class="faq-item fade-up" style="transition-delay: .4s;">
+            <button class="faq-question">
+              <span data-i18n="faq-q5">Existe um tempo estimado para o fim do tratamento?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p data-i18n="faq-a5">Não há um prazo fixo. O processo terapêutico é contínuo e varia muito de acordo com as suas necessidades e objetivos. Avaliamos constantemente sua evolução juntas ao longo dos encontros.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 6 -->
+          <div class="faq-item fade-up" style="transition-delay: .5s;">
+            <button class="faq-question">
+              <span data-i18n="faq-q6">A terapia é indicada apenas para momentos de crise?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p data-i18n="faq-a6">De forma alguma. Embora seja fundamental nas crises, a terapia também é um processo poderoso de autoconhecimento, fortalecimento emocional e desenvolvimento de autonomia para lidar com a vida antes mesmo da crise chegar.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 7 -->
+          <div class="faq-item fade-up" style="transition-delay: .6s;">
+            <button class="faq-question">
+              <span data-i18n="faq-q7">É minha primeira vez na terapia. Como devo proceder?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p data-i18n="faq-a7">Não precisa se preocupar ou "preparar um roteiro". Basta clicar no botão de contato, me mandar um "Olá" e eu te guiarei a partir dali, explicando tudo com calma no seu tempo.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+                      TRATAMENTOS E DEPOIMENTOS
+        ========================================= -->
+    <section class="tratamentos" id="tratamentos">
+      <div class="container tratamentos-container">
+        
+        <!-- Parte 1: Tags de Tratamento -->
+        <div class="tratamentos-header fade-up">
+          <span class="badge" data-i18n="trat-badge">Terapia de Aceitação e Compromisso (ACT)</span>
+          <h2 class="section-title" data-i18n="trat-title">Algumas das demandas que podemos trabalhar juntas:</h2>
+        </div>
+
+        <div class="tratamentos-tags fade-up" style="transition-delay: .2s;">
+          <span class="trat-tag" data-i18n="tag-1"><i class="fa-solid fa-sparkles"></i> Ansiedade e Pensamentos Acelerados</span>
+          <span class="trat-tag" data-i18n="tag-2"><i class="fa-solid fa-sparkles"></i> Sobrecarga Emocional e Burnout</span>
+          <span class="trat-tag" data-i18n="tag-3"><i class="fa-solid fa-sparkles"></i> Dependência Emocional</span>
+          <span class="trat-tag" data-i18n="tag-4"><i class="fa-solid fa-sparkles"></i> Dificuldade em impor limites</span>
+          <span class="trat-tag" data-i18n="tag-5"><i class="fa-solid fa-sparkles"></i> Perfeccionismo e Autocobrança</span>
+          <span class="trat-tag" data-i18n="tag-6"><i class="fa-solid fa-sparkles"></i> Síndrome da Impostora</span>
+          <span class="trat-tag" data-i18n="tag-7"><i class="fa-solid fa-sparkles"></i> Transições de Carreira e Vida</span>
+        </div>
+
+        <div class="tratamentos-action fade-up" style="transition-delay: .3s;">
+          <a href="https://wa.link/0o6gfu" class="btn btn-primary btn-shine" data-i18n="trat-btn">Ver horários disponíveis</a>
+          <p class="trat-info" data-i18n="trat-info">• Atendimento 100% online •</p>
+        </div>
+
+        <div class="spacer-line fade-up"></div>
+
+        <!-- Parte 2: Depoimentos -->
+        <div class="depoimentos-wrapper">
+          
+          <!-- Coluna de Texto -->
+          <div class="depoimentos-text fade-up">
+            <span class="badge" data-i18n="dep-badge">Depoimentos de Pacientes</span>
+            <h2 class="section-title" data-i18n="dep-title">O que as pacientes dizem após o atendimento</h2>
+            <p data-i18n="dep-desc">Os relatos refletem a construção de uma vida com mais autonomia, clareza e acolhimento. Um espaço seguro para ressignificar a forma como você lida com suas próprias emoções e escolhas.</p>
+            <a href="https://wa.link/0o6gfu" class="btn btn-outline" data-i18n="dep-btn">Falar com a Psicóloga Cindy</a>
+          </div>
+
+          <!-- Coluna dos Cards (Injetados via JS) -->
+          <div class="depoimentos-grid" id="depoimentos-grid">
+            <!-- O JS vai popular isso aqui -->
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Parte 3: Letreiro Infinito (Marquee) -->
+      <div class="marquee-wrapper">
+        <div class="marquee-content">
+          <!-- O conteúdo é duplicado para o loop infinito funcionar perfeitamente -->
+          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
+          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
+          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
+          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
+          <!-- Duplicata para transição suave -->
+          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
+          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
+          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
+          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+                        INSTAGRAM
+        ========================================= -->
+    <section class="instagram" id="instagram">
+      <div class="container insta-container">
+        
+        <div class="insta-header fade-up">
+          <h2 class="section-title" data-i18n="insta-title">
+            Me acompanhe também no<br>
+            Instagram <a href="https://instagram.com/cindyandriolli" target="_blank">@cindyandriolli</a>
+          </h2>
+        </div>
+
+        <!-- Grid onde as fotos serão injetadas pelo JavaScript -->
+        <div class="insta-grid" id="insta-grid">
           <!-- O JS vai popular isso aqui -->
         </div>
 
+        <div class="insta-footer fade-up" style="transition-delay: .4s;">
+          <a href="https://instagram.com/cindyandriolli" target="_blank" class="btn btn-primary" data-i18n="insta-btn">
+            <i class="fa-brands fa-instagram"></i> Confira no Instagram
+          </a>
+        </div>
+
       </div>
+    </section>
 
-    </div>
-
-    <!-- Parte 3: Letreiro Infinito (Marquee) -->
-    <div class="marquee-wrapper">
-      <div class="marquee-content">
-        <!-- O conteúdo é duplicado para o loop infinito funcionar perfeitamente -->
-        <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
-        <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
-        <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
-        <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
-        <!-- Duplicata para transição suave -->
-        <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
-        <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
-        <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
-        <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================
-                      INSTAGRAM
-       ========================================= -->
-  <section class="instagram" id="instagram">
-    <div class="container insta-container">
-      
-      <div class="insta-header fade-up">
-        <h2 class="section-title" data-i18n="insta-title">
-          Me acompanhe também no<br>
-          Instagram <a href="https://instagram.com/cindyandriolli" target="_blank">@cindyandriolli</a>
-        </h2>
-      </div>
-
-      <!-- Grid onde as fotos serão injetadas pelo JavaScript -->
-      <div class="insta-grid" id="insta-grid">
-        <!-- O JS vai popular isso aqui -->
-      </div>
-
-      <div class="insta-footer fade-up" style="transition-delay: .4s;">
-        <a href="https://instagram.com/cindyandriolli" target="_blank" class="btn btn-primary" data-i18n="insta-btn">
-          <i class="fa-brands fa-instagram"></i> Confira no Instagram
-        </a>
-      </div>
-
-    </div>
-  </section>
+</main>
+  
 
   <!-- =========================================
                       FOOTER (NOVO LAYOUT)
@@ -664,7 +662,7 @@
 
       <!-- Logo Central -->
       <div class="footer-center-logo fade-up" style="transition-delay: .2s;">
-        <img src="img/Cindylogo.png" alt="Cindy Andriolli - Psicóloga Clínica">
+        <img src="img/Cindylogo.png" height="150" width="300"  alt="Cindy Andriolli - Psicóloga Clínica">
       </div>
 
       <!-- Divisória para os Badges e Créditos -->
@@ -726,8 +724,6 @@
 
   <script type="module" src="./src/js/main.js"></script>
 
-  <!-- JavaScript do AOS Animation -->
-  <script src="https://unpkg.com"></script>
   
   <!-- Inicialização do AOS -->
   <script>
