@@ -107,11 +107,23 @@
   display: flex;
   list-style: none;
   gap: 22px;
-  transition: transform .4s ease;
+  transition: all .4s ease;
+  margin: 0;
+  padding: 0;
 }
 
+/* Quando rola a tela no Desktop: Os links assumem o centro da pílula */
 #navbarPill.scrolled .nav-links {
-  transform: translateX(-20px); /* Puxa os links sutilmente pra esquerda pra equilibrar o sumiço do nome */
+  /* Remove o translateX antigo que descentralizava */
+  transform: none; 
+  /* Centraliza a própria caixa de links dentro do espaço flexível da pílula */
+  margin: 0 auto; 
+}
+
+/* Para garantir o alinhamento, a caixa da pílula precisa distribuir o espaço */
+#navbarPill.scrolled .nav-pill {
+  width: 100%; /* Permite que os links ocupem o espaço deixado pela logo */
+  justify-content: center; /* Centraliza tudo dentro da pílula */
 }
 
 .nav-links a {
@@ -279,7 +291,7 @@
     left: -101vw; /* Esconde 100% da LARGURA DA TELA para a esquerda */
     width: 100vw; 
     height: 100vh; 
-    background-color: rgba(255, 255, 255, 0.98);
+    background-color: rgba(255, 255, 255, .98);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     display: flex;
@@ -287,7 +299,7 @@
     align-items: center; 
     justify-content: center; 
     gap: 30px;
-    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: left .4s cubic-bezier(.4, 0, .2, 1);
     z-index: 1000;
     margin: 0;
     padding: 0; 

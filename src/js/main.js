@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.15 // Dispara quando 15% do elemento estiver visível
+    threshold: .15 // Dispara quando 15% do elemento estiver visível
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.3 });
+    }, { threshold: .3 });
 
     timelineObserver.observe(jornadaTimeline);
   }

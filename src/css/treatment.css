@@ -90,77 +90,206 @@
   display: flex;
   gap: 60px;
   width: 100%;
+  align-items: flex-start;
+  min-width: 0;   /* ESSENCIAL: Impede que o carrossel horizontal estoure a largura máxima da tela do site */
+  overflow: hidden; /* Corta qualquer vazamento que tente criar uma barra lateral no site */
 }
 
+/* 1. CORREÇÃO DA COLUNA DE TEXTO (VOLTANDO AO ORIGINAL) */
 .depoimentos-text {
-  flex: 0 0 40%;
+  flex: 0 0 40%; /* Voltou para 40% como no original */
+  position: relative; /* Removemos o sticky para não bugar o carrossel */
 }
 
-.depoimentos-text .badge {
-  background-color: #e5ebe9;
-  color: #798b84;
-}
-
-.depoimentos-text .section-title {
-  color: #4a453f;
-  font-family: 'Elegant';
+.depoimentos-text .badge { 
+  background-color: #e5ebe9; 
+  color: #798b84; 
+  display: inline-block;
   margin-bottom: 20px;
 }
 
-.depoimentos-text p {
-  color: var(--text-light);
-  line-height: 1.6;
-  margin-bottom: 30px;
+.depoimentos-text .section-title { 
+  color: #4a453f; 
+  font-family: 'Elegant'; 
+  font-size: 2.5rem; /* Título bem grande como na imagem 1 */
+  line-height: 1.2;
+  margin-bottom: 20px; 
 }
 
-/* Grid onde os cards entram pelo JS */
+.depoimentos-text p { 
+  color: var(--text-light); 
+  line-height: 1.7; 
+  margin-bottom: 40px; /* Mais espaço antes do botão */
+  font-size: 1.05rem;
+}
+
+/* Grid transformada em Carrossel Horizontal (Correção de Scroll) */
 .depoimentos-grid {
   flex: 1;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex; 
+  flex-wrap: nowrap; 
+  overflow-x: auto; /* Mantém a rolagem horizontal ativa (barra inferior) */
+  overflow-y: hidden; /* Arranca qualquer barra vertical (lateral) que tente nascer aqui */
   gap: 25px;
+  padding-bottom: 20px; 
+  -webkit-overflow-scrolling: touch; 
+  
+  /* Mantém a scrollbar inferior visível */
+  scrollbar-width: thin; 
+  scrollbar-color: rgba(0,0,0,.1) transparent;
 }
 
+.depoimentos-grid::-webkit-scrollbar {
+  height: 6px;
+}
+.depoimentos-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+.depoimentos-grid::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,.1);
+  border-radius: 10px;
+}
+
+/* 2. CORREÇÃO DO TAMANHO DO CARD */
 .depoimento-card {
+  flex: 0 0 340px; /* Largura fixa do card */
   background: white;
-  padding: 35px 30px;
+  padding: 40px 30px; /* Aumentei o padding vertical para esticar o card */
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0, .04);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: transform .4s ease;
+  transition: transform .4s ease, box-shadow .4s ease;
+  min-height: 380px; /* A MÁGICA: Aumentei a altura mínima drasticamente para parear com o botão da esquerda */
 }
 
 .depoimento-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0, .08);
 }
 
-.dep-name {
-  font-family: var(--font-main);
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: #4a453f;
-  margin-bottom: 15px;
-}
-
-.dep-text {
-  color: var(--text-light);
-  font-size: .9rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.dep-rating {
+.dep-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: #ffc107; /* Cor das estrelas */
-  font-size: .9rem;
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
-.dep-rating img {
-  height: 20px;
+.dep-photo {
+  width: 65px; /* Foto ligeiramente maior */
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f7f6f1;
+}
+
+.dep-title-area { display: flex; flex-direction: column; }
+.dep-name { font-family: var(--font-main); font-weight: 600; font-size: 1.1rem; color: #4a453f; line-height: 1.2; }
+.dep-rating { display: flex; align-items: center; gap: 4px; color: #ffc107; font-size: .85rem; margin-top: 4px; }
+
+/* Mantém o texto travado em 4 ou 5 linhas */
+.dep-text.line-clamp {
+  color: var(--text-light);
+  font-size: .95rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  line-clamp: 5;
+  -webkit-line-clamp: 5; /* Permiti mais uma linha já que o card cresceu */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-grow: 1; /* Empurra o botão ler mais para o fundo do card */
+}
+
+/* Container do botão para garantir alinhamento no fundo */
+.dep-footer-action {
+  margin-top: auto;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  font-family: var(--font-main);
+  font-size: .95rem;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  align-self: flex-start;
+  padding: 0;
+  transition: color .3s ease;
+}
+.read-more-btn:hover { color: var(--primary-hover); }
+
+/* =========================================
+   A CARTINHA FLUTUANTE E A FONTE MANUSCRITA
+========================================= */
+
+/* Importa uma fonte do Google que imita caligrafia real */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap');
+
+.carta-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, .6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+
+.carta-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carta-papel {
+  background-color: #fdfbf7; 
+  /* Adiciona uma textura super leve de papel ao fundo */
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='.08'/%3E%3C/svg%3E");
+  width: 90%;
+  max-width: 600px;
+  max-height: 85vh; 
+  padding: 40px;
+  border-radius: 4px; /* Cantos menos arredondados para parecer papel */
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+  position: relative;
+  overflow-y: auto; 
+  transform: translateY(50px) scale(.9);
+  transition: transform .4s cubic-bezier(.175, .885, .32, 1.275); 
+}
+
+.carta-overlay.active .carta-papel {
+  transform: translateY(0) scale(1);
+}
+
+.carta-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: color .3s;
+}
+.carta-close:hover { color: #FF4757; }
+
+/* Aplica a fonte manuscrita apenas no corpo da carta */
+.carta-body .handwriting-text {
+  font-family: 'Caveat', cursive; /* Fonte do Google Fonts importada acima */
+  color: #3b4238; /* Um tom de grafite/caneta escura, menos agressivo que preto puro */
+  line-height: 1.5;
+  font-size: 1.4rem; /* Maior porque fontes manuscritas são menores visualmente */
+  white-space: pre-wrap; 
+  letter-spacing: .5px; /* Deixa as letras um pouquinho mais legíveis */
 }
 
 /* --- LETREIRO INFINITO (MARQUEE) --- */
@@ -201,37 +330,42 @@
   100% { transform: translateX(-50%); } 
 }
 
-/* --- MOBILE VIEW --- */
+/* --- MOBILE VIEW (Revisado) --- */
 @media (max-width: 992px) {
-  .depoimentos-wrapper {
-    flex-direction: column;
-    gap: 40px;
+  .depoimentos-wrapper { 
+    flex-direction: column; 
+    gap: 40px; 
   }
   
-  .depoimentos-text {
-    text-align: center;
+  .depoimentos-text { 
+    text-align: center; 
+    position: relative; 
+    top: 0; 
   }
 
-  .depoimentos-grid {
-    grid-template-columns: 1fr; /* Empilha os depoimentos */
-  }
-
-  .tratamentos-tags {
-    gap: 10px;
-  }
-
-  .trat-tag {
-    font-size: .85rem;
-    padding: 8px 16px;
+  .depoimentos-text .section-title {
+    font-size: 2.4rem; /* Reduz o título gigante no mobile */
   }
   
-  /* COMENTÁRIO EXTRA 3: No celular, as caixas de depoimentos descem e ficam perto da faixa. Essa margem garante o afastamento correto no mobile! */
-  .marquee-wrapper {
-    margin-top: 60px;
+  /* Ajuste no carrossel para Mobile: Mostra um pedacinho do próximo card */
+  .depoimentos-grid { 
+    padding-left: 20px; /* Adiciona respiro na borda da tela */
+    padding-right: 20px;
+    margin-left: -20px; /* Compensa o respiro do container principal para o carrossel sangrar a tela */
+    margin-right: -20px;
   }
   
-  /* COMENTÁRIO EXTRA 4: Reduz o padding do container apenas no celular para compensar o margin-top da faixa e não deixar um buraco gigante */
-  .tratamentos-container {
-    padding-bottom: 40px;
+  .depoimento-card {
+    flex: 0 0 290px; /* No celular os cards são mais estreitos para caber mais na tela */
+    min-height: 320px;
   }
+
+  .carta-papel { padding: 30px 20px; } 
+  .carta-body .handwriting-text { font-size: 1.25rem; } 
+
+  .tratamentos-tags { gap: 10px; }
+  .trat-tag { font-size: .85rem; padding: 8px 16px; }
+  
+  .marquee-wrapper { margin-top: 60px; }
+  .tratamentos-container { padding-bottom: 40px; }
 }

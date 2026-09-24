@@ -3,7 +3,7 @@ export function initHolidays() {
     // 1. CONFIGURAÇÃO DOS EVENTOS SAZONAIS E FERIADOS
     // =========================================================================
     // Os meses vão de 1 (Jan) a 12 (Dez).
-    // Intensidade: 0.01 (muito sutil) | 0.03 (normal/elegante) | 0.08 (tempestade)
+    // Intensidade: .01 (muito sutil) | .03 (normal/elegante) | .08 (tempestade)
     const feriados = {
         natal: {
             ativo: true, 
@@ -30,7 +30,7 @@ export function initHolidays() {
             icone: ["fa-solid fa-circle", "fa-solid fa-star"], 
             // Cores pasteis para não agredir a visão
             cores: ["#ffb3ba", "#baffc9", "#bae1ff", "#ffffba", "#e5ebe9"],
-            fisica: { gravidade: 1.5, vento: 1, rotacao: 10, tamanhoBase: 5, intensidade: 0.04 } 
+            fisica: { gravidade: 1.5, vento: 1, rotacao: 10, tamanhoBase: 5, intensidade: .04 } 
         },
         pascoa: {
             ativo: true,
@@ -235,7 +235,7 @@ export function initHolidays() {
             imgFooter.style.width = "100%";
             imgFooter.style.pointerEvents = "none"; 
             imgFooter.style.zIndex = "0"; 
-            imgFooter.style.opacity = "0.8"; 
+            imgFooter.style.opacity = ".8"; 
             
             footer.insertBefore(imgFooter, footer.firstChild);
         }
@@ -307,16 +307,16 @@ export function initHolidays() {
             
             this.element.style.position = "absolute";
             // Adiciona uma leve transparência para ficar mais elegante e menos sólido
-            this.element.style.opacity = (Math.random() * 0.5 + 0.3).toFixed(2); 
+            this.element.style.opacity = (Math.random() * .5 + .3).toFixed(2); 
             this.element.style.fontSize = `${Math.random() * 8 + feriadoAtual.fisica.tamanhoBase}px`; 
             
             this.x = Math.random() * window.innerWidth;
             this.y = -30; 
             
             this.vy = Math.random() * 1.5 + feriadoAtual.fisica.gravidade; 
-            this.vx = (Math.random() - 0.5) * feriadoAtual.fisica.vento; 
+            this.vx = (Math.random() - .5) * feriadoAtual.fisica.vento; 
             this.rotacao = Math.random() * 360;
-            this.velocidadeRotacao = (Math.random() - 0.5) * feriadoAtual.fisica.rotacao;
+            this.velocidadeRotacao = (Math.random() - .5) * feriadoAtual.fisica.rotacao;
 
             weatherContainer.appendChild(this.element);
         }
@@ -329,9 +329,9 @@ export function initHolidays() {
             
             if (distancia < 50) { 
                 const forcaImpacto = (50 - distancia) / 80; 
-                this.vx += (dx / distancia) * forcaImpacto * 0.8; 
-                this.vy += (dy / distancia) * forcaImpacto * 0.8; 
-                this.velocidadeRotacao += (Math.random() - 0.5) * 10; 
+                this.vx += (dx / distancia) * forcaImpacto * .8; 
+                this.vy += (dy / distancia) * forcaImpacto * .8; 
+                this.velocidadeRotacao += (Math.random() - .5) * 10; 
             }
 
             // Movimento estilo "folha caindo" ou "neve" com seno (Sway)

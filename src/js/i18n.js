@@ -300,8 +300,8 @@ export function initI18n() {
         gsap.to(elements, {
             y: -15,
             opacity: 0,
-            duration: 0.25,
-            stagger: 0.005, 
+            duration: .25,
+            stagger: .005, 
             ease: "power2.in",
             onComplete: () => {
                 elements.forEach(el => {
@@ -313,7 +313,7 @@ export function initI18n() {
                 
                 gsap.fromTo(elements,
                     { y: 15, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 0.3, stagger: 0.005, ease: "power2.out" }
+                    { y: 0, opacity: 1, duration: .3, stagger: .005, ease: "power2.out" }
                 );
             }
         });
