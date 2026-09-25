@@ -116,7 +116,7 @@ export function initDepoimentos() {
     document.body.style.overflow = 'hidden'; 
 
     try {
-      const paperSound = new Audio('src/audio/paper.mp3'); 
+      const paperSound = new Audio('audio/paper.mp3'); 
       paperSound.volume = .5; 
       paperSound.play();
     } catch (e) {
