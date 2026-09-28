@@ -112,18 +112,16 @@
   padding: 0;
 }
 
-/* Quando rola a tela no Desktop: Os links assumem o centro da pílula */
-#navbarPill.scrolled .nav-links {
-  /* Remove o translateX antigo que descentralizava */
-  transform: none; 
-  /* Centraliza a própria caixa de links dentro do espaço flexível da pílula */
-  margin: 0 auto; 
-}
+@media (min-width: 993px) {
+  #navbarPill.scrolled .nav-links {
+    transform: none; 
+    margin: 0 auto; 
+  }
 
-/* Para garantir o alinhamento, a caixa da pílula precisa distribuir o espaço */
-#navbarPill.scrolled .nav-pill {
-  width: 100%; /* Permite que os links ocupem o espaço deixado pela logo */
-  justify-content: center; /* Centraliza tudo dentro da pílula */
+  #navbarPill.scrolled .nav-pill {
+    width: 100%; 
+    justify-content: center; 
+  }
 }
 
 .nav-links a {
@@ -282,13 +280,15 @@
     box-shadow: none !important;
     padding: 0 !important;
     gap: 0;
+    justify-content: flex-end; /* A MÁGICA: Empurra os controles para a direita no Mobile */
+    width: 100%;
   }
 
   /* --- MENU LATERAL TELA CHEIA --- */
   .nav-links {
     position: fixed;
     top: 0;
-    left: -101vw; /* Esconde 100% da LARGURA DA TELA para a esquerda */
+    left: -109vw; /* Esconde 100% da LARGURA DA TELA para a esquerda */
     width: 100vw; 
     height: 100vh; 
     background-color: rgba(255, 255, 255, .98);
@@ -307,7 +307,7 @@
 
   /* Menu desliza e preenche a tela inteira sem frestas */
   .nav-links.active {
-    left: 0; 
+    left: -20px; 
   }
 
   .nav-links a {
