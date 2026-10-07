@@ -120,6 +120,80 @@
   margin-top: 4px;
 }
 
+/* =========================================
+   AJUSTE PARA NOTEBOOKS E WINDOWS SCALING (125%)
+   Telas até 1600px - Mantém a aparência do layout normal
+========================================= */
+@media (max-width: 1600px) {
+  .hero {
+    /* Voltei o padding inferior para 300px. Isso empurra o recorte azul da seção de baixo para o lugar certo! */
+    padding: 160px 0 300px; 
+  }
+  .container.hero-container {
+    max-width: 1150px; 
+    gap: 50px; 
+  }
+  .hero-content {
+    max-width: 600px; 
+  }
+  .hero-content h1 {
+    font-size: 2.8rem; 
+  }
+  
+  /* Diminui os botões para ficarem proporcionais à tela */
+  .btn {
+    padding: 12px 24px;
+    font-size: .95rem;
+  }
+
+  .image-card.hero-card-tall {
+    max-width: 400px; 
+    width: 100%;
+  }
+}
+
+/* =========================================
+   MOBILE VIEW
+========================================= */
+@media (max-width: 992px) {
+  .hero {
+    padding: 120px 0 100px;
+  }
+
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+  }
+
+  /* Reduz o título que estava gigante */
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Empilha os botões verticalmente no celular */
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
+
+  /* Remove a trava de 1 linha e faz o botão ocupar 100% da tela */
+  .btn {
+    width: 100%;
+    white-space: normal; 
+    padding: 16px 32px; /* Devolve o botão grande pro celular para facilitar o clique com o dedo */
+    font-size: 1rem;
+  }
+
+  .hero-image-wrapper {
+    justify-content: center;
+  }
+}
+
+/* =========================================
+   MOBILE VIEW
+========================================= */
 @media (max-width: 992px) {
   .hero {
     padding: 120px 0 100px;

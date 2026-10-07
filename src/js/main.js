@@ -4,6 +4,7 @@ import 'aos/dist/aos.css';
 import { initNavbar } from './navbar.js';
 import { initFAQ } from './faq.js';
 import { initDepoimentos } from './treatment.js';
+import { initContactForm } from './contact.js';
 import { initInstagram } from './instagram.js';
 import { initFooter } from './footer.js';
 import { initFloatingButtons } from './floating-buttons.js';
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initI18n();
   initFAQ();
   initDepoimentos();
+  initContactForm();
   initInstagram();
   initFooter();
   initFloatingButtons();

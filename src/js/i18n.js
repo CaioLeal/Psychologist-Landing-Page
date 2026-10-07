@@ -110,7 +110,7 @@ export function initI18n() {
             "faq-q3": "O que acontece na minha primeira consulta?",
             "faq-a3": "A primeira sessão é um momento de acolhimento. Vamos mapear o que te trouxe à terapia, entender um pouco da sua história e alinhar as expectativas sobre o processo e a abordagem utilizada.",
             "faq-q4": "Você aceita planos de saúde ou convênios?",
-            "faq-a4": "Meus atendimentos são exclusivamente particulares. No entanto, forneço recibos detalhados de todas as sessões para que você possa solicitar o reembolso integral ou parcial junto ao seu plano de saúde.",
+            "faq-a4": "Sim, aceito alguns planos de saúde e convênios. Para saber quais convênios são aceitos no momento e consultar a disponibilidade de atendimento, entre em contato pelo WhatsApp ou preencha o formulário abaixo. Será um prazer orientá-lo(a)!",
             "faq-q5": "Existe um tempo estimado para o fim do tratamento?",
             "faq-a5": "Não há um prazo fixo. O processo terapêutico é contínuo e varia muito de acordo com as suas necessidades e objetivos. Avaliamos constantemente sua evolução juntas ao longo dos encontros.",
             "faq-q6": "A terapia é indicada apenas para momentos de crise?",
@@ -134,6 +134,14 @@ export function initI18n() {
             "dep-title": "O que as pacientes dizem após o atendimento",
             "dep-desc": "Os relatos refletem a construção de uma vida com mais autonomia, clareza e acolhimento. Um espaço seguro para ressignificar a forma como você lida com suas próprias emoções e escolhas.",
             "dep-btn": "Falar com a Psicóloga Cindy",
+
+            // FORMULÁRIO DE CONTATO (Botões de Seleção)
+            "contact-btn-label": "Qual modalidade de atendimento você prefere?",
+            "contact-mod-osasco-title": "Presencial",
+            "contact-mod-osasco-sub": "Osasco, SP",
+            "contact-mod-online-title": "Online",
+            "contact-mod-online-sub": "Todo o Brasil",
+            "contact-submit": "Enviar solicitação",
 
             // INSTAGRAM
             "insta-title": "Me acompanhe também no<br>Instagram <a href=\"https://instagram.com/cindyandriolli\" target=\"_blank\">@cindyandriolli</a>",
@@ -251,7 +259,7 @@ export function initI18n() {
             "faq-q3": "¿Qué sucede en mi primera consulta?",
             "faq-a3": "La primera sesión es un momento de acogida. Mapearemos lo que te trajo a terapia, entenderemos un poco tu historia y alinearemos las expectativas sobre el proceso y el enfoque utilizado.",
             "faq-q4": "¿Aceptas planes de salud o seguros médicos?",
-            "faq-a4": "Mis atenciones son exclusivamente particulares. Sin embargo, proporciono recibos detallados de todas las sesiones para que puedas solicitar el reembolso total o parcial a tu plan de salud, según tus coberturas.",
+            "faq-a4": "Sí, acepto algunos planes de salud y convenios médicos. Para saber qué convenios acepto actualmente y consultar la disponibilidad de atención, puede ponerse en contacto conmigo por WhatsApp o completar el formulario que aparece a continuación. ¡Será un placer orientarle!",
             "faq-q5": "¿Existe un tiempo estimado para finalizar el tratamiento?",
             "faq-a5": "No hay un plazo fijo. El proceso terapéutico es continuo y varía mucho según tus necesidades y objetivos. Evaluamos constantemente tu evolución juntas a lo largo de los encuentros.",
             "faq-q6": "¿La terapia está indicada solo para momentos de crisis?",
@@ -275,6 +283,14 @@ export function initI18n() {
             "dep-title": "Lo que dicen las pacientes tras la atención",
             "dep-desc": "Los relatos reflejan la construcción de una vida con más autonomía, claridad y acogida. Un espacio seguro para resignificar la forma en que manejas tus propias emociones y elecciones.",
             "dep-btn": "Hablar con la Psicóloga Cindy",
+
+            // FORMULÁRIO DE CONTATO (Botões de Seleção)
+            "contact-btn-label": "¿Qué modalidad de atención prefieres?",
+            "contact-mod-osasco-title": "Presencial",
+            "contact-mod-osasco-sub": "Osasco - SP",
+            "contact-mod-online-title": "Online",
+            "contact-mod-online-sub": "Todo el mundo",
+            "contact-submit": "Enviar solicitud",
 
             // INSTAGRAM
             "insta-title": "Sígueme también en<br>Instagram <a href=\"https://instagram.com/cindyandriolli\" target=\"_blank\">@cindyandriolli</a>",

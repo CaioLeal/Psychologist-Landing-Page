@@ -54,6 +54,15 @@ export function initDepoimentos() {
       fullText: "Excelente profissional, muito atenciosa e acolhedora, gosto bastante das sessões, recomendo!", 
       stars: 5,
       i18nPrefix: "dep-card3" // Lembre-se de adicionar isso no seu i18n.js
+    },
+    {
+      id: 4,
+      name: "Marcia Lucas", // Substitua pelos dados do 3º cliente!
+      image: "img/treatment/marcialucas.png", 
+      shortText: "Maravilhosa ! Atenciosa, sempre disposta a ouvir e orientar com muita empatiac e humanidade...",
+      fullText: "Maravilhosa ! Atenciosa, sempre disposta a ouvir e orientar com muita empatiac e humanidade. Excelente profissional esta me ajudando muito em vários aspectos como depressão, ansiedade TDHA, entre outros. Recomendo muito.", 
+      stars: 5,
+      i18nPrefix: "dep-card3" // Lembre-se de adicionar isso no seu i18n.js
     }
   ];
 

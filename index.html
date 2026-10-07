@@ -100,7 +100,7 @@
           </p>
       
           <div class="hero-buttons">
-            <a href="#contato" class="btn btn-primary btn-shine" data-i18n="hero-btn-primary">Agendar uma conversa</a>
+            <a href="#agendar" class="btn btn-primary btn-shine" data-i18n="hero-btn-primary">Agendar uma conversa</a>
             <a href="#sobre" class="btn btn-outline" data-i18n="hero-btn-secondary">Conheça a Psicóloga</a>
           </div>
         </div>
@@ -109,7 +109,7 @@
         <!-- Imagem Cheiona (Retrato) -->
         <div class="hero-image-wrapper">
           <div class="image-card hero-card-tall">
-            <img src="img/hero1.jpg" alt="Psicóloga Cindy Andriolli" fetchpriority="high">
+            <img src="img/hero3.jpg" alt="Psicóloga Cindy Andriolli" fetchpriority="high">
             <div class="image-card-info">
               <h3 data-i18n="hero-card-name">Cindy Andriolli</h3>
               <p data-i18n="hero-card-crp">Psicóloga - CRP 06/209430</p>
@@ -254,7 +254,7 @@
           <!-- Lado da Imagem -->
           <div class="sobre-img-wrapper">
             <!-- Substitua pela foto da psicóloga -->
-            <img src="img/hero3.jpg" alt="Psicóloga Cindy Andriolli" class="sobre-img">
+            <img src="img/hero1.jpg" alt="Psicóloga Cindy Andriolli" class="sobre-img">
             <div class="sobre-img-caption">
               <h3 data-i18n="sobre-name">Cindy Andriolli</h3>
               <p data-i18n="sobre-crp">Psicóloga - CRP 06/209430</p>
@@ -474,7 +474,7 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer-content">
-                <p data-i18n="faq-a4">Meus atendimentos são exclusivamente particulares. No entanto, forneço recibos detalhados de todas as sessões para que você possa solicitar o reembolso integral ou parcial junto ao seu plano de saúde.</p>
+                <p data-i18n="faq-a4">Sim, aceito alguns planos de saúde e convênios. Para saber quais convênios são aceitos no momento e consultar a disponibilidade de atendimento, entre em contato pelo WhatsApp ou preencha o formulário abaixo. Será um prazer orientá-lo(a)!</p>
               </div>
             </div>
           </div>
@@ -589,6 +589,82 @@
     </section>
 
     <!-- =========================================
+                      FORMULÁRIO DE CONTATO
+        ========================================= -->
+    <section class="contato-form-section" id="agendar">
+      <div class="container contato-form-container">
+        
+        <div class="contato-form-header fade-up">
+          <span class="badge" data-i18n="contact-badge">Agendamento</span>
+          <h2 class="section-title" data-i18n="contact-title">Dê o primeiro passo</h2>
+          <p data-i18n="contact-desc">Preencha o formulário abaixo para solicitar um horário. Retornarei o mais breve possível.</p>
+        </div>
+
+        <div class="contato-form-content fade-up" style="transition-delay: .2s;">
+          <!-- O envio será feito via FormSubmit para o email da Cindy -->
+          <form action="https://formsubmit.co/psicindyandriolli@gmail.com" method="POST" class="form-wrapper">
+            
+            <!-- Honeypot (Segurança contra Robôs/Spam) -->
+            <input type="text" name="_honey" style="display:none">
+            <!-- Página que o usuário vai quando enviar com sucesso -->
+            <input type="hidden" name="_next" value="https://www.psicindyandriolli.com/">
+            <input type="hidden" name="_subject" value="Novo Agendamento - Site!">
+
+            <div class="form-group">
+              <label for="nome" data-i18n="contact-name">Nome completo *</label>
+              <input type="text" id="nome" name="Nome" required placeholder="Seu nome">
+            </div>
+
+            <div class="form-group">
+              <label for="telefone" data-i18n="contact-phone">Telefone (WhatsApp) *</label>
+              <input type="tel" id="telefone" name="Telefone" required placeholder="(11) 99999-9999">
+            </div>
+
+            <div class="form-group">
+              <label for="email" data-i18n="contact-email">Email (Opcional)</label>
+              <input type="email" id="email" name="Email" placeholder="seuemail@exemplo.com">
+            </div>
+
+            <div class="form-group">
+              <label for="mensagem" data-i18n="contact-msg">Mensagem (Opcional)</label>
+              <textarea id="mensagem" name="Mensagem" placeholder="Gostaria de falar sobre..."></textarea>
+            </div>
+
+            <div class="form-buttons">
+              <p class="form-btn-label" data-i18n="contact-btn-label">Qual modalidade de atendimento você prefere?</p>
+              
+              <div class="modalidade-options">
+                <!-- Opção Presencial -->
+                <input type="radio" id="mod-osasco" name="Modalidade" value="Osasco - SP" required>
+                <label for="mod-osasco" class="mod-card">
+                  <i class="fa-solid fa-building"></i>
+                  <span class="mod-title" data-i18n="contact-mod-osasco-title">Presencial</span>
+                  <span class="mod-sub" data-i18n="contact-mod-osasco-sub">Osasco, SP</span>
+                </label>
+
+                <!-- Opção Online -->
+                <input type="radio" id="mod-online" name="Modalidade" value="Online" required>
+                <label for="mod-online" class="mod-card">
+                  <i class="fa-solid fa-laptop"></i>
+                  <span class="mod-title" data-i18n="contact-mod-online-title">Online</span>
+                  <span class="mod-sub" data-i18n="contact-mod-online-sub">Todo o Brasil</span>
+                </label>
+              </div>
+
+              <!-- Desativa o Captcha chato do FormSubmit (opcional) -->
+              <input type="hidden" name="_captcha" value="false">
+
+              <!-- BOTÃO DE ENVIAR -->
+              <button type="submit" class="btn btn-primary btn-shine btn-submit" data-i18n="contact-submit">Enviar solicitação</button>
+            </div>
+            
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================
                         INSTAGRAM
         ========================================= -->
     <section class="instagram" id="instagram">
@@ -632,11 +708,11 @@
       <!-- Botões de Acesso Rápido -->
       <div class="footer-contact-cards fade-up" style="transition-delay: .1s;">
         <!-- Card Email -->
-        <a href="mailto:contato@cindyandriolli.com.br" class="contact-card">
+        <a href="mailto:psicindyandriolli@gmail.com" class="contact-card">
           <div class="contact-icon"><i class="fa-regular fa-envelope"></i></div>
           <div class="contact-info">
             <h3 data-i18n="foot-card-email-title">Email</h3>
-            <p data-i18n="foot-card-email-desc">contato@cindyandriolli.com.br</p>
+            <p data-i18n="foot-card-email-desc">psicindyandriolli@gmail.com</p>
           </div>
         </a>
 

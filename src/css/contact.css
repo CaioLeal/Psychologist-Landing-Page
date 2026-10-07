@@ -1,0 +1,255 @@
+/* =========================================
+   SEÇÃO: FORMULÁRIO DE CONTATO
+========================================= */
+.contato-form-section {
+  background-color: var(--bg-primary); 
+  position: relative;
+}
+
+.contato-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 850px; 
+}
+
+/* --- Cabeçalho do Formulário --- */
+.contato-form-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contato-form-header .badge {
+  background-color: #e5ebe9;
+  color: #798b84;
+}
+
+.contato-form-header .section-title {
+  font-family: 'Elegant';
+  font-size: 2.8rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.contato-form-header p {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* --- Caixa Branca do Formulário --- */
+.contato-form-content {
+  width: 100%;
+  background: white;
+  padding: 50px 60px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0, 0.04);
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #4a453f;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid #d1dbd6;
+  border-radius: 12px;
+  background-color: #fdfdfc;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #aeb8c0;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 4px rgba(64, 85, 115, 0.08);
+  background-color: white;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* =========================================
+   NOVOS BOTÕES DE SELEÇÃO (CARDS) E ENVIO
+========================================= */
+.form-buttons {
+  margin-top: 10px;
+  text-align: center;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 30px;
+}
+
+.form-btn-label {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+/* Esconde as "bolinhas" padrão de rádio */
+input[type="radio"][name="Modalidade"] {
+  display: none;
+}
+
+.modalidade-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.mod-card {
+  flex: 1;
+  max-width: 200px;
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 15px;
+  background: white;
+  border: 2px solid #e5ebe9;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-light);
+}
+
+.mod-card i {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: #9aa8b1;
+  transition: color 0.3s ease;
+}
+
+.mod-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.mod-sub {
+  font-size: 0.85rem;
+}
+
+/* --- Estado de Hover (Ao passar o mouse) --- */
+.mod-card:hover {
+  border-color: #bcc6ce;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* --- Estado de Checado (A mágica da seleção) --- */
+input[type="radio"]:checked + .mod-card {
+  border-color: var(--secondary-color); /* A cor azul da marca */
+  background-color: rgba(64, 85, 115, 0.03); /* Fundo com tom sutil de azul */
+}
+
+input[type="radio"]:checked + .mod-card i,
+input[type="radio"]:checked + .mod-card .mod-title {
+  color: var(--secondary-color);
+}
+
+/* --- Botão Principal de Enviar --- */
+.btn-submit {
+  width: 100%;
+  max-width: 400px; /* Impede que o botão estique de ponta a ponta na tela do PC */
+  font-size: 1.1rem;
+  padding: 16px 32px;
+}
+
+/* =========================================
+   SCALING DE NOTEBOOK/WINDOWS (Até 1600px)
+========================================= */
+@media (max-width: 1600px) {
+  .contato-form-container {
+    max-width: 750px; /* Reduz a largura geral do formulário */
+  }
+  .contato-form-header .section-title {
+    font-size: 2.2rem;
+  }
+  .contato-form-content {
+    padding: 40px 50px;
+  }
+  .mod-card {
+    padding: 20px 10px; /* Cartões levemente mais enxutos */
+  }
+  .mod-card i {
+    font-size: 1.2rem;
+  }
+  .mod-title {
+    font-size: .85rem;
+  }
+}
+
+/* =========================================
+   MOBILE VIEW
+========================================= */
+@media (max-width: 992px) {
+  .contato-form-content {
+    padding: 35px 25px; 
+  }
+  
+  .contato-form-header .section-title {
+    font-size: 2.2rem;
+  }
+  
+  /* Mantém os cartões lado a lado no celular */
+  .modalidade-options {
+    flex-direction: row; 
+    gap: 10px; /* Reduz o espaço entre eles para caber na tela pequena */
+  }
+  
+  /* Mantém o formato quadrado (ícone em cima, texto embaixo) */
+  .mod-card {
+    max-width: 100%;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 5px; /* Reduz o espaço interno para não apertar o texto */
+    gap: 0;
+  }
+  
+  .mod-card i {
+    font-size: 1.4rem; /* Ícone um pouquinho menor no celular */
+    margin-bottom: 8px; /* Devolve o espaço entre o ícone e o título */
+  }
+  
+  .mod-title {
+    font-size: 0.95rem; /* Ajuste milimétrico para caber na caixinha */
+    margin-bottom: 2px;
+  }
+  
+  .mod-sub {
+    display: block;
+    font-size: 0.75rem; /* Legenda menorzinha para caber "Todo o Brasil" em uma linha */
+  }
+  
+  .btn-submit {
+    max-width: 100%; /* Botão largo no mobile */
+  }
+}

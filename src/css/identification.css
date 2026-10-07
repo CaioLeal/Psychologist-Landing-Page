@@ -103,6 +103,14 @@
   transform: translateY(0); /* Sobe para a posição original */
 }
 
+/* --- ESCALA PARA WINDOWS/NOTEBOOK (Até 1600px) --- */
+@media (max-width: 1600px) {
+  .identificacao {
+    /* Diminui o quanto a seção azul "sobe" em cima da branca, evitando colar na foto */
+    margin-top: -200px; 
+  }
+}
+
 /* --- MOBILE VIEW --- */
 @media (max-width: 992px) {
   .identificacao {

@@ -246,6 +246,33 @@
 .btn-mobile.active .bar3 { transform: rotate(-45deg); top: 9px; }
 
 /* =========================================
+   AJUSTE DE ESCALA DA NAVBAR (Até 1600px)
+========================================= */
+@media (max-width: 1600px) {
+  .nav-pill {
+    padding: 8px 40px; /* Diminui o gordinho da pílula */
+    gap: 18px; /* Aproxima os botões */
+  }
+  
+  .nav-links a {
+    font-size: .85rem; /* Diminui a fonte dos links */
+  }
+  
+  .logo-text {
+    font-size: 2.1rem; /* Diminui o nome da profissional */
+  }
+  
+  .logo-text span {
+    font-size: .45rem;
+  }
+
+  .logo-icon {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* =========================================
    MOBILE VIEW (NAVBAR PÍLULA + MENU FULLSCREEN)
 ========================================= */
 @media (max-width: 992px) {
