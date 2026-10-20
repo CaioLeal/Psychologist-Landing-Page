@@ -26,7 +26,7 @@ export function initDepoimentos() {
     document.body.insertAdjacentHTML('beforeend', modalHTML);
   }
 
-  // 2. DADOS DOS PACIENTES (Agora com 3 opções para forçar o scroll horizontal)
+  // 2. DADOS DOS PACIENTES
   const depoimentos = [
     {
       id: 1,
@@ -48,36 +48,52 @@ export function initDepoimentos() {
     },
     {
       id: 3,
-      name: "Gustavo Lima Timoteo", // Substitua pelos dados do 3º cliente!
+      name: "Gustavo Lima Timoteo", 
       image: "img/treatment/user.png", 
       shortText: "Excelente profissional, muito atenciosa e acolhedora, gosto bastante das sessões, recomendo!",
       fullText: "Excelente profissional, muito atenciosa e acolhedora, gosto bastante das sessões, recomendo!", 
       stars: 5,
-      i18nPrefix: "dep-card3" // Lembre-se de adicionar isso no seu i18n.js
+      i18nPrefix: "dep-card3" 
     },
     {
       id: 4,
-      name: "Marcia Lucas", // Substitua pelos dados do 3º cliente!
+      name: "Marcia Lucas", 
       image: "img/treatment/marcialucas.png", 
       shortText: "Maravilhosa ! Atenciosa, sempre disposta a ouvir e orientar com muita empatiac e humanidade...",
       fullText: "Maravilhosa ! Atenciosa, sempre disposta a ouvir e orientar com muita empatiac e humanidade. Excelente profissional esta me ajudando muito em vários aspectos como depressão, ansiedade TDHA, entre outros. Recomendo muito.", 
       stars: 5,
-      i18nPrefix: "dep-card3" // Lembre-se de adicionar isso no seu i18n.js
+      i18nPrefix: "dep-card3" 
+    },
+    {
+      id: 5,
+      name: "Flavia Falco", 
+      image: "img/treatment/flaviafalco.png", 
+      shortText: "Encontrar ela foi a melhor coisa que me aconteceu, e muito fácil gostar dela e do jeito dela em tratar as pessoas...",
+      fullText: "Encontrar ela foi a melhor coisa que me aconteceu, e muito fácil gostar dela e do jeito dela em tratar as pessoas. Posso dizer que muitas coisas mudaram na minha vida devido as sessões que temos! E impressionante como uma boa conversa com ela os problemas encontram saida sem  esse lugar de dor. Falar com ela pode-se dizer que encontramos paz e conforto.", 
+      stars: 5,
+      i18nPrefix: "dep-card3" 
     }
   ];
 
-  // 3. GERA OS CARDS
+  // 3. GERA OS CARDS (Duplica a lista para o loop infinito funcionar de forma limpa)
+  const itensDuplicados = [...depoimentos, ...depoimentos];
+  
   container.innerHTML = '';
-  depoimentos.forEach((dep, index) => {
-    const delay = (index + 2) * .2; 
+  itensDuplicados.forEach((dep, index) => {
+    // Usamos o índice original (dep.id - 1) para a função de abrir carta não se perder nos duplicados
+    const indexOriginal = dep.id - 1; 
+    
+    // Animação fade-up apenas nos primeiros itens (para não pesar os duplicados ocultos)
+    const fadeClass = index < depoimentos.length ? 'fade-up' : '';
+    const delay = index < depoimentos.length ? (index + 2) * .2 : 0; 
     
     const starsHTML = Array.from({ length: dep.stars }).map(() => '<i class="fa-solid fa-star"></i>').join('');
     const imgHTML = dep.image ? `<img src="${dep.image}" alt="${dep.name}" class="dep-photo">` : '';
 
-    const btnLerMais = dep.fullText ? `<button class="read-more-btn" onclick="abrirCarta(${index})" data-i18n="read-more">Ler depoimento completo</button>` : '';
+    const btnLerMais = dep.fullText ? `<button class="read-more-btn" onclick="abrirCarta(${indexOriginal})" data-i18n="read-more">Ler depoimento completo</button>` : '';
 
     const cardHTML = `
-      <div class="depoimento-card fade-up" style="transition-delay: ${delay}s;">
+      <div class="depoimento-card ${fadeClass}" style="transition-delay: ${delay}s;">
         <div class="dep-header">
           ${imgHTML}
           <div class="dep-title-area">
@@ -97,11 +113,66 @@ export function initDepoimentos() {
     container.innerHTML += cardHTML;
   });
 
-  // 4. FUNÇÕES GLOBAIS DE ABRIR E FECHAR A CARTA
+  // 4. LÓGICA DO CARROSSEL DE AUTOSCROLL
+  let animationId;
+  let isHovered = false; // Flag para pausar no mouse
+  let isModalOpen = false; // Flag para pausar quando a cartinha estiver aberta
+  let scrollSpeed = 0.5; // Velocidade de rolagem (Pixels por quadro). Aumente se quiser mais rápido.
+  let currentScroll = 0; // Posição atual armazenada em variável fracionária para maior fluidez
+
+  // Ponto exato onde o carrossel atinge o meio invisível (e devemos zerar)
+  // (A largura total dividida por 2, pois o conteúdo foi duplicado)
+  const calculateResetPoint = () => container.scrollWidth / 2;
+
+  function autoScroll() {
+    // Só rola se não tiver mouse em cima, cartinha aberta, ou dedo tocando na tela
+    if (!isHovered && !isModalOpen) {
+      currentScroll += scrollSpeed;
+      container.scrollLeft = currentScroll;
+
+      // Se a rolagem atual ultrapassar a metade (o limite dos cards originais), volta instantaneamente para o zero.
+      if (currentScroll >= calculateResetPoint()) {
+        currentScroll = 0;
+        container.scrollLeft = 0;
+      }
+    }
+    animationId = requestAnimationFrame(autoScroll);
+  }
+
+  // Inicia o motor
+  autoScroll();
+
+  // Pausar no Hover (Desktop)
+  container.addEventListener('mouseenter', () => { isHovered = true; });
+  container.addEventListener('mouseleave', () => { 
+    isHovered = false; 
+    // Atualiza a posição atual de scroll caso o usuário tenha rolado com a rodinha
+    currentScroll = container.scrollLeft; 
+  });
+
+  // Pausar no Toque (Mobile)
+  container.addEventListener('touchstart', () => { isHovered = true; });
+  container.addEventListener('touchend', () => { 
+    isHovered = false;
+    currentScroll = container.scrollLeft;
+  });
+
+  // Sincronizar caso o usuário use o mouse para rolar o conteúdo horizontalmente
+  container.addEventListener('scroll', () => {
+    if (isHovered) {
+      currentScroll = container.scrollLeft;
+    }
+  });
+
+
+  // 5. FUNÇÕES GLOBAIS DE ABRIR E FECHAR A CARTA
   window.abrirCarta = function(index) {
     const dep = depoimentos[index];
     const modal = document.getElementById('carta-modal');
     
+    // Pausa o carrossel
+    isModalOpen = true;
+
     const modalImg = document.getElementById('carta-img');
     if (dep.image) {
       modalImg.src = dep.image;
@@ -136,6 +207,8 @@ export function initDepoimentos() {
   window.fecharCarta = function() {
     document.getElementById('carta-modal').classList.remove('active');
     document.body.style.overflow = ''; 
+    // Retoma o carrossel
+    isModalOpen = false;
   };
 
   document.getElementById('carta-modal').addEventListener('click', function(e) {

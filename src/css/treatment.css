@@ -123,31 +123,24 @@
   font-size: 1.05rem;
 }
 
-/* Grid transformada em Carrossel Horizontal (Correção de Scroll) */
+/* Grid transformada em Carrossel Horizontal com Autoscroll */
 .depoimentos-grid {
   flex: 1;
   display: flex; 
   flex-wrap: nowrap; 
-  overflow-x: auto; /* Mantém a rolagem horizontal ativa (barra inferior) */
-  overflow-y: hidden; /* Arranca qualquer barra vertical (lateral) que tente nascer aqui */
+  overflow-x: auto; 
+  overflow-y: hidden; 
   gap: 25px;
   padding-bottom: 20px; 
   -webkit-overflow-scrolling: touch; 
   
-  /* Mantém a scrollbar inferior visível */
-  scrollbar-width: thin; 
-  scrollbar-color: rgba(0,0,0,.1) transparent;
+  /* Esconde a barra de rolagem no Firefox */
+  scrollbar-width: none; 
 }
 
+/* Esconde a barra de rolagem no Chrome/Safari/Edge */
 .depoimentos-grid::-webkit-scrollbar {
-  height: 6px;
-}
-.depoimentos-grid::-webkit-scrollbar-track {
-  background: transparent;
-}
-.depoimentos-grid::-webkit-scrollbar-thumb {
-  background-color: rgba(0,0,0,.1);
-  border-radius: 10px;
+  display: none; 
 }
 
 /* 2. CORREÇÃO DO TAMANHO DO CARD */
