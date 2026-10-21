@@ -1,0 +1,451 @@
+/* =========================================
+   SEÇÃO: PALESTRAS E TREINAMENTOS
+========================================= */
+.palestras {
+  background-color: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.palestras-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Cabeçalho --- */
+.palestras-header {
+  text-align: center;
+  max-width: 780px;
+  margin-bottom: 50px;
+}
+
+.palestras-header .badge {
+  background-color: #e5ebe9;
+  color: #798b84;
+}
+
+.palestras-header .section-title {
+  font-family: 'Elegant', serif;
+  font-size: 2.6rem;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.palestras-subtitle {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* --- Card Principal Corporativo --- */
+.palestras-info-card {
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .04);
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.lec-text-col h3 {
+  font-family: 'Elegant', serif;
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+.lec-text-col > p {
+  color: var(--text-light);
+  font-size: .98rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.lec-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lec-pillar-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.lec-pillar-icon {
+  min-width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background-color: rgba(229, 235, 233, .7);
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+}
+
+.lec-pillar-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.lec-pillar-item p {
+  font-size: .88rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* --- Coluna de Tópicos / Temas --- */
+.lec-topics-col {
+  background-color: #faf9f5;
+  border: 1px solid #eceae2;
+  padding: 35px 30px;
+  border-radius: 16px;
+}
+
+.lec-topics-label {
+  display: block;
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.lec-tags-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lec-topic-tag {
+  background: white;
+  border: 1px solid #e2e8e5;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: .9rem;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.lec-topic-tag i {
+  color: #798b84;
+  font-size: .8rem;
+}
+
+.lec-topic-tag:hover {
+  transform: translateX(5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, .03);
+}
+
+/* =========================================
+   BENTO GRID DE MÍDIA (5 FOTOS + 2 VÍDEOS)
+========================================= */
+.palestras-gallery-wrapper {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.gallery-header-mini {
+  text-align: center;
+  margin-bottom: 22px;
+  color: var(--text-light);
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.gallery-header-mini i {
+  color: #798b84;
+  margin-right: 6px;
+}
+
+.palestras-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 240px;
+  gap: 18px;
+  width: 100%;
+}
+
+.bento-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #e5ebe9;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, .05);
+  transition: transform .4s cubic-bezier(.4, 0, .2, 1), box-shadow .4s ease;
+}
+
+.bento-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
+}
+
+/* Destaque de layout para os 7 itens encaixarem em um retângulo 4x3 impecável */
+.bento-item.span-2x2 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.bento-item.span-2x1 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.bento-item img,
+.bento-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s ease;
+}
+
+.bento-item:hover img,
+.bento-item:hover video {
+  transform: scale(1.05);
+}
+
+/* Overlay e Ícones da Galeria */
+.bento-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(35, 32, 29, .65) 0%, rgba(35, 32, 29, 0) 55%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.bento-item:hover .bento-overlay,
+.bento-item.is-video .bento-overlay {
+  opacity: 1;
+}
+
+.bento-badge-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .92);
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+  transition: transform .3s ease, background .3s ease;
+}
+
+.bento-item:hover .bento-badge-play {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: white;
+}
+
+.bento-zoom-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .85);
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .85rem;
+}
+
+.bento-caption {
+  color: white;
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+/* --- CTA Final --- */
+.palestras-cta {
+  text-align: center;
+}
+
+.palestras-cta p {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  margin-bottom: 22px;
+}
+
+.palestras-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* =========================================
+   LIGHTBOX MODAL (PARA VER FOTOS E VÍDEOS)
+========================================= */
+.lec-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(25, 23, 21, .88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+
+.lec-lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lec-lightbox-content {
+  position: relative;
+  max-width: 950px;
+  width: 100%;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lec-lightbox-content img,
+.lec-lightbox-content video {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
+  object-fit: contain;
+  background: black;
+}
+
+.lec-lightbox-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: white;
+  color: var(--text-dark);
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s ease;
+}
+
+.lec-lightbox-close:hover {
+  transform: scale(1.1);
+}
+
+/* =========================================
+   AJUSTE PARA NOTEBOOKS E ESCALA 125% (Até 1600px)
+========================================= */
+@media (max-width: 1600px) {
+  .palestras-header .section-title {
+    font-size: 2.3rem;
+  }
+
+  .palestras-info-card {
+    padding: 40px;
+    gap: 35px;
+  }
+
+  .lec-text-col h3 {
+    font-size: 1.75rem;
+  }
+
+  .palestras-bento-grid {
+    grid-auto-rows: 205px; /* Compacta a altura dos blocos para caber perfeitamente na tela em 125% */
+    gap: 15px;
+  }
+}
+
+/* =========================================
+   MOBILE VIEW (Até 992px)
+========================================= */
+@media (max-width: 992px) {
+  .palestras-header .section-title {
+    font-size: 2.1rem;
+  }
+
+  .palestras-info-card {
+    grid-template-columns: 1fr;
+    padding: 30px 22px;
+    gap: 30px;
+  }
+
+  .lec-text-col h3 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .lec-text-col > p {
+    text-align: center;
+  }
+
+  .lec-topics-col {
+    padding: 25px 20px;
+  }
+
+  /* No mobile a galeria vira um grid elegante de 2 colunas */
+  .palestras-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 190px;
+    gap: 12px;
+  }
+
+  .bento-item.span-2x2 {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .bento-item.span-2x1 {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .palestras-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .palestras-cta-buttons .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .palestras-bento-grid {
+    grid-auto-rows: 165px;
+  }
+}

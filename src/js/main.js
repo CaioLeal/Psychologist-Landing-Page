@@ -3,6 +3,7 @@ import 'aos/dist/aos.css';
 
 import { initNavbar } from './navbar.js';
 import { initFAQ } from './faq.js';
+import { initLectures } from './lectures.js';
 import { initDepoimentos } from './treatment.js';
 import { initContactForm } from './contact.js';
 import { initInstagram } from './instagram.js';
@@ -10,6 +11,7 @@ import { initFooter } from './footer.js';
 import { initFloatingButtons } from './floating-buttons.js';
 import { initHolidays } from './holidays.js';
 import { initI18n } from './i18n.js';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   AOS.init({
@@ -21,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initI18n();
   initFAQ();
+  initLectures();
   initDepoimentos();
   initContactForm();
   initInstagram();

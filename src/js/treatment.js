@@ -62,7 +62,7 @@ export function initDepoimentos() {
       shortText: "Maravilhosa ! Atenciosa, sempre disposta a ouvir e orientar com muita empatiac e humanidade...",
       fullText: "Maravilhosa ! Atenciosa, sempre disposta a ouvir e orientar com muita empatiac e humanidade. Excelente profissional esta me ajudando muito em vários aspectos como depressão, ansiedade TDHA, entre outros. Recomendo muito.", 
       stars: 5,
-      i18nPrefix: "dep-card3" 
+      i18nPrefix: "dep-card4" 
     },
     {
       id: 5,
@@ -71,7 +71,25 @@ export function initDepoimentos() {
       shortText: "Encontrar ela foi a melhor coisa que me aconteceu, e muito fácil gostar dela e do jeito dela em tratar as pessoas...",
       fullText: "Encontrar ela foi a melhor coisa que me aconteceu, e muito fácil gostar dela e do jeito dela em tratar as pessoas. Posso dizer que muitas coisas mudaram na minha vida devido as sessões que temos! E impressionante como uma boa conversa com ela os problemas encontram saida sem  esse lugar de dor. Falar com ela pode-se dizer que encontramos paz e conforto.", 
       stars: 5,
-      i18nPrefix: "dep-card3" 
+      i18nPrefix: "dep-card5" 
+    },
+    {
+      id: 6,
+      name: "Gabrielle Viana", 
+      image: "img/treatment/gabrielleviana.png", 
+      shortText: "Maravilhosa!! A Cindy é uma profissional excelente! É minha primeira psicóloga e desde o início me senti muito confortável com ela...",
+      fullText: "Maravilhosa!! A Cindy é uma profissional excelente! É minha primeira psicóloga e desde o início me senti muito confortável com ela. Gosto muito da atenção e do cuidado que ela tem, além de o espaço das sessões ser acolhedor e bem localizado. Tenho recomendado o trabalho dela para várias pessoas que conheço! <3", 
+      stars: 5,
+      i18nPrefix: "dep-card6" 
+    },
+    {
+      id: 7,
+      name: "Caio Leal", 
+      image: "img/treatment/user.png", 
+      shortText: "Psicóloga incrível! Tem sido fundamental no meu processo. Com a escuta atenta e o olhar cuidadoso dela, consegui entender coisas sobre mim que eu nunca tinha percebido...",
+      fullText: "Psicóloga incrível! Tem sido fundamental no meu processo. Com a escuta atenta e o olhar cuidadoso dela, consegui entender coisas sobre mim que eu nunca tinha percebido, e ela me encaminhou para a avaliação que eu precisava. Super recomendo!", 
+      stars: 5,
+      i18nPrefix: "dep-card7" 
     }
   ];
 

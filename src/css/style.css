@@ -4,6 +4,7 @@
 @import 'benefits.css';
 @import 'about.css';
 @import 'journey.css';
+@import 'lectures.css';
 @import 'faq.css';
 @import 'treatment.css';
 @import 'contact.css';
@@ -16,7 +17,7 @@
   --text-dark: #4a453f;
   --text-light: #7a756f;
   --primary-color: #bcc6ce; /* Azul acinzentado do botão */
-  --secondary-color: #405573;
+  --secondary-color: #4a453f /* #405573 */;
   --primary-hover: #566b75;
   --border-radius: 12px;
   --font-main:'Poppins', sans-serif;
