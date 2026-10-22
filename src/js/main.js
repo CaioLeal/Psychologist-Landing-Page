@@ -1,6 +1,7 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import { initPromoBanner } from './promo-banner.js';
 import { initNavbar } from './navbar.js';
 import { initFAQ } from './faq.js';
 import { initLectures } from './lectures.js';
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     offset: 80
   });
   
+  initPromoBanner();
   initNavbar();
   initI18n();
   initFAQ();

@@ -10,6 +10,15 @@ export function initI18n() {
     // Dicionário de Traduções (Mantido igual)
     const translations = {
         pt: {
+            // FAIXA E MODAL: GRUPO DE ADOLESCENTES
+            "promo-badge": "<i class=\"fa-solid fa-sparkles\"></i> Vagas Limitadas",
+            "promo-bar-text": "<strong>Grupo Terapêutico para Adolescentes (12 a 16 anos)</strong> • Inscrições promocionais abertas!",
+            "promo-bar-cta": "Clique para ver <i class=\"fa-solid fa-arrow-right\"></i>",
+            "promo-modal-title": "Grupo Terapêutico para Adolescentes",
+            "promo-modal-sub": "De 12 a 16 anos • 100% Online • Vagas promocionais para as primeiras 20 inscrições",
+            "promo-swipe-hint": "<i class=\"fa-solid fa-arrows-left-right\"></i> Deslize para o lado para ver os dois cartazes",
+            "promo-whatsapp-btn": "<i class=\"fa-brands fa-whatsapp\"></i> Consulte aqui e garanta sua vaga",
+            
             // NAVBAR
             "nav-home": "Home",
             "nav-for-who": "Para quem é",
@@ -181,7 +190,7 @@ export function initI18n() {
             "foot-badge": "Ainda ficou alguma dúvida?",
             "foot-title": "Entre em contato",
             "foot-card-email-title": "Email",
-            "foot-card-email-desc": "contato@cindyandriolli.com.br",
+            "foot-card-email-desc": "cindyandriolli@gmail.com",
             "foot-card-wpp-title": "WhatsApp",
             "foot-card-wpp-desc": "Atendimento Online",
             "foot-card-insta-title": "Instagram",
@@ -189,6 +198,15 @@ export function initI18n() {
             "foot-copy": "Cindy Andriolli. Todos os direitos reservados."
         },
         es: {
+            // FAIXA E MODAL: GRUPO DE ADOLESCENTES
+            "promo-badge": "<i class=\"fa-solid fa-sparkles\"></i> Cupos Limitados",
+            "promo-bar-text": "<strong>Grupo Terapéutico para Adolescentes (12 a 16 años)</strong> • ¡Inscripciones promocionales abiertas!",
+            "promo-bar-cta": "Clic para ver <i class=\"fa-solid fa-arrow-right\"></i>",
+            "promo-modal-title": "Grupo Terapéutico para Adolescentes",
+            "promo-modal-sub": "De 12 a 16 años • 100% Online • Cupos promocionales para las primeras 20 inscripciones",
+            "promo-swipe-hint": "<i class=\"fa-solid fa-arrows-left-right\"></i> Desliza hacia el lado para ver ambos carteles",
+            "promo-whatsapp-btn": "<i class=\"fa-brands fa-whatsapp\"></i> Consulta aquí y asegura tu cupo",
+
             // NAVBAR
             "nav-home": "Inicio",
             "nav-for-who": "Para quién es",
@@ -360,7 +378,7 @@ export function initI18n() {
             "foot-badge": "¿Aún tienes alguna duda?",
             "foot-title": "Ponte en contacto",
             "foot-card-email-title": "Correo Electrónico",
-            "foot-card-email-desc": "contato@cindyandriolli.com.br",
+            "foot-card-email-desc": "cindyandriolli@gmail.com",
             "foot-card-wpp-title": "WhatsApp",
             "foot-card-wpp-desc": "Atención en Línea",
             "foot-card-insta-title": "Instagram",

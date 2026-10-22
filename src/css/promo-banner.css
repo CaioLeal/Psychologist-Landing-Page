@@ -1,0 +1,406 @@
+/* =========================================
+   FAIXA DE ANÚNCIO NO TOPO (PROMO BANNER)
+========================================= */
+.promo-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 46px;
+  background: linear-gradient(90deg, #02ddfa 0%, #056774 100%);
+  color: #ffffff;
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 45px 8px 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .2);
+  border-bottom: 2px solid #02ddfa;
+  transform: translateY(-100%);
+  transition: transform .6s cubic-bezier(.16, 1, .3, 1);
+  cursor: pointer;
+}
+
+.promo-top-bar.show {
+  transform: translateY(0);
+}
+
+/* Empurra a Navbar para baixo suavemente quando a faixa aparece */
+body.has-promo-bar .header {
+  top: 62px;
+  transition: top .5s ease, padding .4s ease;
+}
+
+.promo-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+/* Detalhe inspirado nas cores da arte do Grupo Terapêutico */
+.promo-pill-badge {
+  background: var(--bg-primary);
+  color: #181615;
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 50px;
+  letter-spacing: .6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 2px 2px 0 var(--text-light);
+}
+
+.promo-bar-text {
+  font-size: .88rem;
+  font-weight: 400;
+  color: #f7f6f1;
+}
+
+.promo-bar-text strong {
+  color: #fdfdfd;
+  font-weight: 700;
+}
+
+.promo-bar-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, .12);
+  color: #ffffff;
+  font-size: .8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  transition: all .3s ease;
+}
+
+.promo-top-bar:hover .promo-bar-cta {
+  background: #ff1e75;
+  border-color: #ff1e75;
+  transform: translateX(3px);
+}
+
+.promo-bar-close {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, .65);
+  font-size: 1.1rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s, color .2s;
+}
+
+.promo-bar-close:hover {
+  background: rgba(255, 255, 255, .15);
+  color: #ffffff;
+}
+
+/* =========================================
+   MODAL POPUP COM AS 2 IMAGENS LADO A LADO
+========================================= */
+.promo-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 18, 16, .82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s ease;
+}
+
+.promo-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.promo-modal-box {
+  background: var(--bg-primary);
+  width: 100%;
+  max-width: 1020px;
+  max-height: 92vh;
+  border-radius: 22px;
+  padding: 28px 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, .45);
+  border: 1px solid rgba(255, 255, 255, .3);
+  transform: translateY(30px) scale(.95);
+  transition: transform .4s cubic-bezier(.16, 1, .3, 1);
+  overflow-y: auto;
+}
+
+.promo-modal-overlay.active .promo-modal-box {
+  transform: translateY(0) scale(1);
+}
+
+.promo-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, .08);
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+  transition: transform .2s ease, background .2s ease;
+  z-index: 10;
+}
+
+.promo-modal-close:hover {
+  transform: scale(1.08);
+  background: #ff1e75;
+  color: white;
+}
+
+.promo-modal-header {
+  text-align: center;
+  margin-bottom: 18px;
+  padding-right: 25px;
+}
+
+.promo-modal-header h3 {
+  font-family: 'Elegant', serif;
+  font-size: 2rem;
+  color: var(--text-dark);
+  line-height: 1.15;
+}
+
+.promo-modal-header p {
+  font-size: .9rem;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+/* Dica de arrastar pro lado (visível principalmente no mobile/telas menores) */
+.promo-swipe-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .8rem;
+  font-weight: 600;
+  color: #ff1e75;
+  background: rgba(255, 30, 117, .08);
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-top: 8px;
+}
+
+/* Container das 2 imagens lado a lado com rolagem horizontal suave */
+.promo-images-track {
+  width: 100%;
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 6px 4px 14px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) transparent;
+}
+
+.promo-images-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.promo-images-track::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+.promo-flyer-item {
+  flex: 1 0 46%;
+  min-width: 320px;
+  scroll-snap-align: center;
+  border-radius: 14px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+  border: 2px solid white;
+}
+
+.promo-flyer-item img {
+  width: 100%;
+  height: auto;
+  max-height: 56vh;
+  object-fit: contain;
+  display: block;
+  background: #181615;
+}
+
+/* Rodapé do Modal com Botão do WhatsApp */
+.promo-modal-footer {
+  width: 100%;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-promo-whatsapp {
+  background-color: #25D366;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 15px 34px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, .35);
+  transition: transform .3s ease, background-color .3s ease, box-shadow .3s ease;
+}
+
+.btn-promo-whatsapp i {
+  font-size: 1.35rem;
+}
+
+.btn-promo-whatsapp:hover {
+  background-color: #1ebe5d;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(37, 211, 102, .45);
+}
+
+/* =========================================
+   MONITORES MENORES E ESCALA 125% (Até 1600px)
+========================================= */
+@media (max-width: 1600px) {
+  .promo-top-bar {
+    min-height: 40px;
+    padding: 6px 40px 6px 14px;
+  }
+
+  body.has-promo-bar .header {
+    top: 52px;
+  }
+
+  .promo-bar-text {
+    font-size: .82rem;
+  }
+
+  .promo-modal-box {
+    max-width: 860px;
+    padding: 20px 24px;
+  }
+
+  .promo-modal-header h3 {
+    font-size: 1.7rem;
+  }
+
+  .promo-flyer-item img {
+    max-height: 50vh;
+  }
+
+  .btn-promo-whatsapp {
+    padding: 13px 28px;
+    font-size: .98rem;
+  }
+}
+
+/* =========================================
+   MOBILE VIEW (Até 992px)
+========================================= */
+@media (max-width: 992px) {
+  .promo-top-bar {
+    padding: 8px 36px 8px 12px;
+  }
+
+  body.has-promo-bar .header {
+    top: 48px;
+  }
+
+  .promo-bar-content {
+    gap: 6px;
+  }
+
+  .promo-pill-badge {
+    font-size: .65rem;
+    padding: 2px 8px;
+  }
+
+  .promo-bar-text {
+    font-size: .76rem;
+    line-height: 1.3;
+  }
+
+  .promo-bar-cta {
+    font-size: .72rem;
+    padding: 3px 9px;
+  }
+
+  .promo-modal-overlay {
+    padding: 12px;
+  }
+
+  .promo-modal-box {
+    padding: 20px 15px;
+    max-height: 94vh;
+  }
+
+  .promo-modal-header h3 {
+    font-size: 1.45rem;
+  }
+
+  /* No celular, cada imagem ocupa quase toda a largura para o usuário deslizar pro lado facilmente */
+  .promo-images-track {
+    gap: 12px;
+  }
+
+  .promo-flyer-item {
+    flex: 0 0 88%;
+    min-width: 85%;
+  }
+
+  .promo-flyer-item img {
+    max-height: 54vh;
+  }
+
+  .btn-promo-whatsapp {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: .95rem;
+  }
+}
+
+@media (max-width: 400px) {
+  body.has-promo-bar .header {
+    top: 56px;
+  }
+
+  .promo-bar-cta {
+    display: none; /* Em telas ultra estreitas deixa o texto mais limpo, pois a barra toda já é clicável */
+  }
+}
