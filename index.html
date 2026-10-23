@@ -346,6 +346,88 @@
     </section>
 
     <!-- =========================================
+                      TRATAMENTOS E DEPOIMENTOS
+        ========================================= -->
+    <section class="tratamentos" id="tratamentos">
+      <div class="container tratamentos-container">
+    
+        <!-- Parte 1: Tags de Tratamento -->
+        <div class="tratamentos-header fade-up">
+          <span class="badge" data-i18n="trat-badge">Terapia de Aceitação e Compromisso (ACT)</span>
+          <h2 class="section-title" data-i18n="trat-title">Algumas das demandas que podemos trabalhar juntas:</h2>
+        </div>
+    
+        <div class="tratamentos-tags fade-up" style="transition-delay: .2s;">
+          <span class="trat-tag" data-i18n="tag-1"><i class="fa-solid fa-sparkles"></i> Ansiedade e Pensamentos
+            Acelerados</span>
+          <span class="trat-tag" data-i18n="tag-2"><i class="fa-solid fa-sparkles"></i> Sobrecarga Emocional e
+            Burnout</span>
+          <span class="trat-tag" data-i18n="tag-3"><i class="fa-solid fa-sparkles"></i> Dependência Emocional</span>
+          <span class="trat-tag" data-i18n="tag-4"><i class="fa-solid fa-sparkles"></i> Dificuldade em impor limites</span>
+          <span class="trat-tag" data-i18n="tag-5"><i class="fa-solid fa-sparkles"></i> Perfeccionismo e Autocobrança</span>
+          <span class="trat-tag" data-i18n="tag-6"><i class="fa-solid fa-sparkles"></i> Síndrome da Impostora</span>
+          <span class="trat-tag" data-i18n="tag-7"><i class="fa-solid fa-sparkles"></i> Transições de Carreira e Vida</span>
+        </div>
+    
+        <div class="tratamentos-action fade-up" style="transition-delay: .3s;">
+          <a href="https://wa.link/0o6gfu" class="btn btn-primary btn-shine" data-i18n="trat-btn">Ver horários
+            disponíveis</a>
+          <p class="trat-info" data-i18n="trat-info">• Atendimento 100% online •</p>
+        </div>
+    
+        <div class="spacer-line fade-up"></div>
+    
+        <!-- Parte 2: Depoimentos (Layout Empilhado: Topo -> Carrossel -> Botão) -->
+        <div class="depoimentos-wrapper">
+    
+          <!-- Topo Centralizado -->
+          <div class="depoimentos-text fade-up">
+            <span class="badge" data-i18n="dep-badge">Depoimentos de Pacientes</span>
+            <h2 class="section-title" data-i18n="dep-title">Depoimentos</h2>
+            <p data-i18n="dep-desc">Os relatos refletem a construção de uma vida com mais autonomia, clareza e acolhimento.
+              Um espaço seguro para ressignificar a forma como você lida com suas próprias emoções e escolhas.</p>
+          </div>
+    
+          <!-- Linha de Cards Rodando em Largura Total (Injetados via JS) -->
+          <div class="depoimentos-grid" id="depoimentos-grid">
+            <!-- O JS vai popular isso aqui -->
+          </div>
+    
+          <!-- Botão mantido e centralizado abaixo dos cards -->
+          <div class="depoimentos-footer-cta fade-up">
+            <a href="https://wa.link/0o6gfu" class="btn btn-outline" data-i18n="dep-btn">Falar com a Psicóloga Cindy</a>
+          </div>
+    
+        </div>
+    
+      </div>
+    
+      <!-- Parte 3: Letreiro Infinito (Marquee) -->
+      <div class="marquee-wrapper">
+        <div class="marquee-content">
+          <!-- O conteúdo é duplicado para o loop infinito funcionar perfeitamente -->
+          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i
+              class="fa-solid fa-diamond"></i></span>
+          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i
+              class="fa-solid fa-diamond"></i></span>
+          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i
+              class="fa-solid fa-diamond"></i></span>
+          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i
+              class="fa-solid fa-diamond"></i></span>
+          <!-- Duplicata para transição suave -->
+          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i
+              class="fa-solid fa-diamond"></i></span>
+          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i
+              class="fa-solid fa-diamond"></i></span>
+          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i
+              class="fa-solid fa-diamond"></i></span>
+          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i
+              class="fa-solid fa-diamond"></i></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
                   PALESTRAS E TREINAMENTOS
         ========================================= -->
     <section class="palestras" id="palestras">
@@ -590,72 +672,6 @@
             </div>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================
-                      TRATAMENTOS E DEPOIMENTOS
-        ========================================= -->
-    <section class="tratamentos" id="tratamentos">
-      <div class="container tratamentos-container">
-        
-        <!-- Parte 1: Tags de Tratamento -->
-        <div class="tratamentos-header fade-up">
-          <span class="badge" data-i18n="trat-badge">Terapia de Aceitação e Compromisso (ACT)</span>
-          <h2 class="section-title" data-i18n="trat-title">Algumas das demandas que podemos trabalhar juntas:</h2>
-        </div>
-
-        <div class="tratamentos-tags fade-up" style="transition-delay: .2s;">
-          <span class="trat-tag" data-i18n="tag-1"><i class="fa-solid fa-sparkles"></i> Ansiedade e Pensamentos Acelerados</span>
-          <span class="trat-tag" data-i18n="tag-2"><i class="fa-solid fa-sparkles"></i> Sobrecarga Emocional e Burnout</span>
-          <span class="trat-tag" data-i18n="tag-3"><i class="fa-solid fa-sparkles"></i> Dependência Emocional</span>
-          <span class="trat-tag" data-i18n="tag-4"><i class="fa-solid fa-sparkles"></i> Dificuldade em impor limites</span>
-          <span class="trat-tag" data-i18n="tag-5"><i class="fa-solid fa-sparkles"></i> Perfeccionismo e Autocobrança</span>
-          <span class="trat-tag" data-i18n="tag-6"><i class="fa-solid fa-sparkles"></i> Síndrome da Impostora</span>
-          <span class="trat-tag" data-i18n="tag-7"><i class="fa-solid fa-sparkles"></i> Transições de Carreira e Vida</span>
-        </div>
-
-        <div class="tratamentos-action fade-up" style="transition-delay: .3s;">
-          <a href="https://wa.link/0o6gfu" class="btn btn-primary btn-shine" data-i18n="trat-btn">Ver horários disponíveis</a>
-          <p class="trat-info" data-i18n="trat-info">• Atendimento 100% online •</p>
-        </div>
-
-        <div class="spacer-line fade-up"></div>
-
-        <!-- Parte 2: Depoimentos -->
-        <div class="depoimentos-wrapper">
-          
-          <!-- Coluna de Texto -->
-          <div class="depoimentos-text fade-up">
-            <span class="badge" data-i18n="dep-badge">Depoimentos de Pacientes</span>
-            <h2 class="section-title" data-i18n="dep-title">O que os pacientes dizem após o atendimento</h2>
-            <p data-i18n="dep-desc">Os relatos refletem a construção de uma vida com mais autonomia, clareza e acolhimento. Um espaço seguro para ressignificar a forma como você lida com suas próprias emoções e escolhas.</p>
-            <a href="https://wa.link/0o6gfu" class="btn btn-outline" data-i18n="dep-btn">Falar com a Psicóloga Cindy</a>
-          </div>
-
-          <!-- Coluna dos Cards (Injetados via JS) -->
-          <div class="depoimentos-grid" id="depoimentos-grid">
-            <!-- O JS vai popular isso aqui -->
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- Parte 3: Letreiro Infinito (Marquee) -->
-      <div class="marquee-wrapper">
-        <div class="marquee-content">
-          <!-- O conteúdo é duplicado para o loop infinito funcionar perfeitamente -->
-          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
-          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
-          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
-          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
-          <!-- Duplicata para transição suave -->
-          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
-          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
-          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
-          <span>Cindy Andriolli <i class="fa-solid fa-diamond"></i> Psicóloga Clínica <i class="fa-solid fa-diamond"></i></span>
         </div>
       </div>
     </section>

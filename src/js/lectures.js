@@ -35,8 +35,8 @@ export function initLectures() {
       defaultCaption: 'Encontro sobre Prevenção e Autocuidado'
     },
     {
-      type: 'video',
-      src: 'img/lectures/7.mp4',
+      type: 'image',
+      src: 'img/lectures/8.jpeg',
       spanClass: 'span-2x1',
       i18nKey: 'lec-media-5',
       defaultCaption: 'Depressão e a Curiosidade • Inteligência Emocional'
@@ -50,7 +50,7 @@ export function initLectures() {
     },
     {
       type: 'image',
-      src: 'img/lectures/5.png',
+      src: 'img/lectures/9.jpeg',
       spanClass: '',
       i18nKey: 'lec-media-7',
       defaultCaption: 'Acolhimento e Escuta nas Organizações'
