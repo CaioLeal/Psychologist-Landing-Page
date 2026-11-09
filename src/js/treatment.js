@@ -90,6 +90,24 @@ export function initDepoimentos() {
       fullText: "Psicóloga incrível! Tem sido fundamental no meu processo. Com a escuta atenta e o olhar cuidadoso dela, consegui entender coisas sobre mim que eu nunca tinha percebido, e ela me encaminhou para a avaliação que eu precisava. Super recomendo!", 
       stars: 5,
       i18nPrefix: "dep-card7" 
+    },
+    {
+      id: 8,
+      name: "Letícia Alves", 
+      image: "img/treatment/leticiaalves.png", 
+      shortText: "Sempre foi psicóloga antes mesmo de ter o diploma! (Sou amiga e já fui paciente). Uma profissional acolhedora, com muita empatia...",
+      fullText: "Sempre foi psicóloga antes mesmo de ter o diploma! (Sou amiga e já fui paciente). Uma profissional acolhedora, com muita empatia, conselhos sinceros e palavras firmes na hora certa. Tenho certeza de que levará todo esse cuidado e sensibilidade para a todos que atender. Sucesso! ❤️", 
+      stars: 5,
+      i18nPrefix: "dep-card8" 
+    },
+    {
+      id: 9,
+      name: "Jéssica Rayra R Ribeiro", 
+      image: "img/treatment/jessicarayrarribeiro.png", 
+      shortText: "A Cindy é uma daquelas pessoas que a gente só tem a sorte de encontrar uma vez na vida, acolhedora, amorosa e sabe lidar com muita empatia mesmo em situações...",
+      fullText: "A Cindy é uma daquelas pessoas que a gente só tem a sorte de encontrar uma vez na vida, acolhedora, amorosa e sabe lidar com muita empatia mesmo em situações em que vc precisa de uma sacudida. Profissional incrível, indico de olhos fechados!", 
+      stars: 5,
+      i18nPrefix: "dep-card9" 
     }
   ];
 
