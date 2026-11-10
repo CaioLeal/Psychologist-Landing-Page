@@ -22,7 +22,7 @@ export function initLectures() {
     },
     {
       type: 'image',
-      src: 'img/lectures/1.png',
+      src: 'img/lectures/10.jpeg',
       spanClass: '',
       i18nKey: 'lec-media-3',
       defaultCaption: 'Dinâmica em Grupo'
